@@ -230,27 +230,24 @@ flex-direction: column;
 padding: 0px;
 }
 
-.location{
+.location {
   display: flex;
-  flex-direction: column;
+  align-items: center; /* Align items vertically centered */
 }
 
-.featuredJob h2{
-  font-size: 12px;
+.featuredJob h2 {
+  font-size: 12px; /* Adjust font size */
 }
 
-
-.card-section1{
+.card-section1 {
   display: flex; /* Use Flexbox to arrange cards */
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap; /* Allow cards to wrap */
+  justify-content: center; /* Center cards in the section */
 }
 
-
-
-.card-data{
+.card-data {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Space between subtitle and salary */
 }
 
 .featuredJob .card {
@@ -263,12 +260,46 @@ padding: 0px;
   border: 1px solid #ccc; /* Light border */
   border-radius: 10px; /* Rounded corners */
   overflow: hidden; /* Prevent overflow */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow */
   transition: background 0.3s ease; /* Smooth transition for background change */
 }
 
 .featuredJob .card:hover {
   background: linear-gradient(135deg, rgb(248, 242, 246), #fff); /* Gradient background on hover */
+}
+
+/* Centering the section title */
+.section4Head {
+  display: flex;
+  justify-content: space-between; /* Space between title and link */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Space below the section header */
+}
+
+.section4Head h1 {
+  margin: 0; /* Remove default margin */
+}
+
+.section4Head a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Link color */
+}
+
+/* Ensure image size consistency */
+.card-image {
+  width: 40px; /* Set a fixed width */
+  height: auto; /* Keep aspect ratio */
+  margin-right: 10px; /* Space between image and text */
+}
+
+/* Adjust the font size for the company name and location */
+.company-name {
+  font-size: 14px; /* Adjust as needed */
+  font-weight: bold; /* Make it bold */
+}
+
+.card h6 {
+  margin: 5px 0; /* Consistent margin for subtitles */
 }
 
 
@@ -281,6 +312,7 @@ padding: 0px;
 .location {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 20px;
   flex-direction: row; /* Horizontal layout */
   margin-left: 10px; /* Space between the icon and text */
 }
@@ -295,13 +327,19 @@ padding: 0px;
   border-radius: 2px;
 }
 
-.TopComponiesButon {
+.TopComponiesButton {
   height: 40px; /* Set the height */
   width: 270px; /* Set the width */
   background-color: #007bff; /* Set background color to blue */
   color: white; /* Change text color to white for contrast */
   border: none; /* Remove default border */
-  border-radius: 5px; /* Optional: add rounded corners */
+  border-radius: 5px; /* Add rounded corners */
   cursor: pointer; /* Change cursor to pointer on hover */
-  transition: background-color 0.3s; /* Smooth background transition */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth background transition */
 }
+
+.TopComponiesButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+

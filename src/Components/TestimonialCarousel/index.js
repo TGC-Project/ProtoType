@@ -84,5 +84,4 @@ const TestimonialCarousel = () => {
         </div>
     );
 }
-
 export default TestimonialCarousel;

@@ -1,5 +1,3 @@
-/* TestimonialCarousel.css */
-
 .MainCarousel {
     font-family: sans-serif;
     display: flex;
@@ -7,7 +5,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5; /* Background color */
+    background-color: #f0f2f5;
 }
 
 .carousel-title {
@@ -15,9 +13,8 @@
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
-    color:black; /* Yellow color for title */
+    color: black;
 }
-
 .carousel {
     display: flex;
     align-items: center;
@@ -27,10 +24,38 @@
     overflow: hidden; 
 }
 
+.carousel-btn {
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1; 
+    position: absolute; /* Keep buttons absolute for visibility */
+}
+
+.carousel-btn.prev {
+    left: 20px; /* Position on the left edge */
+    top: 10px; /* Adjust this value to position the button higher or lower */
+}
+
+.carousel-btn.next {
+    right: 20px; /* Position on the right edge */
+    top: 10px; /* Adjust this value to position the button higher or lower */
+}
+
+
+/* Optional: Remove hover effects */
+.carousel-btn:hover {
+    background: none; /* No background on hover */
+    color: inherit; /* Keep text color unchanged */
+}
+
 .testimonial-container {
     display: flex; 
     transition: transform 0.5s ease; 
     width: 100%; 
+    justify-content: space-between; /* Add this for equal spacing */
 }
 
 .testimonial-card {
@@ -38,8 +63,9 @@
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 0 0 300px; 
+    flex: 0 0 30%; /* Use percentage for flexibility */
     margin: 0 10px; 
+    box-sizing: border-box; /* Ensure padding doesn't affect total width */
 }
 
 .rating {
@@ -49,7 +75,7 @@
 }
 
 .rating .star {
-    color: #FFA500; /* Yellow color for stars */
+    color: #FFA500;
     font-size: 20px;
     margin-right: 4px;
 }
@@ -85,23 +111,4 @@
     font-size: 64px;
     color: #ccc;
     margin-left: auto;
-}
-
-.carousel-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1; 
-}
-
-.carousel-btn.prev {
-    position: absolute;
-    left: 0;
-}
-
-.carousel-btn.next {
-    position: absolute;
-    right: 0;
 }

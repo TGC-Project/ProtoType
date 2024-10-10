@@ -1,12 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+
   
   .hero-section {
     height: 60vh;
@@ -15,7 +7,7 @@
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     color: white;
   }
   
@@ -55,10 +47,17 @@
   
   .job-location {
     display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
     align-items: center;
+  }
+
+ .job-location p{
+    font-weight: bold;
   }
   
   .job-description {
+    margin-top: 20px;
     color: gray;
   }
   
@@ -71,6 +70,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  .rating{
+    display: flex;
+    flex-direction: column;
+  }
   
   .company-list {
     border: 1px solid #ccc;
@@ -79,6 +83,11 @@
     padding: 1rem;
     width: calc(20% - 20px);
     text-align: center;
+  }
+
+  .company img{
+    width: 100px;
+    height: 80px;
   }
   
   .clt-section {
@@ -103,13 +112,15 @@
     border: none;
     border-radius: 4px;
   }
-  
+
+ button{
+    width: 100px !important;
+    margin-left: 20px;
+    margin-top: 30px;
+ }
   .view-more-btn,
   .signIn-btn {
-    background-color: blue;
-    color: white;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
   }
@@ -117,6 +128,10 @@
   .view-more-btn:hover,
   .signIn-btn:hover {
     background-color: darkblue;
+  }
+
+  .job-offers .view-more-btn{
+   width: 150px !important;
   }
   
   /* Responsive Styles */

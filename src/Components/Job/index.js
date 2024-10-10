@@ -1,5 +1,11 @@
 import React from 'react';
+import Footer from "../Footer"
 import './index.css'; // Make sure to create this CSS file
+import Genpact from "../../Images/genpact.png"
+import Amazone from "../../Images/amazon.png"
+import TATA from "../../Images/tata.png"
+import Apple from "../../Images/apple.png"
+import IBM from "../../Images/ibm.png"
 
 const Job = () => {
   return (
@@ -37,6 +43,7 @@ const Job = () => {
               <button className="view-more-btn">View More</button>
               <button className="view-more-btn">Apply</button>
             </a>
+
           </div>
         ))}
       </section>
@@ -70,6 +77,7 @@ const Job = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };
@@ -104,35 +112,35 @@ const jobListings = [
 const companies = [
   {
     name: "Genpact",
-    logo: "genpact.png",
+    logo: Genpact,
     rating: "3.9",
     reviews: "28.2K+",
     description: "Global professional services firm."
   },
   {
     name: "Amazon",
-    logo: "amazon.png",
+    logo: Amazone,
     rating: "3.9",
     reviews: "28.2K+",
     description: "Global professional services firm."
   },
   {
     name: "Apple",
-    logo: "apple.png",
+    logo: Apple,
     rating: "3.9",
     reviews: "28.2K+",
     description: "Global professional services firm."
   },
   {
     name: "TATA",
-    logo: "tata.png",
+    logo: TATA,
     rating: "3.9",
     reviews: "28.2K+",
     description: "Global professional services firm."
   },
   {
     name: "IBM",
-    logo: "ibm.png",
+    logo: IBM,
     rating: "3.9",
     reviews: "28.2K+",
     description: "Global professional services firm."
