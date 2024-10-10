@@ -108,12 +108,11 @@
 .signup-btn {
   background-color: white;
   color:#007bff;
-  border: none;
+  border: 2px solid #007bff;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  border: 2px solid #007bff;
-  margin-right: 20px;
+  height: 40px;
 }
 
 .signIn-btn {
@@ -125,3 +124,17 @@
   cursor: pointer;
   height: 40px;
 } 
+
+.Buttons{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.profile-image {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  border-radius: 50%; /* This makes the image circular */
+  object-fit: cover; /* Ensures the image covers the container */
+  margin-left: 10px; /* Space between image and buttons */
+}
