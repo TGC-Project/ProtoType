@@ -1,0 +1,39 @@
+/* Footer.css */
+p{
+    font-size: 10px;
+}
+.footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center; /* Center the sections */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    max-width: 1200px; /* Maximum width for the footer */
+    margin: 0 auto; /* Center the footer within the page */
+    padding: 0 20px; /* Optional: add some horizontal padding */
+}
+
+.footer-section {
+    flex: 1; /* Allow sections to grow */
+    min-width: 150px; /* Minimum width for responsiveness */
+    margin: 10px; /* Spacing between sections */
+    text-align: center; /* Center text within each section */
+}
+
+.footer-section h4 {
+    margin-bottom: 10px; /* Space below headers */
+}
+
+.footer-section ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+}
+
+.footer-section ul li {
+    margin: 5px 0; /* Space between list items */
+    font-size: 10px;
+}

@@ -1,0 +1,307 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  .Main{
+    background-color: #f8f9fa; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 20px;
+    
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .cta-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Hero Illustration - GIF styling */
+  .hero-illustration img {
+    width:570px;
+    height: 400px;
+
+  }
+  
+  .hero-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-section {
+    display: flex; /* Flexbox for alignment */
+ /* Center items */
+    margin-top: 20px; /* Space above */
+  }
+  
+  .find-input {
+    padding: 10px; /* Padding for input */
+    margin-right: 10px; /* Space between input and button */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .find-btn {
+    padding: 10px 20px; /* Padding for button */
+    background-color: #007bff; /* Button background */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .find-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  .card-section {
+    display: flex; /* Use Flexbox to arrange cards */
+    justify-content: center; /* Align cards to the start */
+    overflow: hidden;
+    width: auto;
+    height: 50px;
+}
+
+.card {
+    display: flex; /* Align items horizontally */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents overflow of the image */
+    transition: transform 0.3s; /* Smooth zoom effect */
+    cursor: pointer; /* Pointer on hover */
+    margin-right: 20px; /* Space between cards */
+}
+
+.card:last-child {
+    margin-right: 0; /* Remove margin from the last card */
+}
+
+  
+  .card-image {
+    width: 70px; /* Adjust as needed */
+    height:70px; /* Maintain aspect ratio */
+  }
+  
+  .card-content {
+    padding: 16px; /* Space around text */
+    display: flex;
+    color: black;
+    flex-direction: column; /* Stack title and description */
+    justify-content: center; /* Center vertically */
+  }
+  
+  .card-title {
+    font-size: 1.2em; /* Title size */
+    margin: 0; /* Remove default margin */
+    color: black;
+  }
+  
+  .card-description {
+    font-size: 0.9em; /* Description size */
+    margin: 8px 0 0; /* Space above */
+  }
+  
+  .Productcard{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .PopularProducts{
+    margin-top: 20px;
+  }
+  .PopularProductHeader{
+   text-align: center;
+  margin-top: 7%;
+  }
+ 
+
+  .ProductCardDetails{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section3{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #f8f9fa; 
+  }
+  span{
+        font-size: 25px; /* Adjust font size as needed */
+        font-weight: bold; /* Make the text bold */
+        background: linear-gradient(to top, #0a7902, #06cf24);
+        -webkit-background-clip: text; /* For WebKit browsers */
+        -webkit-text-fill-color: transparent; /* Make the fill color transparent */
+        background-clip: text; /* For other browsers */
+    
+  }
+  
+  .section4Head{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 8%;
+  }
+  a {
+    text-decoration: none;
+    margin-right: 8%;
+    margin-top: 20px;
+  }
+
+  .section4  .card {
+    display: flex; /* Use flexbox to align items */
+    justify-content: center;
+    align-items: center; /* Center items horizontally */
+    overflow: hidden; /* Prevent overflow */
+    transition: transform 0.3s; /* Smooth zoom effect */
+    cursor: pointer; /* Pointer on hover */
+    margin: 10px; /* Space between cards */
+    width: 220px; /* Set a fixed width for cards */
+    height: 100px;
+    border: none;
+    padding: 20px; /* Optional padding */
+   
+}
+
+.section4 .card-image {
+    width: 60px; /* Set desired width for the image */
+    height: 60px; /* Set desired height for the image */
+    object-fit: cover; /* Ensure the image covers the area */
+}
+
+
+  .section4  .card-image:hover {
+    transform: scale(1.05); /* Zoom effect */
+    background-color: #007bff;
+   
+  }
+
+  .section4  .card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  
+    transform: scale(1.05);
+  }
+
+  .domainCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card{
+    border: 2px solid black;
+    width: 200px;
+    height: 250px;
+  }
+  .Sub{
+    display: flex;
+  }
+
+  .Sub.image {
+    width: 50px; /* Set desired width for the image */
+    height: 50px; /* Set desired height for the image */
+    object-fit: cover; /* Ensure the image covers the area */
+    padding: 10px;
+}
+.CardCol{
+display: flex;
+flex-direction: column;
+padding: 0px;
+}
+
+.location{
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredJob h2{
+  font-size: 12px;
+}
+
+
+.card-section1{
+  display: flex; /* Use Flexbox to arrange cards */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.card-data{
+  display: flex;
+  justify-content: space-around;
+}
+
+.featuredJob .card {
+  width: 300px; /* Consistent width */
+  height: 180px; /* Consistent height */
+  margin: 10px; /* Space between cards */
+  display: flex; /* Align contents */
+  flex-direction: column; /* Stack elements */
+  justify-content: space-evenly; /* Space out elements */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease; /* Smooth transition for background change */
+}
+
+.featuredJob .card:hover {
+  background: linear-gradient(135deg, rgb(248, 242, 246), #fff); /* Gradient background on hover */
+}
+
+
+.company-info {
+  display: flex;
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center; /* Center vertically */
+}
+
+.location {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row; /* Horizontal layout */
+  margin-left: 10px; /* Space between the icon and text */
+}
+
+.featuredJob .card-image {
+  width: 50px; /* Google logo width */
+  height: 50px; /* Google logo height */
+  object-fit: cover; /* Maintain aspect ratio */
+  transform: scale(1.05); /* Zoom effect */
+  background-color:rgb(241, 236, 236);
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.TopComponiesButon {
+  height: 40px; /* Set the height */
+  width: 270px; /* Set the width */
+  background-color: #007bff; /* Set background color to blue */
+  color: white; /* Change text color to white for contrast */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Optional: add rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Smooth background transition */
+}

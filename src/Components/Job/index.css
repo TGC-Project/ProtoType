@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .hero-section {
+    height: 60vh;
+    background-image: url("../../Images/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+  }
+  
+  .hero-text-section {
+    margin: 4rem;
+  }
+  
+  .hero-text-section h1 {
+    font-size: 35px;
+    font-weight: 800;
+  }
+  
+  .job-offers {
+    margin: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .job-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 4rem;
+  }
+  
+  .job {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 1rem;
+    width: calc(33% - 20px);
+  }
+  
+  .job-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .job-location {
+    display: flex;
+    align-items: center;
+  }
+  
+  .job-description {
+    color: gray;
+  }
+  
+  .feature-companies {
+    margin: 2rem 4rem;
+  }
+  
+  .companies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .company-list {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 1rem;
+    width: calc(20% - 20px);
+    text-align: center;
+  }
+  
+  .clt-section {
+    background-image: url("../../Images/headway-5QgIuuBxKwM-unsplash.jpg");
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem;
+    color: white;
+  }
+  
+  .email-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .email-container input {
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .view-more-btn,
+  .signIn-btn {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-more-btn:hover,
+  .signIn-btn:hover {
+    background-color: darkblue;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .job {
+      width: calc(100% - 20px);
+    }
+  
+    .company-list {
+      width: calc(100% - 20px);
+    }
+  
+    .hero-text-section h1 {
+      font-size: 24px;
+    }
+  }
+  
