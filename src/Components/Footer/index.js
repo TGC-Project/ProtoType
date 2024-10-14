@@ -3,52 +3,44 @@ import React from 'react';
 import './index.css';
 
 const Footer = () => {
-    return (
-        <footer className="footer">
-            <div className="footer-container">
-                <div className="footer-section">
-                    <h4>Prototype</h4>
-                    <p>Call: 1234567</p>
-                    <p>Baner, Pune</p>
-                </div>
-                <div className="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li>Pricing</li>
-                        <li>Blog</li>
-                    </ul>
-                </div>
-                <div className="footer-section">
-                    <h4>Candidates</h4>
-                    <ul>
-                        <li>Browse Jobs</li>
-                        <li>Browse Employers</li>
-                        <li>Candidates Dashboard</li>
-                        <li>Saved Jobs</li>
-                    </ul>
-                </div>
-                <div className="footer-section">
-                    <h4>Employer</h4>
-                    <ul>
-                        <li>Post a Job</li>
-                        <li>Browse Candidates</li>
-                        <li>Employer Dashboard</li>
-                        <li>Applications</li>
-                    </ul>
-                </div>
-                <div className="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li>FAQs</li>
-                        <li>Privacy Policy</li>
-                        <li>Terms & Conditions</li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    );
+  return (
+    <div className="footer">
+      <div className="footer-column">
+        <h3>Prototype1</h3>
+        <p style={{ fontSize: '12px' }}>
+          Call now: <span className="highlight">1234 56789</span>
+        </p>
+        <p>Base: Baner</p>
+      </div>
+      <div className="footer-column">
+        <h3>Quick Link</h3>
+        <a href="#">About</a>
+        <a href="#" className="highlight">Contact</a>
+        <a href="#">Pricing</a>
+        <a href="#">Blog</a>
+      </div>
+      <div className="footer-column">
+        <h3>Candidates</h3>
+        <a href="#">Browse Jobs</a>
+        <a href="#">Browse Employers</a>
+        <a href="#">Candidate Dashboard</a>
+        <a href="#">Saved Jobs</a>
+      </div>
+      <div className="footer-column">
+        <h3>Employers</h3>
+        <a href="#">Post a Job</a>
+        <a href="#">Browse Candidates</a>
+        <a href="#">Employer Dashboard</a>
+        <a href="#">Applications</a>
+      </div>
+      <div className="footer-column">
+        <h3>Support</h3>
+        <a href="#">FAQs</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+    </div>
+  );
 };
 
 export default Footer;

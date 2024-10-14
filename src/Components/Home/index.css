@@ -1,345 +1,560 @@
-*{
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Suranna&display=swap'); 
+
+body {
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-  .Main{
-    background-color: #f8f9fa; 
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  .hero {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    padding: 20px;
-    
-  }
-  
-  .hero-content h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .hero-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-  
-  .cta-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  /* Hero Illustration - GIF styling */
-  .hero-illustration img {
-    width:570px;
-    height: 400px;
-
-  }
-  
-  .hero-illustration {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .search-section {
-    display: flex; /* Flexbox for alignment */
- /* Center items */
-    margin-top: 20px; /* Space above */
-  }
-  
-  .find-input {
-    padding: 10px; /* Padding for input */
-    margin-right: 10px; /* Space between input and button */
-    border: 1px solid #ccc; /* Border for input */
-    border-radius: 4px; /* Rounded corners */
-  }
-  
-  .find-btn {
-    padding: 10px 20px; /* Padding for button */
-    background-color: #007bff; /* Button background */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-  }
-  
-  .find-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-
-  .card-section {
-    display: flex; /* Use Flexbox to arrange cards */
-    justify-content: center; /* Align cards to the start */
-    overflow: hidden;
-    width: auto;
-    height: 50px;
+  justify-content: center;
+  background-color: var(--primary-color) !important; 
 }
 
-.card {
-    display: flex; /* Align items horizontally */
-    border-radius: 8px; /* Rounded corners */
-    overflow: hidden; /* Prevents overflow of the image */
-    transition: transform 0.3s; /* Smooth zoom effect */
-    cursor: pointer; /* Pointer on hover */
-    margin-right: 20px; /* Space between cards */
+.container {
+  width: 100%; /* Full width of the container */
 }
 
-.card:last-child {
-    margin-right: 0; /* Remove margin from the last card */
-}
-
-  
-  .card-image {
-    width: 70px; /* Adjust as needed */
-    height:70px; /* Maintain aspect ratio */
-  }
-  
-  .card-content {
-    padding: 16px; /* Space around text */
-    display: flex;
-    color: black;
-    flex-direction: column; /* Stack title and description */
-    justify-content: center; /* Center vertically */
-  }
-  
-  .card-title {
-    font-size: 1.2em; /* Title size */
-    margin: 0; /* Remove default margin */
-    color: black;
-  }
-  
-  .card-description {
-    font-size: 0.9em; /* Description size */
-    margin: 8px 0 0; /* Space above */
-  }
-  
-  .Productcard{
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .PopularProducts{
-    margin-top: 20px;
-  }
-  .PopularProductHeader{
-   text-align: center;
-  margin-top: 7%;
-  }
- 
-
-  .ProductCardDetails{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .section3{
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    background-color: #f8f9fa; 
-  }
-  span{
-        font-size: 25px; /* Adjust font size as needed */
-        font-weight: bold; /* Make the text bold */
-        background: linear-gradient(to top, #0a7902, #06cf24);
-        -webkit-background-clip: text; /* For WebKit browsers */
-        -webkit-text-fill-color: transparent; /* Make the fill color transparent */
-        background-clip: text; /* For other browsers */
-    
-  }
-  
-  .section4Head{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 8%;
-  }
-  a {
-    text-decoration: none;
-    margin-right: 8%;
-    margin-top: 20px;
-  }
-
-  .section4  .card {
-    display: flex; /* Use flexbox to align items */
-    justify-content: center;
-    align-items: center; /* Center items horizontally */
-    overflow: hidden; /* Prevent overflow */
-    transition: transform 0.3s; /* Smooth zoom effect */
-    cursor: pointer; /* Pointer on hover */
-    margin: 10px; /* Space between cards */
-    width: 220px; /* Set a fixed width for cards */
-    height: 100px;
-    border: none;
-    padding: 20px; /* Optional padding */
-   
-}
-
-.section4 .card-image {
-    width: 60px; /* Set desired width for the image */
-    height: 60px; /* Set desired height for the image */
-    object-fit: cover; /* Ensure the image covers the area */
-}
-
-
-  .section4  .card-image:hover {
-    transform: scale(1.05); /* Zoom effect */
-    background-color: #007bff;
-   
-  }
-
-  .section4  .card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  
-    transform: scale(1.05);
-  }
-
-  .domainCard{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .card{
-    border: 2px solid black;
-    width: 200px;
-    height: 250px;
-  }
-  .Sub{
-    display: flex;
-  }
-
-  .Sub.image {
-    width: 50px; /* Set desired width for the image */
-    height: 50px; /* Set desired height for the image */
-    object-fit: cover; /* Ensure the image covers the area */
-    padding: 10px;
-}
-.CardCol{
-display: flex;
-flex-direction: column;
-padding: 0px;
-}
-
-.location {
+.header {
+  position: relative;
   display: flex;
-  align-items: center; /* Align items vertically centered */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  height: 350px;
+  overflow: hidden; /* Hide any overflow */
+  padding: 0 80px; /* Add padding for left and right */
 }
 
-.featuredJob h2 {
-  font-size: 12px; /* Adjust font size */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../Images/map-for-hero-section.png"); /* Your background image */
+  background-repeat: no-repeat;
+  background-position: right; /* Position the image to the right */
+  background-size:cover; /* Cover the entire area */
+  opacity: 0.7; /* Set opacity */
+  z-index: 1; /* Position it behind the text */
 }
 
-.card-section1 {
-  display: flex; /* Use Flexbox to arrange cards */
-  flex-wrap: wrap; /* Allow cards to wrap */
-  justify-content: center; /* Center cards in the section */
+.header-text {
+  position: relative; /* Ensure text is above the background */
+  z-index: 2; /* Bring text in front of the background */
+  color: #fff; /* Change text color for visibility */
+  text-align: center; /* Center text */
+  max-width: 600px; /* Optional: limit text width */
 }
 
-.card-data {
-  display: flex;
-  justify-content: space-between; /* Space between subtitle and salary */
+.header-text h1,
+.header-text p {
+  margin: 0; /* Reset margins for consistency */
 }
 
-.featuredJob .card {
-  width: 300px; /* Consistent width */
-  height: 180px; /* Consistent height */
-  margin: 10px; /* Space between cards */
-  display: flex; /* Align contents */
-  flex-direction: column; /* Stack elements */
-  justify-content: space-evenly; /* Space out elements */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 10px; /* Rounded corners */
-  overflow: hidden; /* Prevent overflow */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Box shadow */
-  transition: background 0.3s ease; /* Smooth transition for background change */
+/* Styles for the button */
+.header-text button {
+  margin-top: 15px; /* Spacing above the button */
+  padding: 10px 20px; /* Padding for the button */
+  background-color: #007bff; /* Button color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
 }
 
-.featuredJob .card:hover {
-  background: linear-gradient(135deg, rgb(248, 242, 246), #fff); /* Gradient background on hover */
-}
-
-/* Centering the section title */
-.section4Head {
-  display: flex;
-  justify-content: space-between; /* Space between title and link */
-  align-items: center; /* Center items vertically */
-  margin-bottom: 20px; /* Space below the section header */
-}
-
-.section4Head h1 {
-  margin: 0; /* Remove default margin */
-}
-
-.section4Head a {
-  text-decoration: none; /* Remove underline */
-  color: #007bff; /* Link color */
-}
-
-/* Ensure image size consistency */
-.card-image {
-  width: 40px; /* Set a fixed width */
-  height: auto; /* Keep aspect ratio */
-  margin-right: 10px; /* Space between image and text */
-}
-
-/* Adjust the font size for the company name and location */
-.company-name {
-  font-size: 14px; /* Adjust as needed */
-  font-weight: bold; /* Make it bold */
-}
-
-.card h6 {
-  margin: 5px 0; /* Consistent margin for subtitles */
-}
-
-
-.company-info {
-  display: flex;
-  justify-content: flex-start; /* Align items to the start */
-  align-items: center; /* Center vertically */
-}
-
-.location {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 20px;
-  flex-direction: row; /* Horizontal layout */
-  margin-left: 10px; /* Space between the icon and text */
-}
-
-.featuredJob .card-image {
-  width: 50px; /* Google logo width */
-  height: 50px; /* Google logo height */
-  object-fit: cover; /* Maintain aspect ratio */
-  transform: scale(1.05); /* Zoom effect */
-  background-color:rgb(241, 236, 236);
-  padding: 5px;
-  border-radius: 2px;
-}
-
-.TopComponiesButton {
-  height: 40px; /* Set the height */
-  width: 270px; /* Set the width */
-  background-color: #007bff; /* Set background color to blue */
-  color: white; /* Change text color to white for contrast */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Add rounded corners */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth background transition */
-}
-
-.TopComponiesButton:hover {
+/* Optional hover effect for the button */
+.header-text button:hover {
   background-color: #0056b3; /* Darker blue on hover */
-  transform: scale(1.05); /* Slightly increase size on hover */
 }
 
+/* Stats section styles */
+.stats {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Space items evenly */
+  margin-top: 20px; /* Margin above stats */
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+
+.paragraph-container {
+  display: flex;
+  flex-direction: column; /* Stack paragraphs vertically */
+  align-items: flex-start ;
+  margin: 20px 0; /* Space between the header and paragraphs */
+}
+
+.paragraph {
+  display: flex;
+  align-items: flex-start; /* Center the image and text vertically */
+  margin: 10px 0; /* Space between paragraphs */
+}
+
+p{
+  font-size:var(--paragarph);
+}
+.check-icon {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 10px; /* Space between the image and text */
+margin-top: 11px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+  background-color: white !important;
+}
+.header-text {
+  font-size: var(--heading1);
+  max-width: 50%;
+}
+.header-text h1 {
+  font-size: 32px;
+  margin-right: 30px;
+  color: #333;
+  margin: 0;
+}
+.header-text p {
+  font-size: var(--paragarph);
+  color: #666;
+  margin: 10px 0;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  height: 45px;
+}
+.search-bar input {
+  padding: 10px;
+  font-size: var(--paragarph);
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  flex: 1;
+}
+.search-bar button {
+  padding: 10px 10px;
+  font-size: var(--paragarph);
+ height: 30px;
+ width: 30px;
+  border: none;
+  margin-top: -1px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.suggestions {
+  font-size: var(--paragarph);
+  color: #666;
+  margin-top: 10px;
+}
+.suggestions a {
+  color: #007bff;
+  text-decoration: none;
+}
+.illustration {
+  max-width: 50%;
+}
+.illustration img {
+  width: 100%;
+  height: 400px;
+  opacity: 0.6;
+}
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.stat {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin: 0 10px;
+  /* height: 120px !important; */
+  transition: transform 0.3s ease;
+}
+.stat:hover {
+  transform: translateY(-10px);
+}
+.stat i {
+  font-size: var(--heading1);
+  color: #007bff;
+}
+.stat h3 {
+  font-size:var(--heading2);
+  color: #333;
+  margin: 10px 0;
+}
+.stat p {
+  font-size: var(--paragarph);
+  color: #666;
+}
+
+/* MOST POPULAR CATEGORIES */
+.container-MOST-P {
+  text-align: center;
+  margin-top: 30px;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.categories-MOST-P {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.category-MOST-P {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 180px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.category-MOST-P:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.category-MOST-P h2 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+.category-MOST-P p {
+  font-size: 11px;
+  color: #666;
+  margin: 5px 0 0 0;
+}
+
+/* HIRE VERIFIED CANDIDATE BANNER */
+
+.container-VC {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 100%;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.highlight-VC {
+  color: #1a0dab;
+}
+/* END */
+/* TOP COMPANIES */
+.container-TC {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.container-TC h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.company-list-TC {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.company-card-TC {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  width: calc(33.333% - 20px);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.company-card-TC img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+.company-info-TC {
+  display: flex;
+  flex-direction: column;
+}
+.company-name-TC {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.company-card-TC:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.featured-TC {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.location-TC {
+  font-size: 14px;
+  color: #666;
+}
+.location-TC i {
+  margin-right: 5px;
+}
+/* END */
+/* FEATURED JOB DOMAIN */
+.container-JD {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header-JD {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.header-JD h1 {
+  font-size: 24px;
+  margin: 0;
+}
+.header-JD a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+}
+.job-list-JD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.job-card-JD {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  width: calc(33.333% - 60px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.job-card-JD:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.job-card-JD.highlight-JD {
+  border-color: #ffeb3b;
+}
+.job-card-JD h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+.job-card-JD .job-type-JD {
+  font-size: 12px;
+  color: #28a745;
+  margin-bottom: 5px;
+}
+.job-card-JD .salary-JD {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+.job-card-JD .company-JD {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #6c757d;
+}
+.job-card-JD .company-JD img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.job-card-JD .location {
+  font-size: 12px;
+  color: #6c757d;
+}
+/* FEATURED JOB DOMAIN **END */
+/* Testonomial */@keyframes fadeInUp-Tt {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-section-Tt {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.testimonial-section-Tt h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: fadeInUp-Tt 1s ease-in-out;
+}
+
+.testimonial-container-Tt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial-card-Tt {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: left;
+  position: relative;
+  animation: fadeInUp-Tt 1s ease-in-out;
+}
+
+.testimonial-card-Tt .stars-Tt {
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.testimonial-card-Tt p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.testimonial-card-Tt .author-Tt {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-card-Tt .author-Tt img {
+  border-radius: 50% !important; 
+  width: 40px !important;
+  height: 40px !important;
+  margin-right: 10px !important;
+}
+
+.testimonial-card-Tt .author-Tt .name-Tt {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonial-card-Tt .author-Tt .role-Tt {
+  font-size: 14px;
+  color: #777;
+}
+
+.testimonial-card-Tt .quote-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #ddd;
+}
+
+.navigation-Tt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.arrow-Tt {
+  font-size: 24px;
+  color: #007bff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.arrow-Tt:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.dot-Tt {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot-Tt.active-Tt {
+  background-color: #007bff;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  background-color: rgb(255, 255, 255) !important;
+  max-width: 100%;
+  padding: 0; /* Remove any padding if needed */
+}
+
+.container2 .card {
+  background: white;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 5px; /* Decrease margin to minimize space */
+  text-align: center;
+}
+
+.AboutPolicy{
+  height: 50px;
+  width: 50px;
+}
+
+.container2 .card h1 {
+  font-size: 14px;
+  margin: 0 0 10px;
+  color: black;
+}
+
+.container2 .card p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Corrected hover effect */
+.container2 img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container2 .card {
+    width: calc(50% - 10px); /* Adjust to fit better with less space */
+  }
+}
+
+@media (max-width: 480px) {
+  .container2 .card {
+    width: calc(100% - 10px); /* Ensure cards fit without extra space */
+  }
+}

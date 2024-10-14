@@ -9,46 +9,53 @@ const SignIn = () => {
 
     const loginSubmit = (e) => {
         e.preventDefault();
-        // Handle the login logic here (e.g., authentication)
-        console.log('Username:', username);
-        console.log('Password:', password);
 
-        // After successful login, navigate to the feed page
-        navigate('/feed'); // Adjust the path as necessary
+        // Dummy authentication logic
+        if (username === 'Dhanshri' && password === '12345') {
+            // After successful login, navigate to the feed page
+            navigate('/feed');
+        } else {
+            // If authentication fails, navigate to the sign-up page
+            navigate('/signup');
+        }
     };
 
     return (
-        <div className="login-container">  
-            <form className="login-form" onSubmit={loginSubmit}>
-                <h2>Login</h2>
-                <div className="input-group">
-                    <label htmlFor="username">Username</label>
-                    <input 
-                        type="text" 
-                        value={username} 
-                        onChange={(e) => setUsername(e.target.value)} 
-                        id="username" 
-                        name="username" 
-                        required 
-                    />
-                </div>
-                <div className="input-group">
-                    <label htmlFor="password">Password</label>
-                    <input 
-                        type="password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        id="password" 
-                        name="password" 
-                        required 
-                    />
-                </div>
-                <button type="submit">Sign In</button>
-                <div className="OR">OR</div>
-                <p className="message">
-                    Don't have an account? <a href="/signup">Sign Up</a>
-                </p>
-            </form>
+        <div className='wrapper'>
+            <div className="login-container">  
+                <form className="login-form" onSubmit={loginSubmit}>
+                    <h2>Login</h2>
+                    <div className="input-group">
+                        <label htmlFor="username">Username
+                        <input 
+                            type="text" 
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                            id="username" 
+                            name="username" 
+                            required 
+                        />
+                        </label>
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="password">Password
+                        <input 
+                            type="password" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)} 
+                            id="password" 
+                            name="password" 
+                            required 
+                        />
+                        </label>
+                    </div>
+                    <button type="submit">Sign In</button>
+                    <div className="OR">OR</div>
+                    <p className="message">
+                        Don't have an account? <a href="/signup">Sign Up</a>
+                    </p>
+                </form>
+            </div>
         </div>
     );
 };

@@ -9,12 +9,12 @@ const Navbar = () => {
 
   const handleSignIn = () => {
     setIsAuthenticated(true);
-    navigate('/feed');
+    navigate('/signin');
   };
 
   const handleSignUp = () => {
     setIsAuthenticated(true);
-    navigate('/feed');
+    navigate('/signup');
   };
 
   const handleEmployer = () => {
@@ -22,25 +22,28 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <ul>
-        <li><Link to="/" className='active'>Home</Link></li>
-        <li><Link to="/products">Products</Link></li>
-        <li><Link to="/job">Opportunities</Link></li>
-        <li><Link to="#">Support</Link></li>
-      </ul>
-      <div className='MainNavbar'>
-        <h1>ProtoType</h1>
+    <div className="navbar-container">
+      <div className="navbar">
+        <Link to="/" className='active'>Home</Link>
+        <Link to="/products">Explore products</Link>
+        <Link to="/job">Opportunities</Link>
+        <Link to="/profileuser">Customer Supports</Link>
+      </div>
+      <div className="navbarData">
+        <h1>Prototype</h1>
         <div className="search-bar">
-          <input type="text" placeholder="Jobs, Companies..." />
-          <FaSearch className="search-icon" />
-        </div>
-        <div className='Buttons'>
+  <input type="text" placeholder="Products, Jobs, companies." />
+  <FaSearch className="search-icon" />
+</div>
+
+        <div className='buttons'>
           {!isAuthenticated ? (
             <>
-              <button className="signup-btn" onClick={handleSignUp}>Sign Up</button>
               <button className="signIn-btn" onClick={handleSignIn}>Sign In</button>
-              <button className="signup-btn" onClick={handleEmployer}>For Employer</button>
+              <button className="signup" onClick={handleSignUp}>Sign Up</button>
+              <button className="employer" onClick={handleEmployer}>
+                For Employer <i className="fas fa-caret-down"></i>
+              </button>
             </>
           ) : (
             <img 
@@ -50,8 +53,9 @@ const Navbar = () => {
             />
           )}
         </div>
+        
       </div>
-    </nav>
+    </div>
   );
 };
 

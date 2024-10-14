@@ -1,11 +1,32 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f0f0; /* Light background for contrast */
+    padding: 0 20px; /* Add some padding for smaller screens */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
 
 .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    height: 400px;
-    width: 500px;
+    max-width: 400px; /* Maximum width for larger screens */
+    width: 100%; /* Full width for smaller screens */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-form h2 {
@@ -14,21 +35,24 @@
 }
 
 .input-group {
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
+    width: 100%; /* Full width for input groups */
+    display: flex;
+    flex-direction: column; /* Stack label and input */
+    align-items: center; /* Center children */
 }
 
 .input-group label {
-    display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 .input-group input {
-    width: 100%;
     padding: 10px;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
     transition: border 0.3s;
+    width: 80%; /* Adjust width of input */
 }
 
 .input-group input:focus {
@@ -68,6 +92,13 @@ button:hover {
 }
 
 .OR {
-    margin-left: 45%;
     margin-top: 20px;
+    margin-left: 30px !important;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
 }

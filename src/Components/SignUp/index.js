@@ -141,7 +141,7 @@ const SignUp = () => {
                 <button className="register-button" type="submit">Register</button>
                 <div className="OR">OR</div>
                 <div className="loginIn">
-                    Already On Prototype? <a href="/signin">Login In</a>
+                    Already On Prototype? <a href="/signin">SignIn</a>
                 </div>
             </form>
         </div>

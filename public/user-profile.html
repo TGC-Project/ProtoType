@@ -1,0 +1,993 @@
+<html>
+<head>
+    <title>Profile Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        
+        .container-user-hero {
+            display: flex;
+            flex-direction: row;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef;
+        }
+        .left-section-user-hero {
+            width: 70%;
+            padding: 20px;
+        }
+        .right-section-user-hero {
+            width: 30%;
+            padding: 20px;
+        }
+        .header-user-hero {
+            background-image: url('https://imgs.search.brave.com/YEwglQNTTgdlTrnWz5egkLnUj6YWjhvjf6DmWerGotI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzAw/NjYvNDU3NC8zNjg2/L2ZpbGVzL0Fic3Ry/YWN0X0xpbmtlZElu/X0JhY2tncm91bmQu/cG5nP3Y9MTYyNzkx/MjA3NQ');
+            background-size: cover;
+            height: 200px;
+            position: relative;
+        }
+        .edit-profile-user-hero {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: -1;
+        }
+        .profile-section-user-hero {
+            display: flex;
+            padding: 20px;
+            background-color: white;
+            border-bottom: 1px solid #ccc;
+            animation: fadeIn 1s;
+        }
+        .profile-picture-user-hero {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            margin-top: -75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+        .profile-picture-user-hero img {
+            width: 100%;
+            height: auto;
+        }
+        .profile-info-user-hero {
+            margin-left: 20px;
+        }
+        .profile-info-user-hero h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .profile-info-user-hero p {
+            margin: 5px 0;
+            color: gray;
+        }
+        .profile-info-user-hero .location-user-hero {
+            display: flex;
+            align-items: center;
+            color: gray;
+        }
+        .profile-info-user-hero .location-user-hero i {
+            margin-right: 5px;
+        }
+        .profile-actions-user-hero {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .profile-actions-user-hero button {
+            background-color: #0073b1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        .profile-actions-user-hero button:hover {
+            background-color: #005f8d;
+        }
+        .profile-actions-user-hero .connections-user-hero {
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .tabs-user-hero {
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            border-bottom: 1px solid #ccc;
+        }
+        .tabs-user-hero div {
+            padding: 15px 0;
+            cursor: pointer;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .tabs-user-hero .active-user-hero {
+            border-bottom: 3px solid #0073b1;
+            color: #0073b1;
+        }
+        .content-section-user-hero {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            animation: fadeIn 1s;
+        }
+        .content-section-user-hero.active-user-hero {
+            display: block;
+        }
+        .sidebar-user-hero {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            animation: fadeIn 1s;
+        }
+        .sidebar-user-hero h3 {
+            margin-top: 0;
+        }
+        .visitor-user-hero {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            animation: slideIn 1s;
+        }
+        .visitor-user-hero img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .visitor-info-user-hero {
+            display: flex;
+            flex-direction: column;
+        }
+        .visitor-info-user-hero p {
+            margin: 0;
+        }
+        .visitor-info-user-hero .title-user-hero {
+            color: gray;
+            font-size: 12px;
+        }
+        .view-all-user-hero {
+            text-align: right;
+            margin-top: 10px;
+        }
+        .view-all-user-hero button {
+            background-color: #0073b1;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .view-all-user-hero button:hover {
+            background-color: #005f8d;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        .additional-visitors-user-hero {
+            display: none;
+            margin-top: 10px;
+        }
+        .carousel-user-hero {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            animation: fadeIn 1s;
+        }
+        .carousel-item-user-hero {
+            min-width: 200px;
+            margin-right: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+        .section-user-hero {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            animation: fadeIn 1s;
+        }
+        .section-user-hero h2 {
+            margin-top: 0;
+        }
+        .post-user-hero {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            animation: fadeIn 1s;
+        }
+        .post-user-hero img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        /* About */
+        .container-About {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius:10px;
+        }
+        h1-About {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p-About {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333333;
+        }
+        /* top cat-prodcuct crousel */
+        .container-top-categories {
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+        background-color: #f5f7fa;
+        padding: 20px;
+      }
+      .header-top-categories {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .header-top-categories h2 {
+        font-size: 24px;
+        color: #333;
+      }
+      .header-top-categories h2 span {
+        color: #28a745;
+      }
+      .header-top-categories a {
+        font-size: 14px;
+        color: #007bff;
+        text-decoration: none;
+      }
+      .header-top-categories a i {
+        margin-left: 5px;
+      }
+      .categories-wrapper-top-categories {
+        overflow: hidden;
+        position: relative;
+      }
+      .categories-top-categories {
+        display: flex;
+        gap: 20px;
+        padding-bottom: 10px;
+        animation: scroll-top-categories 20s linear infinite;
+      }
+      @keyframes scroll-top-categories {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .category-top-categories {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 10px;
+        width: 150px;
+        transition: transform 0.3s;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .category-top-categories:hover {
+        transform: scale(1.05);
+      }
+      .category-top-categories:hover .best-price-top-categories {
+        display: block;
+      }
+      .category-top-categories img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .category-top-categories p {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: #333;
+      }
+      .best-price-top-categories {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #28a745;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        text-decoration: none;
+      }
+      /* experience */
+      @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container-experience {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .heading-experience {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .profile-experience {
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .profile-experience img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .details-experience {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        .title-experience {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333333;
+        }
+        .subtitle-experience {
+            font-size: 14px;
+            color: black;
+            margin-top: 5px;
+        }
+        .location-experience {
+            font-size: 14px;
+            color: black;
+        }
+        .date-duration-experience {
+            font-size: 14px;
+            color: black;
+            display: flex;
+            gap: 10px;
+        }
+        .description-experience {
+            margin-top: 10px;
+            font-size: 14px;
+            color: black;
+        }
+        /* skills */
+        .skills-container-skills {
+            margin: 20px;
+        }
+        .skills-title-skills {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .skills-list-skills {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill-item-skills {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            background-color: #f8f8f8;
+            font-size: 14px;
+            color: #333;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .skill-item-skills:first-child {
+            border-color: #8bc34a;
+        }
+        .skill-item-skills:hover {
+            transform: scale(1.1);
+            background-color: #e0e0e0;
+            color: #555;
+        }
+        /* Posts */
+        .post-post {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease-in-out;
+        transition: transform 0.3s;
+      }
+      .post-post:hover {
+        transform: translateY(-5px);
+      }
+      .post-post .header-post {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .post-post .header-post img {
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .post-post .header-post .name-post {
+        font-weight: bold;
+      }
+      .post-post .header-post .role-post {
+        font-size: 0.9em;
+        color: #555;
+      }
+      .post-post .content-post {
+        margin-bottom: 10px;
+      }
+      .post-post .footer-post {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .post-post .footer-post .actions-post {
+        display: flex;
+        align-items: center;
+      }
+      .post-post .footer-post .actions-post i {
+        margin-right: 5px;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .post-post .footer-post .actions-post i:hover {
+        transform: scale(1.2);
+      }
+      .post-post .footer-post .actions-post span {
+        margin-right: 15px;
+      }
+      .sidebar-post .group-list-post {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+      .sidebar-post .group-list-post .group-post {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        transition: transform 0.3s;
+      }
+      .sidebar-post .group-list-post .group-post:hover {
+        transform: translateX(5px);
+      }
+      .sidebar-post .group-list-post .group-post img {
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .sidebar-post .group-list-post .group-post .name-post {
+        font-weight: bold;
+      }
+      .sidebar-post .group-list-post .show-all-post {
+        color: #2b90d9;
+        cursor: pointer;
+      }
+      .sidebar-post .group-list-post h2 {
+        margin-bottom: 20px;
+      }
+      .sidebar-post .group-list-post .view-all-post {
+        text-align: right;
+        color: #2b90d9;
+        cursor: pointer;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .user-profile-post {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in-out;
+      }
+      .user-profile-post img {
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .user-profile-post .name-post {
+        font-weight: bold;
+      }
+      .user-profile-post .role-post {
+        font-size: 0.9em;
+        color: #555;
+      } 
+</style>
+</head>
+<body>
+    <div class="header-user-hero">
+        <button class="edit-profile-user-hero">EDIT PROFILE</button>
+    </div>
+    <div class="container-user-hero">
+        <div class="left-section-user-hero">
+            <div class="profile-section-user-hero">
+                <div class="profile-picture-user-hero">
+                    <img src="https://storage.googleapis.com/a1aa/image/vPaFYr5iuAb3JdcVf8tjt3ehNNJ9DxnJ3gMHeMZB3OqkjLLnA.jpg" alt="Profile picture of a person sitting at a table">
+                </div>
+                <div class="profile-info-user-hero">
+                    <h1>Prototype patil <i class="fas fa-check-circle" style="color: #0073b1;"></i></h1>
+                    <p>CEO - XYZ Company</p>
+                    <div class="location-user-hero">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Pune, India</span>
+                    </div>
+                </div>
+                <div class="profile-actions-user-hero">
+                    <button>CONNECT</button>
+                    <div class="connections-user-hero">1,043 CONNECTIONS</div>
+                </div>
+            </div>
+            <div class="tabs-user-hero">
+                <div class="tab-user-hero" onclick="showSection('profile-user-hero')">PROFILE</div>
+                <div class="tab-user-hero" onclick="showSection('products-user-hero')">PRODUCTS</div>
+                <div class="tab-user-hero" onclick="showSection('posts-user-hero')">POSTS</div>
+            </div>
+            <div class="content-section-user-hero" id="profile-user-hero">
+                <div>
+                    <h1 class="h1-About">About</h1>
+                    <p class="p-About">Hi, I'm [Your Name], a recent graduate with a Master's in Computer Applications (MCA). I have a strong passion for technology, particularly in Python development, and I'm eager to apply my skills in real-world projects. Alongside Python, I'm currently sharpening my knowledge in JavaScript and exploring machine learning and data engineering. I'm always looking for opportunities to grow professionally and work on innovative solutions.</p>
+                </div>
+                <div class="section-user-hero" style="color:black">
+                    <h2>Education</h2>
+                    <div class="profile-experience">
+                        <img alt="Globe icon" height="40" src="https://storage.googleapis.com/a1aa/image/ipYzfKWQzelskUK9ed4XiBufy3eAeR2XNMYidmoKkaljVlZ5E.jpg" width="40"/>
+                        <div class="details-experience">
+                         <div class="title-experience">
+                          Worker
+                         </div>
+                         <div class="subtitle-experience">
+                          Self Employed
+                         </div>
+                         <div class="location-experience">
+                          Around the world
+                         </div>
+                         <div class="date-duration-experience">
+                          <div class="date-experience">
+                           Jun 2016 — Present
+                          </div>
+                          <div class="duration-experience">
+                           3 yrs 3 mos
+                          </div>
+                         </div>
+                        </div>
+                        <div class="description-experience">
+                         a recent graduate with a Master's in Computer Applications (MCA). I have a strong passion for technology, particularly in Python development, and I'm eager to apply my skills in real-world projects.
+                        </div>
+                       </div>
+                       <div class="profile-experience">
+                        <img alt="Globe icon" height="40" src="https://storage.googleapis.com/a1aa/image/ipYzfKWQzelskUK9ed4XiBufy3eAeR2XNMYidmoKkaljVlZ5E.jpg" width="40"/>
+                        <div class="details-experience">
+                         <div class="title-experience">
+                          Worker
+                         </div>
+                         <div class="subtitle-experience">
+                          Self Employed
+                         </div>
+                         <div class="location-experience">
+                          Around the world
+                         </div>
+                         <div class="date-duration-experience">
+                          <div class="date-experience">
+                           Jun 2016 — Present
+                          </div>
+                          <div class="duration-experience">
+                           3 yrs 3 mos
+                          </div>
+                         </div>
+                        </div>
+                        <div class="description-experience">
+                         a recent graduate with a Master's in Computer Applications (MCA). I have a strong passion for technology, particularly in Python development, and I'm eager to apply my skills in real-world projects.
+                        </div>
+                       </div>
+                </div>
+                <div class="section-user-hero">
+                    <h2>Education</h2>
+                    <div class="profile-experience">
+                        <img alt="Globe icon" height="40" src="https://storage.googleapis.com/a1aa/image/ipYzfKWQzelskUK9ed4XiBufy3eAeR2XNMYidmoKkaljVlZ5E.jpg" width="40"/>
+                        <div class="details-experience">
+                         <div class="title-experience">
+                          College/University name
+                         </div>
+                         <div class="subtitle-experience">
+                          Degree
+                         </div>
+                         <div class="location-experience">
+                          Location
+                         </div>
+                         <div class="date-duration-experience">
+                          <div class="date-experience">
+                           Jun 2016 — Present
+                          </div>
+                          <div class="duration-experience">
+                           3 yrs
+                          </div>
+                         </div>
+                        </div>
+                        <div class="description-experience">
+                         a recent graduate with a Master's in Computer Applications (MCA). I have a strong passion for technology, particularly in Python development, and I'm eager to apply my skills in real-world projects.
+                        </div>
+                       </div>
+                </div>
+                <div class="skills-container-skills">
+                    <div class="skills-title-skills">Skills & Endorsements</div>
+                    <div class="skills-list-skills">
+                        <div class="skill-item-skills">Python</div>
+                        <div class="skill-item-skills">SQL</div>
+                        <div class="skill-item-skills">Data Science</div>
+                        <div class="skill-item-skills">AI/ML</div>
+                        <div class="skill-item-skills">PHP</div>
+                        <div class="skill-item-skills">SnowFlake</div>
+                    </div>
+                </div>
+                <div class="skills-container-skills">
+                    <div class="skills-title-skills">Langauges</div>
+                    <div class="skills-list-skills">
+                        <div class="skill-item-skills">English</div>
+                        <div class="skill-item-skills">Hindi</div>
+                        <div class="skill-item-skills">Marathi</div>
+                    </div>
+                </div>
+                <div class="skills-container-skills">
+                    <div class="skills-title-skills">Area of Intrest</div>
+                    <div class="skills-list-skills">
+                        <div class="skill-item-skills">Ai/ML</div>
+                        <div class="skill-item-skills">Data Science</div>
+        
+                    </div>
+                </div>
+            </div>
+            <div class="content-section-user-hero" id="products-user-hero">
+                <div class="container-top-categories">
+                    <div class="header-top-categories">
+                      <h2>
+                        Shop From
+                        <span> Top Categories </span>
+                      </h2>
+                      <a href="#">
+                        View All
+                        <i class="fas fa-chevron-right"> </i>
+                      </a>
+                    </div>
+                    <div class="categories-wrapper-top-categories">
+                      <div class="categories-top-categories">
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial coffee machine"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/FNQrX3JiMY7qL1jTUfMXqftzEGSm1hYak6TSBQBY3X7ZlclTA.jpg"
+                            width="150"
+                          />
+                          <p>Coffee Machine</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial ice cream machine"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/npKqAbPA5j72B16bx5XyGSXuvCcRJ0NXfcoPePNEpO1YlclTA.jpg"
+                            width="150"
+                          />
+                          <p>Ice Cream Machine</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial oven"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/TCVjnoJXnhKOH1PfcUWiHwrugq3fXqAa7G73wgAkYFHblclTA.jpg"
+                            width="150"
+                          />
+                          <p>Oven</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial refrigerator"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/DIXwG3P4fX3LUCaymjnQTJKTZsWuzhHkmrugvSdDCjFrSuyJA.jpg"
+                            width="150"
+                          />
+                          <p>Refrigerator</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial dishwasher"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/fMMAJeaQ2zglfIlLAq2KDey6xYaouJhnUUdnNjdpbeyvqkrcC.jpg"
+                            width="150"
+                          />
+                          <p>Dishwasher</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial coffee machine"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/FNQrX3JiMY7qL1jTUfMXqftzEGSm1hYak6TSBQBY3X7ZlclTA.jpg"
+                            width="150"
+                          />
+                          <p>Coffee Machine</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial ice cream machine"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/npKqAbPA5j72B16bx5XyGSXuvCcRJ0NXfcoPePNEpO1YlclTA.jpg"
+                            width="150"
+                          />
+                          <p>Ice Cream Machine</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial oven"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/TCVjnoJXnhKOH1PfcUWiHwrugq3fXqAa7G73wgAkYFHblclTA.jpg"
+                            width="150"
+                          />
+                          <p>Oven</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial refrigerator"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/DIXwG3P4fX3LUCaymjnQTJKTZsWuzhHkmrugvSdDCjFrSuyJA.jpg"
+                            width="150"
+                          />
+                          <p>Refrigerator</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                        <div class="category-top-categories">
+                          <img
+                            alt="Commercial dishwasher"
+                            height="150"
+                            src="https://storage.googleapis.com/a1aa/image/fMMAJeaQ2zglfIlLAq2KDey6xYaouJhnUUdnNjdpbeyvqkrcC.jpg"
+                            width="150"
+                          />
+                          <p>Dishwasher</p>
+                          <a class="best-price-top-categories" href="#">
+                            Get Best Price
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="view-all-user-hero">
+                    <button>VIEW ALL</button>
+                </div>
+            </div>
+            <!-- post -->
+            <div class="content-section-user-hero" id="posts-user-hero">
+                <h2>Posts Section</h2>
+                <div class="post-user-hero">
+                    <div class="post-post">
+                        <div class="header-post">
+                          
+                          <div>
+                            <div class="name-post">John Doe</div>
+                            
+                          </div>
+                        </div>
+                        <div class="content-post">
+                          Just finished a new project! Check out my latest website design.
+                          <img
+                            alt="Screenshot of a website design"
+                            height="400"
+                            src="https://storage.googleapis.com/a1aa/image/HEkdeX1SfzthA0QAM8eUkWMJPlf1tuYXEI84yTm7ULMesgrcC.jpg"
+                            style="width: 100%; margin-top: 10px"
+                            width="600"
+                          />
+                        </div>
+                        <div class="footer-post">
+                          <div class="actions-post">
+                            <span>
+                              <i class="fas fa-thumbs-up"> </i>
+                              30
+                            </span>
+                            <span>
+                              <i class="fas fa-comment"> </i>
+                              5
+                            </span>
+                          </div>
+                          <div class="share-post">
+                            <i class="fas fa-share"> </i>
+                            SHARE
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="post-user-hero">
+                    <div class="post-post">
+                        <div class="header-post">
+                          
+                          <div>
+                            <div class="name-post">John Doe</div>
+                          </div>
+                        </div>
+                        <div class="content-post">
+                          Excited to start a new project with my team! Let's do this!
+                        </div>
+                        <div class="footer-post">
+                          <div class="actions-post">
+                            <span>
+                              <i class="fas fa-thumbs-up"> </i>
+                              15
+                            </span>
+                            <span>
+                              <i class="fas fa-comment"> </i>
+                              2
+                            </span>
+                          </div>
+                          <div class="share-post">
+                            <i class="fas fa-share"> </i>
+                            SHARE
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="post-user-hero">
+                    <p>Post 3: This is yet another sample post.</p>
+                </div>
+                <div class="post-user-hero">
+                    <p>Post 4: This post has an image.</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-section-user-hero">
+            <div class="sidebar-user-hero">
+                <h3>VISITORS</h3>
+                <div class="visitor-user-hero">
+                    <img src="https://storage.googleapis.com/a1aa/image/dEBmhaLABwq1Fpy42xfWLxdtAYHOoSybtQ37PjNmrfPxxllTA.jpg" alt="Profile picture of a visitor">
+                    <div class="visitor-info-user-hero">
+                        <p>Darlene Black</p>
+                        <p class="title-user-hero">Hairdresser, 8,000+ samples</p>
+                    </div>
+                </div>
+                <div class="visitor-user-hero">
+                    <img src="https://storage.googleapis.com/a1aa/image/dEBmhaLABwq1Fpy42xfWLxdtAYHOoSybtQ37PjNmrfPxxllTA.jpg" alt="Profile picture of a visitor">
+                    <div class="visitor-info-user-hero">
+                        <p>Theresa Steward</p>
+                        <p class="title-user-hero">GIS developer</p>
+                    </div>
+                </div>
+                <div class="visitor-user-hero">
+                    <img src="https://storage.googleapis.com/a1aa/image/dEBmhaLABwq1Fpy42xfWLxdtAYHOoSybtQ37PjNmrfPxxllTA.jpg" alt="Profile picture of a visitor">
+                    <div class="visitor-info-user-hero">
+                        <p>Brandon Wilson</p>
+                        <p class="title-user-hero">Lead QA Manager</p>
+                    </div>
+                </div>
+                <div class="visitor-user-hero">
+                    <img src="https://storage.googleapis.com/a1aa/image/dEBmhaLABwq1Fpy42xfWLxdtAYHOoSybtQ37PjNmrfPxxllTA.jpg" alt="Profile picture of a visitor">
+                    <div class="visitor-info-user-hero">
+                        <p>Kyle Fisher</p>
+                        <p class="title-user-hero">Product Designer & Co.</p>
+                    </div>
+                </div>
+                <div class="view-all-user-hero">
+                    <button onclick="showAllVisitors()">VIEW ALL</button>
+                </div>
+                <div class="additional-visitors-user-hero" id="additional-visitors-user-hero">
+                    <div class="visitor-user-hero">
+                        <img src="https://storage.googleapis.com/a1aa/image/dEBmhaLABwq1Fpy42xfWLxdtAYHOoSybtQ37PjNmrfPxxllTA.jpg" alt="Profile picture of a visitor">
+                        <div class="visitor-info-user-hero">
+                            <p>John Doe</p>
+                            <p class="title-user-hero">Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="visitor-user-hero">
+                        <img src="https://storage.googleapis.com/a1aa/image/dEBmhaLABwq1Fpy42xfWLxdtAYHOoSybtQ37PjNmrfPxxllTA.jpg" alt="Profile picture of a visitor">
+                        <div class="visitor-info-user-hero">
+                            <p>Jane Smith</p>
+                            <p class="title-user-hero">Marketing Specialist</p>
+                        </div>
+                    </div>
+                    <div class="visitor-user-hero">
+                        <img src="https://storage.googleapis.com/a1aa/image/dEBmhaLABwq1Fpy42xfWLxdtAYHOoSybtQ37PjNmrfPxxllTA.jpg" alt="Profile picture of a visitor">
+                        <div class="visitor-info-user-hero">
+                            <p>Michael Brown</p>
+                            <p class="title-user-hero">Data Analyst</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <!-- JAVASCRIPT -->
+    <!-- <script>
+        function showSection(section) {
+            var sections = document.getElementsByClassName('content-section-user-hero');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active-user-hero');
+            }
+            document.getElementById(section).classList.add('active-user-hero');
+
+            var tabs = document.getElementsByClassName('tab-user-hero');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active-user-hero');
+            }
+            event.target.classList.add('active-user-hero');
+        }
+
+        function showAllVisitors() {
+            var additionalVisitors = document.getElementById('additional-visitors-user-hero');
+            additionalVisitors.style.display = 'block';
+        }
+    </script> -->
+</body>
+</html>

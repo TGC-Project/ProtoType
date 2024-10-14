@@ -1,30 +1,37 @@
 import React from 'react';
-import Footer from "../Footer"
-import './index.css'; // Make sure to create this CSS file
-import Genpact from "../../Images/genpact.png"
-import Amazone from "../../Images/amazon.png"
-import TATA from "../../Images/tata.png"
-import Apple from "../../Images/apple.png"
-import IBM from "../../Images/ibm.png"
+import { useNavigate } from 'react-router-dom';
+import Footer from "../Footer";
+import './index.css'; // Ensure this CSS file exists
+
+// Import company logos
+import Genpact from "../../Images/genpact.png";
+import Amazon from "../../Images/amazon.png";
+import TATA from "../../Images/tata.png";
+import Apple from "../../Images/apple.png";
+import IBM from "../../Images/ibm.png";
 
 const Job = () => {
+  const navigate = useNavigate();
+
+  const handleJobs = () => {
+    navigate("/morejobs");
+  };
+
   return (
     <div className="job-container">
       <header className="hero-section">
         <div className="hero-text-section">
           <h1>Juniors Make IT Work</h1>
-          <p>Hire and Invest in highly skilled employees now!!!</p>
-          <button>.............</button>
+          <p>Hire and invest in highly skilled employees now!</p>
+          <button>Learn More</button>
         </div>
       </header>
-      
+
       <div className="job-offers">
         <h1>Newest Job Offers</h1>
-        <a href="#">
-          <button className="view-more-btn">View all job offers</button>
-        </a>
+          <button className="view-more-btn" onClick={handleJobs}>View all job offers</button>
       </div>
-      
+
       <section className="job-section">
         {jobListings.map((job, index) => (
           <div className="job" key={index}>
@@ -39,11 +46,12 @@ const Job = () => {
             <div className="job-description">
               <p>{job.description}</p>
             </div>
-            <a href={job.link}>
+            <div className="job-actions">
               <button className="view-more-btn">View More</button>
-              <button className="view-more-btn">Apply</button>
-            </a>
-
+              <a href={job.link}>
+                <button className="view-more-btn">Apply</button>
+              </a>
+            </div>
           </div>
         ))}
       </section>
@@ -70,18 +78,20 @@ const Job = () => {
       <section className="clt-section">
         <div className="clt-text-section">
           <h1>Receive New Job Offers</h1>
-          <p>Want to know about new postings early? <br /> Subscribe to our job offer digest.</p>
+          <p>Want to know about new postings early? Subscribe to our job offer digest.</p>
           <div className="email-container">
             <input type="email" placeholder="Enter your email address" />
             <button>Subscribe</button>
           </div>
         </div>
       </section>
-      <Footer/>
+      
+      <Footer />
     </div>
   );
 };
 
+// Job listings array
 const jobListings = [
   {
     title: "Junior Java Developer",
@@ -109,6 +119,7 @@ const jobListings = [
   }
 ];
 
+// Companies array
 const companies = [
   {
     name: "Genpact",
@@ -119,7 +130,7 @@ const companies = [
   },
   {
     name: "Amazon",
-    logo: Amazone,
+    logo: Amazon,
     rating: "3.9",
     reviews: "28.2K+",
     description: "Global professional services firm."

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>JOB VIEW </title>
+    <style>
+        /* Add this to your index.css or a similar CSS file */
+
+/* Overall page styling */
+.App {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* White background to stand out */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Styling for the search bar */
+  .search-bar {
+    position: relative; /* Make this element the parent for the absolutely positioned icon */
+    display: flex;
+    align-items: center;
+    
+  }
+  /* .search-icon
+  {
+
+  } */
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* Adjust the right padding to make space for the icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styling for the search icon inside the input field */
+  .search-icon {
+    position: absolute;
+    right: 15px; /* Position the icon inside the input */
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+  }
+  
+  /* Optional hover effect on search icon */
+  .search-icon:hover {
+    color: #000;
+  }
+  
+  
+  .signup-btn {
+    background-color: white;
+    color: blue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid blue;
+    margin-right: 20px;
+  }
+  
+  .signIn-btn {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+  }
+  
+  /* Categories Section */
+  .popular-categories {
+    padding: 40px;
+    background-color: #f1f1f1;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .category {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .category:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Stats Section */
+  .stats {
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  /* Featured Domains Section */
+  .featured-domains {
+    padding: 40px;
+  }
+  
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .domain {
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .domain:hover {
+    background-color: #218838;
+  }
+  
+  
+  /* Navbar Styles */
+  /* Navbar Styles */
+  .navbar {
+    background-color: #fff; /* Background color of the navbar */
+    padding: 10px 20px; /* Add some padding */
+  }
+  
+  .navbar ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Align items horizontally */
+  }
+  
+  .navbar li {
+    margin: 0 15px; /* Space between links */
+  }
+  
+  .navbar a {
+    text-decoration: none; /* Remove default underline */
+    color: black; /* Text color */
+    position: relative; /* Positioning for the pseudo-element */
+  }
+  
+  /* Underline effect */
+  .navbar a::after {
+    content: ""; /* Necessary for pseudo-element */
+    display: block; /* Makes the underline appear */
+    height: 2px; /* Thickness of the underline */
+    background-color: blue; /* Color of the underline */
+    width: 100%; /* Full width of the link */
+    position: absolute; /* Positioning */
+    left: 0; /* Align to left */
+    bottom: -5px; /* Space below the text */
+    transform: scaleX(0); /* Initially hide the underline */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Underline appears on hover */
+  .navbar a:hover::after {
+    transform: scaleX(1); /* Show the underline on hover */
+  }
+  
+  /* Default underline for the active link */
+  .navbar a.active::after {
+    transform: scaleX(1); /* Show the underline by default */
+  }
+  
+  .find-job-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #007bff; /* Blue background */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor */
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff; /* White background to stand out */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Styling for the search bar */
+  .search-bar {
+    position: relative; /* Make this element the parent for the absolutely positioned icon */
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* Adjust the right padding to make space for the icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styling for the search icon inside the input field */
+  .search-icon {
+    position: absolute;
+    right: 15px; /* Position the icon inside the input */
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+  }
+  
+  /* Optional hover effect on search icon */
+  .search-icon:hover {
+    color: #000;
+  }
+  
+  
+  .signup-btn {
+    background-color: white;
+    color: blue;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid blue;
+    margin-right: 20px;
+  }
+  
+  .signIn-btn {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+  }
+  
+.job-offers{
+    margin-left: 4rem;
+    margin-right: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 10vh; */
+    /* margin-bottom: 5vh; */
+    color: blue;
+}
+.job-offers>h1{
+    font-weight: 700;
+    font-size: 30px;
+}
+
+/* .job-offers>a{
+    text-decoration: none;
+    color: rgb(24, 8, 167);
+    cursor: pointer;
+    font-weight: 700;
+    background-color: blueviolet;
+} */
+  
+  .job-section{
+    margin-left: 4rem;
+    margin-right: 4rem;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+   
+    /* margin-bottom: 10vh; */
+}
+
+.view-more-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+
+    margin-bottom: 10px;
+}
+
+.job{
+    
+    /* border-right: 1px; */
+    padding-left: 1%;
+    width: 380px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.job-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-bottom: 5px; */
+
+}
+.job-title p{
+  
+  padding-right: 50px;
+}
+.job-location{
+    display: flex;
+    align-items: center;
+    padding-bottom: -10px;
+    margin-top: -10px;
+    
+}.job-location>p{
+    margin-left: 5px;
+    color: grey;
+    font-weight: 600;
+}
+.job-description{
+    color: gray;
+    font-weight: 600;
+    margin-top: -20px;
+}
+    </style>
+</head>
+<body>
+    
+   
+<div class="job-offers">
+    <h1>Newest Job Offers</h1>
+    
+</div>
+
+<section class="job-section">
+    <div class="job">  <!-- jop post 1 -->
+        <div class="job-title">
+            <h2>Junior Java Developer</h2>
+            <p>2 hours ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Infosys</h4>
+            <p>Chennai,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a java developer. <br>Project for public sector location.Chennai <br>(during the pandemic remote work)</p>
+        </div>
+        <a href="https://www.infosys.com/careers.html">
+                <button class="view-more-btn"  onclick="viewMore(this)">View More</button>
+                <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+        
+    <div class="job">
+        <div class="job-title">
+            <h2>Project Manager</h2>
+            <p>3 hours ago</p>
+        </div>
+        <div class="job-location">
+            <h4>TCS</h4>
+            <p>Mumbai,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a project Manager <br>who can any type of project and <br>complete the work on time</p>
+        </div>
+        <a href="https://ibegin.tcs.com/iBegin/jobs/search">
+            <button class="view-more-btn" onclick="viewMore(this)">View More</button>
+            <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+    <div class="job">
+        <div class="job-title">
+             <h2>Python Developer</h2>
+            <p>1 hour ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Yoptima</h4>
+            <p>Banglore,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a Python developer. <br>Project for online Education <br>An app should be designed using python</p>
+        </div>
+        <a href="https://yoptima.com/careers/#">
+            <button class="view-more-btn" onclick="viewMore(this)">View More</button>
+            <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+</section>
+
+
+<br>
+<!-- This is sexond section -->
+
+<section class="job-section">
+    <div class="job">  <!-- jop post 4-->
+        <div class="job-title">
+            <h2>Application Developer</h2>
+            <p>2 hours ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Accenture</h4>
+            <p>Pune,India</p>
+        </div>
+        <div class="job-description">
+            <p>Design, build and configure applications to meet business process and application requirements.<br> MuleSoft Anypoint Platform</p>
+        </div>
+        <a href="https://www.infosys.com/careers.html">
+                <button class="view-more-btn"  onclick="viewMore(this)">View More</button>
+                <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+        
+    <div class="job">
+        <div class="job-title">
+            <h2>Full Stack Engineer</h2>
+            <p>3 hours ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Wipro</h4>
+            <p>Bhubaneswar, Pune, Chennai</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a project Manager <br>who can any type of project and <br>complete the work on time</p>
+        </div>
+        <a href="https://ibegin.tcs.com/iBegin/jobs/search">
+            <button class="view-more-btn" onclick="viewMore(this)">View More</button>
+            <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+    <div class="job">
+        <div class="job-title">
+             <h2>Python Developer</h2>
+            <p>1 hour ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Yoptima</h4>
+            <p>Banglore,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a Python developer. <br>Project for online Education <br>An app should be designed using python</p>
+        </div>
+        <a href="https://yoptima.com/careers/#">
+            <button class="view-more-btn" onclick="viewMore(this)">View More</button>
+            <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+</section>
+
+
+
+<br>
+
+
+<section class="job-section">
+    <div class="job">  <!-- jop post 1 -->
+        <div class="job-title">
+            <h2>Junior Java Developer</h2>
+            <p>2 hours ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Infosys</h4>
+            <p>Chennai,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a java developer. <br>Project for public sector location.Chennai <br>(during the pandemic remote work)</p>
+        </div>
+        <a href="https://www.infosys.com/careers.html">
+                <button class="view-more-btn"  onclick="viewMore(this)">View More</button>
+                <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+        
+    <div class="job">
+        <div class="job-title">
+            <h2>Project Manager</h2>
+            <p>3 hours ago</p>
+        </div>
+        <div class="job-location">
+            <h4>TCS</h4>
+            <p>Mumbai,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a project Manager <br>who can any type of project and <br>complete the work on time</p>
+        </div>
+        <a href="https://ibegin.tcs.com/iBegin/jobs/search">
+            <button class="view-more-btn" onclick="viewMore(this)">View More</button>
+            <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+    <div class="job">
+        <div class="job-title">
+             <h2>Python Developer</h2>
+            <p>1 hour ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Yoptima</h4>
+            <p>Banglore,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a Python developer. <br>Project for online Education <br>An app should be designed using python</p>
+        </div>
+        <a href="https://yoptima.com/careers/#">
+            <button class="view-more-btn" onclick="viewMore(this)">View More</button>
+            <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+</section>
+
+
+<br>
+
+
+
+<section class="job-section">
+    <div class="job">  <!-- jop post 1 -->
+        <div class="job-title">
+            <h2>Junior Java Developer</h2>
+            <p>2 hours ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Infosys</h4>
+            <p>Chennai,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a java developer. <br>Project for public sector location.Chennai <br>(during the pandemic remote work)</p>
+        </div>
+        <a href="https://www.infosys.com/careers.html">
+                <button class="view-more-btn"  onclick="viewMore(this)">View More</button>
+                <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+        
+    <div class="job">
+        <div class="job-title">
+            <h2>Project Manager</h2>
+            <p>3 hours ago</p>
+        </div>
+        <div class="job-location">
+            <h4>TCS</h4>
+            <p>Mumbai,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a project Manager <br>who can any type of project and <br>complete the work on time</p>
+        </div>
+        <a href="https://ibegin.tcs.com/iBegin/jobs/search">
+            <button class="view-more-btn" onclick="viewMore(this)">View More</button>
+            <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+    <div class="job">
+        <div class="job-title">
+             <h2>Python Developer</h2>
+            <p>1 hour ago</p>
+        </div>
+        <div class="job-location">
+            <h4>Yoptima</h4>
+            <p>Banglore,India</p>
+        </div>
+        <div class="job-description">
+            <p>I am looking for a Python developer. <br>Project for online Education <br>An app should be designed using python</p>
+        </div>
+        <a href="https://yoptima.com/careers/#">
+            <button class="view-more-btn" onclick="viewMore(this)">View More</button>
+            <button class="view-more-btn">Apply</button>
+        </a>
+    </div>
+</section>
+
+
+</body>
+</html>

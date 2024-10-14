@@ -1,140 +1,130 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
-  background-color: #fff; /* Background color of the navbar */
-  padding: 10px 20px; /* Add some padding */
-  position: relative; /* or 'fixed' if needed */
+  background-color:white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  flex-wrap: wrap; /* Allow wrapping */
 }
-
-.navbar ul {
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  display: flex; /* Align items horizontally */
-}
-
-.navbar li {
-  margin: 0 15px; /* Space between links */
-  opacity: 0; /* Initially hidden */
-  transform: translateY(-10px); /* Slide in from above */
-  animation: slide-in 0.5s forwards; /* Animation */
-}
-
-.navbar li:nth-child(1) { animation-delay: 0.1s; }
-.navbar li:nth-child(2) { animation-delay: 0.2s; }
-.navbar li:nth-child(3) { animation-delay: 0.3s; }
-.navbar li:nth-child(4) { animation-delay: 0.4s; }
 
 .navbar a {
-  text-decoration: none; /* Remove default underline */
-  color: black; /* Text color */
-  position: relative; /* Positioning for the pseudo-element */
+  text-decoration: none;
+  color: #000;
+  margin-right: 20px;
+  font-size: var(--font-size);
+  position: relative;
+  transition: color 0.3s;
 }
 
-/* Underline effect */
 .navbar a::after {
-  content: ""; /* Necessary for pseudo-element */
-  display: block; /* Makes the underline appear */
-  height: 2px; /* Thickness of the underline */
-  background-color: blue; /* Color of the underline */
-  width: 100%; /* Full width of the link */
-  position: absolute; /* Positioning */
-  left: 0; /* Align to left */
-  bottom: -5px; /* Space below the text */
-  transform: scaleX(0); /* Initially hide the underline */
-  transition: transform 0.3s ease; /* Smooth transition */
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #0073b1;
+  transition: width 0.3s ease;
 }
 
-.navbar a:hover::after,
-.navbar a.active::after {
-  transform: scaleX(1); /* Show the underline on hover or when active */
+.navbar a:hover::after {
+  width: 100%;
+  left: 0;
+  background: #0073b1;
 }
 
-/* Keyframes for slide-in animation */
-@keyframes slide-in {
-  to {
-    opacity: 1; /* Make visible */
-    transform: translateY(0); /* Move to original position */
-  }
+.navbar a:hover {
+  color: #0073b1;
 }
 
+.navbar a.active {
+  border-bottom: 2px solid #0073b1;
+  padding-bottom: 5px;
+}
 
-.header {
+.navbarData {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #fff; /* White background to stand out */
-  border-bottom: 1px solid #ddd;
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Set a max width */
+  margin: 0 auto; /* Center it with auto margins */
+  padding: 0 20px; /* Add padding for spacing */
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+.navbarData h1{
+  font-size:var(--heading1);
+  margin-top: 35px;
 }
 
-.MainNavbar{
-  display: flex;
-  justify-content: space-between;
-}
-/* Styling for the search bar */
 .search-bar {
-  position: relative; /* Make this element the parent for the absolutely positioned icon */
+  position: relative;
   display: flex;
   align-items: center;
 }
 
 .search-bar input {
-  width: 100%;
-  padding: 10px 40px 10px 15px; /* Adjust the right padding to make space for the icon */
-  font-size: 16px;
+  padding: 10px 40px; /* Add padding on the left for the icon */
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: var(--font-size);
+  width: 100%; /* Make the input full width */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
-/* Styling for the search icon inside the input field */
 .search-icon {
-  position: relative;
-  right: 30px; /* Position the icon inside the input */
-  font-size: 18px;
-  color: #aaa;
-  cursor: pointer;
-}
-
-/* Optional hover effect on search icon */
-.search-icon:hover {
-  color: #000;
-}
-
-
-.signup-btn {
-  background-color: white;
-  color:#007bff;
-  border: 2px solid #007bff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 40px;
-}
-
-.signIn-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 40px;
-} 
-
-.Buttons{
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
+  position: absolute;
+  left: 10px; /* Position the icon inside the input */
+  color: #0073b1;
+  pointer-events: none; /* Prevent clicks on the icon */
 }
 
 .profile-image {
-  width: 40px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
-  border-radius: 50%; /* This makes the image circular */
-  object-fit: cover; /* Ensures the image covers the container */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-left: 10px; /* Space between image and buttons */
+}
+
+.buttons{
+  display: flex;
+}
+
+.signIn-btn{
+  width: 30px;
+  height: 30px;
+  font-size:var(--font-size);
+}
+
+.signup{
+  width: 30px;
+  height: 30px;
+  font-size: var(--font-size);
+}
+
+.employer{
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .navbarData {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: stretch; /* Full width */
+  }
+
+  .search-bar {
+    margin: 10px 0; /* Margin between elements */
+  }
 }

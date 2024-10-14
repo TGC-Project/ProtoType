@@ -191,6 +191,578 @@ function Products() {
   };
 
   return (
+
+    <>
+     <div class="container-cat">
+      <div class="card-cat">
+        <img
+          alt="Electronics"
+          src="https://storage.googleapis.com/a1aa/image/0NPflDM39CUXXSHBaIRrAs5ZWw7GF566iu7skI7h8X3gmuyJA.jpg"
+        />
+        <p>Electronics</p>
+        <div class="hover-menu-cat">
+          <ul>
+            <li>
+              <img
+                alt="Laptops"
+                src="https://storage.googleapis.com/a1aa/image/BrvxS2jI38LoExjSf0bY6g1v2xBHy2Bf7ZTUJ9CkNn7DMdlTA.jpg"
+              />Laptops
+            </li>
+            <li>
+              <img
+                alt="Smartphones"
+                src="https://storage.googleapis.com/a1aa/image/FMjlSUmoiVqfRqzRNmJHrAW2UUNp23RMLRz9SpLG5Vv9luyJA.jpg"
+              />Smartphones
+            </li>
+            <li>
+              <img
+                alt="Tablets"
+                src="https://storage.googleapis.com/a1aa/image/SENRgD7YiM6XDJMZ5GEabFYmjBXco17uaeiVWnGGMVOImuyJA.jpg"
+              />Tablets
+            </li>
+            <li>
+              <img
+                alt="Cameras"
+                src="https://storage.googleapis.com/a1aa/image/BnJv6i236n7oIpfcfkLIOm2gXo51tLHM7oIdqew27KWFb6KnA.jpg"
+              />Cameras
+            </li>
+            <li>
+              <img
+                alt="Headphones"
+                src="https://storage.googleapis.com/a1aa/image/afv4y26EfvgIp0SeUx42rZXmLxfp8762F2vaiYFGYhKut0VOB.jpg"
+              />Headphones
+            </li>
+            <li>
+              <img
+                alt="Speakers"
+                src="https://storage.googleapis.com/a1aa/image/lWICzaymvnpDLl4bTbytvZL4stHFn1h6qBYetsstqdfzMdlTA.jpg"
+              />Speakers
+            </li>
+            <li>
+              <img
+                alt="Wearables"
+                src="https://storage.googleapis.com/a1aa/image/F5qoZtmlWgqdIlmszWV5QjAkdBrxklTIi0PSZVl2ppwWTX5E.jpg"
+              />Wearables
+            </li>
+            <li>
+              <img
+                alt="Gaming Consoles"
+                src="https://storage.googleapis.com/a1aa/image/AOakPSw5Q6q1IdhUjzRYxBhm4nARIJBvnUXLZEzMco6DTX5E.jpg"
+              />Gaming Consoles
+            </li>
+            <li>
+              <img
+                alt="Drones"
+                src="https://storage.googleapis.com/a1aa/image/zLg0sREe94XHKqHUMr98yUKNUKr6sJ9UcRcSXUkPj6NKmuyJA.jpg"
+              />Drones
+            </li>
+            <li>
+              <img
+                alt="Accessories"
+                src="https://storage.googleapis.com/a1aa/image/0ITQ8nw3VrqfTqBXoiLG8pSmdeQOLN2yH6QD4uCYHz1xLdlTA.jpg"
+              />Accessories
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-cat">
+        <img
+          alt="Home Appliances"
+          src="https://storage.googleapis.com/a1aa/image/Cy6LAgOKb4rjGhNQGwVem9oi8xw006Gz7y5kDe2sS0IcNdlTA.jpg"
+        />
+        <p>Home Appliances</p>
+        <div class="hover-menu-cat">
+          <ul>
+            <li>
+              <img
+                alt="Refrigerators"
+                src="https://storage.googleapis.com/a1aa/image/t5xBMfiz4EVsWqcmLs8rqalYXAWvXKbqaitzSrm3hrO2luyJA.jpg"
+              />Refrigerators
+            </li>
+            <li>
+              <img
+                alt="Washing Machines"
+                src="https://storage.googleapis.com/a1aa/image/bdIFclkQuP6RFdOwJmPeoOgLPer4kft99fQPDxsqu96ecprcC.jpg"
+              />Washing Machines
+            </li>
+            <li>
+              <img
+                alt="Microwaves"
+                src="https://storage.googleapis.com/a1aa/image/F0X7hehoS8UwAa4dcKwAQ1GiH8fJYpmLSbcZIk0gQkyNMdlTA.jpg"
+              />Microwaves
+            </li>
+            <li>
+              <img
+                alt="Air Conditioners"
+                src="https://storage.googleapis.com/a1aa/image/xuJrhgyZAkJ9BB4ZdHCMxvJNFVCs03eI1FQyANSdeePvZ6KnA.jpg"
+              />Air Conditioners
+            </li>
+            <li>
+              <img
+                alt="Vacuum Cleaners"
+                src="https://storage.googleapis.com/a1aa/image/lmzGGNbkGU7FHNvPfnomRx2hBHeesHbVoufQniuJrgzCz0VOB.jpg"
+              />Vacuum Cleaners
+            </li>
+            <li>
+              <img
+                alt="Water Purifiers"
+                src="https://storage.googleapis.com/a1aa/image/8UAxyPRsVp6MA1bXgVB48rA2tsWJEtgHmPMfyHfzu1mdNdlTA.jpg"
+              />Water Purifiers
+            </li>
+            <li>
+              <img
+                alt="Dishwashers"
+                src="https://storage.googleapis.com/a1aa/image/9n5hvy4xXTpeb6oT73HobBt1ZZLMduMajY7cIwS65UNwmuyJA.jpg"
+              />Dishwashers
+            </li>
+            <li>
+              <img
+                alt="Ovens"
+                src="https://storage.googleapis.com/a1aa/image/odfobXY4HtxhMacFyzdGCOuHN2VAl90ueFxZKpvvAPbmLdlTA.jpg"
+              />Ovens
+            </li>
+            <li>
+              <img
+                alt="Heaters"
+                src="https://storage.googleapis.com/a1aa/image/sjkqlfb4Ply4L65DA35qP2YtZ76jqbhI3qKmn7lvVVEMmuyJA.jpg"
+              />Heaters
+            </li>
+            <li>
+              <img
+                alt="Fans"
+                src="https://storage.googleapis.com/a1aa/image/qHjG8vOfbQ3ecEGPXaQae0t3EbIOACzvvBJ9RX0HzrmiY6KnA.jpg"
+              />Fans
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-cat">
+        <img
+          alt="Furniture"
+          src="https://storage.googleapis.com/a1aa/image/kdMyRYB7fr36QC5K3KWovQqotWxe4FUpUgV6MmmJeTxia6KnA.jpg"
+        />
+        <p>Furniture</p>
+        <div class="hover-menu-cat">
+          <ul>
+            <li>
+              <img
+                alt="Sofas"
+                src="https://storage.googleapis.com/a1aa/image/NTocaugEC5IxORUDpShXbm624X6blfl34KKKhtet1PLWLdlTA.jpg"
+              />Sofas
+            </li>
+            <li>
+              <img
+                alt="Beds"
+                src="https://storage.googleapis.com/a1aa/image/bPSlBQI0pq6YJVhPwCJa40UGWftdBjvJI0CGxoNHrhuEmuyJA.jpg"
+              />Beds
+            </li>
+            <li>
+              <img
+                alt="Dining Tables"
+                src="https://storage.googleapis.com/a1aa/image/0CIOyzEAFJK6Ld96elsVK90LBVfQl0ljqmMbBFL3ZeWab6KnA.jpg"
+              />Dining Tables
+            </li>
+            <li>
+              <img
+                alt="Chairs"
+                src="https://storage.googleapis.com/a1aa/image/WC1UO5Z4ZyqSEBmmCE22ZB4s2Nz0bpXyIIBgrJnHhE3fluyJA.jpg"
+              />Chairs
+            </li>
+            <li>
+              <img
+                alt="Wardrobes"
+                src="https://storage.googleapis.com/a1aa/image/DF2HUfdRVCWgeEIHaQoWfe5Rkj7K46uCV3mbquog9BmOu0VOB.jpg"
+              />Wardrobes
+            </li>
+            <li>
+              <img
+                alt="Coffee Tables"
+                src="https://storage.googleapis.com/a1aa/image/8X7A6YgV375GFBopd6jemEu34lcsmyFnXdYd7cyebjVmMdlTA.jpg"
+              />Coffee Tables
+            </li>
+            <li>
+              <img
+                alt="TV Units"
+                src="https://storage.googleapis.com/a1aa/image/Nwe5h98fEFoWI0uwwsEk1Y2Z233CrxNG9H1wlRDRSZZgLdlTA.jpg"
+              />TV Units
+            </li>
+            <li>
+              <img
+                alt="Bookshelves"
+                src="https://storage.googleapis.com/a1aa/image/7cxKi3WIoe1kByxceX4f4fe8QloC3rXPS67JJU6dqIAVcprcC.jpg"
+              />Bookshelves
+            </li>
+            <li>
+              <img
+                alt="Shoe Racks"
+                src="https://storage.googleapis.com/a1aa/image/JwFUCsIdLxIYKtbyst1pWkYtdd8bOh1IfnTYVONgBmZXmuyJA.jpg"
+              />Shoe Racks
+            </li>
+            <li>
+              <img
+                alt="Office Chairs"
+                src="https://storage.googleapis.com/a1aa/image/nZ8msciPnGrDDpAJVVQ0yVU6orcFC4UnUDVoXgNTI3oTTX5E.jpg"
+              />Office Chairs
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-cat">
+        <img
+          alt="Clothing"
+          src="https://storage.googleapis.com/a1aa/image/Yp5LGmhtcv58I5qdVBDAfLYyecosL7jn4h73dv3o64BZNdlTA.jpg"
+        />
+        <p>Clothing</p>
+        <div class="hover-menu-cat">
+          <ul>
+            <li>
+              <img
+                alt="Men's Clothing"
+                src="https://storage.googleapis.com/a1aa/image/zC3Q8encyLxRGCwE3RdQ56FSs9syOwuQfkgyGx71OwrrMdlTA.jpg"
+              />Men's Clothing
+            </li>
+            <li>
+              <img
+                alt="Women's Clothing"
+                src="https://storage.googleapis.com/a1aa/image/Nty5ogW8kVKzIhH66GISDhjoRt7cVtzfL2thfUAFhc8pLdlTA.jpg"
+              />Women's Clothing
+            </li>
+            <li>
+              <img
+                alt="Kids' Clothing"
+                src="https://storage.googleapis.com/a1aa/image/Qq6iMUtADRI7MV9ZQfJqsavdkkaQfX2NKtflfeqU6vuksprcC.jpg"
+              />Kids' Clothing
+            </li>
+            <li>
+              <img
+                alt="Footwear"
+                src="https://storage.googleapis.com/a1aa/image/y7cW4ofmehnzzUYF4fOLyOHNDLjr1jBkZIjecUXTfAXpoprcC.jpg"
+              />Footwear
+            </li>
+            <li>
+              <img
+                alt="Accessories"
+                src="https://storage.googleapis.com/a1aa/image/0ITQ8nw3VrqfTqBXoiLG8pSmdeQOLN2yH6QD4uCYHz1xLdlTA.jpg"
+              />Accessories
+            </li>
+            <li>
+              <img
+                alt="Sportswear"
+                src="https://storage.googleapis.com/a1aa/image/0LDQzPys4M7fCqR6BPeBCCxkqYfNO8kzWmWJueVzkY8ly0VOB.jpg"
+              />Sportswear
+            </li>
+            <li>
+              <img
+                alt="Ethnic Wear"
+                src="https://storage.googleapis.com/a1aa/image/FKDDFnKM9LbvFJAeMarAu7x1UYQSQOfYKqzagggkk2TTMdlTA.jpg"
+              />Ethnic Wear
+            </li>
+            <li>
+              <img
+                alt="Winter Wear"
+                src="https://storage.googleapis.com/a1aa/image/5fatYlwHxXwXYyAlRcrFKC4JRTNE1C2IZ7YEVPntyxYimuyJA.jpg"
+              />Winter Wear
+            </li>
+            <li>
+              <img
+                alt="Innerwear"
+                src="https://storage.googleapis.com/a1aa/image/CfpfUm4I5CoqWE9x7SdXkkO9yeuJDBTETz8C8rHaEEX8Z6KnA.jpg"
+              />Innerwear
+            </li>
+            <li>
+              <img
+                alt="Sleepwear"
+                src="https://storage.googleapis.com/a1aa/image/jbPxOUdtu3acFt2OZ6JWPzYxQ2Se0fJadWNcp4Ktxbb4LdlTA.jpg"
+              />Sleepwear
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-cat">
+        <img
+          alt="Electronics"
+          src="https://storage.googleapis.com/a1aa/image/0NPflDM39CUXXSHBaIRrAs5ZWw7GF566iu7skI7h8X3gmuyJA.jpg"
+        />
+        <p>Electronics</p>
+        <div class="hover-menu-cat">
+          <ul>
+            <li>
+              <img
+                alt="Laptops"
+                src="https://storage.googleapis.com/a1aa/image/BrvxS2jI38LoExjSf0bY6g1v2xBHy2Bf7ZTUJ9CkNn7DMdlTA.jpg"
+              />Laptops
+            </li>
+            <li>
+              <img
+                alt="Smartphones"
+                src="https://storage.googleapis.com/a1aa/image/FMjlSUmoiVqfRqzRNmJHrAW2UUNp23RMLRz9SpLG5Vv9luyJA.jpg"
+              />Smartphones
+            </li>
+            <li>
+              <img
+                alt="Tablets"
+                src="https://storage.googleapis.com/a1aa/image/SENRgD7YiM6XDJMZ5GEabFYmjBXco17uaeiVWnGGMVOImuyJA.jpg"
+              />Tablets
+            </li>
+            <li>
+              <img
+                alt="Cameras"
+                src="https://storage.googleapis.com/a1aa/image/BnJv6i236n7oIpfcfkLIOm2gXo51tLHM7oIdqew27KWFb6KnA.jpg"
+              />Cameras
+            </li>
+            <li>
+              <img
+                alt="Headphones"
+                src="https://storage.googleapis.com/a1aa/image/afv4y26EfvgIp0SeUx42rZXmLxfp8762F2vaiYFGYhKut0VOB.jpg"
+              />Headphones
+            </li>
+            <li>
+              <img
+                alt="Speakers"
+                src="https://storage.googleapis.com/a1aa/image/lWICzaymvnpDLl4bTbytvZL4stHFn1h6qBYetsstqdfzMdlTA.jpg"
+              />Speakers
+            </li>
+            <li>
+              <img
+                alt="Wearables"
+                src="https://storage.googleapis.com/a1aa/image/F5qoZtmlWgqdIlmszWV5QjAkdBrxklTIi0PSZVl2ppwWTX5E.jpg"
+              />Wearables
+            </li>
+            <li>
+              <img
+                alt="Gaming Consoles"
+                src="https://storage.googleapis.com/a1aa/image/AOakPSw5Q6q1IdhUjzRYxBhm4nARIJBvnUXLZEzMco6DTX5E.jpg"
+              />Gaming Consoles
+            </li>
+            <li>
+              <img
+                alt="Drones"
+                src="https://storage.googleapis.com/a1aa/image/zLg0sREe94XHKqHUMr98yUKNUKr6sJ9UcRcSXUkPj6NKmuyJA.jpg"
+              />Drones
+            </li>
+            <li>
+              <img
+                alt="Accessories"
+                src="https://storage.googleapis.com/a1aa/image/0ITQ8nw3VrqfTqBXoiLG8pSmdeQOLN2yH6QD4uCYHz1xLdlTA.jpg"
+              />Accessories
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-cat">
+        <img
+          alt="Electronics"
+          src="https://storage.googleapis.com/a1aa/image/0NPflDM39CUXXSHBaIRrAs5ZWw7GF566iu7skI7h8X3gmuyJA.jpg"
+        />
+        <p>Electronics</p>
+        <div class="hover-menu-cat">
+          <ul>
+            <li>
+              <img
+                alt="Laptops"
+                src="https://storage.googleapis.com/a1aa/image/BrvxS2jI38LoExjSf0bY6g1v2xBHy2Bf7ZTUJ9CkNn7DMdlTA.jpg"
+              />Laptops
+            </li>
+            <li>
+              <img
+                alt="Smartphones"
+                src="https://storage.googleapis.com/a1aa/image/FMjlSUmoiVqfRqzRNmJHrAW2UUNp23RMLRz9SpLG5Vv9luyJA.jpg"
+              />Smartphones
+            </li>
+            <li>
+              <img
+                alt="Tablets"
+                src="https://storage.googleapis.com/a1aa/image/SENRgD7YiM6XDJMZ5GEabFYmjBXco17uaeiVWnGGMVOImuyJA.jpg"
+              />Tablets
+            </li>
+            <li>
+              <img
+                alt="Cameras"
+                src="https://storage.googleapis.com/a1aa/image/BnJv6i236n7oIpfcfkLIOm2gXo51tLHM7oIdqew27KWFb6KnA.jpg"
+              />Cameras
+            </li>
+            <li>
+              <img
+                alt="Headphones"
+                src="https://storage.googleapis.com/a1aa/image/afv4y26EfvgIp0SeUx42rZXmLxfp8762F2vaiYFGYhKut0VOB.jpg"
+              />Headphones
+            </li>
+            <li>
+              <img
+                alt="Speakers"
+                src="https://storage.googleapis.com/a1aa/image/lWICzaymvnpDLl4bTbytvZL4stHFn1h6qBYetsstqdfzMdlTA.jpg"
+              />Speakers
+            </li>
+            <li>
+              <img
+                alt="Wearables"
+                src="https://storage.googleapis.com/a1aa/image/F5qoZtmlWgqdIlmszWV5QjAkdBrxklTIi0PSZVl2ppwWTX5E.jpg"
+              />Wearables
+            </li>
+            <li>
+              <img
+                alt="Gaming Consoles"
+                src="https://storage.googleapis.com/a1aa/image/AOakPSw5Q6q1IdhUjzRYxBhm4nARIJBvnUXLZEzMco6DTX5E.jpg"
+              />Gaming Consoles
+            </li>
+            <li>
+              <img
+                alt="Drones"
+                src="https://storage.googleapis.com/a1aa/image/zLg0sREe94XHKqHUMr98yUKNUKr6sJ9UcRcSXUkPj6NKmuyJA.jpg"
+              />Drones
+            </li>
+            <li>
+              <img
+                alt="Accessories"
+                src="https://storage.googleapis.com/a1aa/image/0ITQ8nw3VrqfTqBXoiLG8pSmdeQOLN2yH6QD4uCYHz1xLdlTA.jpg"
+              />Accessories
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-cat">
+        <img
+          alt="Electronics"
+          src="https://storage.googleapis.com/a1aa/image/0NPflDM39CUXXSHBaIRrAs5ZWw7GF566iu7skI7h8X3gmuyJA.jpg"
+        />
+        <p>Electronics</p>
+        <div class="hover-menu-cat">
+          <ul>
+            <li>
+              <img
+                alt="Laptops"
+                src="https://storage.googleapis.com/a1aa/image/BrvxS2jI38LoExjSf0bY6g1v2xBHy2Bf7ZTUJ9CkNn7DMdlTA.jpg"
+              />Laptops
+            </li>
+            <li>
+              <img
+                alt="Smartphones"
+                src="https://storage.googleapis.com/a1aa/image/FMjlSUmoiVqfRqzRNmJHrAW2UUNp23RMLRz9SpLG5Vv9luyJA.jpg"
+              />Smartphones
+            </li>
+            <li>
+              <img
+                alt="Tablets"
+                src="https://storage.googleapis.com/a1aa/image/SENRgD7YiM6XDJMZ5GEabFYmjBXco17uaeiVWnGGMVOImuyJA.jpg"
+              />Tablets
+            </li>
+            <li>
+              <img
+                alt="Cameras"
+                src="https://storage.googleapis.com/a1aa/image/BnJv6i236n7oIpfcfkLIOm2gXo51tLHM7oIdqew27KWFb6KnA.jpg"
+              />Cameras
+            </li>
+            <li>
+              <img
+                alt="Headphones"
+                src="https://storage.googleapis.com/a1aa/image/afv4y26EfvgIp0SeUx42rZXmLxfp8762F2vaiYFGYhKut0VOB.jpg"
+              />Headphones
+            </li>
+            <li>
+              <img
+                alt="Speakers"
+                src="https://storage.googleapis.com/a1aa/image/lWICzaymvnpDLl4bTbytvZL4stHFn1h6qBYetsstqdfzMdlTA.jpg"
+              />Speakers
+            </li>
+            <li>
+              <img
+                alt="Wearables"
+                src="https://storage.googleapis.com/a1aa/image/F5qoZtmlWgqdIlmszWV5QjAkdBrxklTIi0PSZVl2ppwWTX5E.jpg"
+              />Wearables
+            </li>
+            <li>
+              <img
+                alt="Gaming Consoles"
+                src="https://storage.googleapis.com/a1aa/image/AOakPSw5Q6q1IdhUjzRYxBhm4nARIJBvnUXLZEzMco6DTX5E.jpg"
+              />Gaming Consoles
+            </li>
+            <li>
+              <img
+                alt="Drones"
+                src="https://storage.googleapis.com/a1aa/image/zLg0sREe94XHKqHUMr98yUKNUKr6sJ9UcRcSXUkPj6NKmuyJA.jpg"
+              />Drones
+            </li>
+            <li>
+              <img
+                alt="Accessories"
+                src="https://storage.googleapis.com/a1aa/image/0ITQ8nw3VrqfTqBXoiLG8pSmdeQOLN2yH6QD4uCYHz1xLdlTA.jpg"
+              />Accessories
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-cat">
+        <img
+          alt="Electronics"
+          src="https://storage.googleapis.com/a1aa/image/0NPflDM39CUXXSHBaIRrAs5ZWw7GF566iu7skI7h8X3gmuyJA.jpg"
+        />
+        <p>Electronics</p>
+        <div class="hover-menu-cat">
+          <ul>
+            <li>
+              <img
+                alt="Laptops"
+                src="https://storage.googleapis.com/a1aa/image/BrvxS2jI38LoExjSf0bY6g1v2xBHy2Bf7ZTUJ9CkNn7DMdlTA.jpg"
+              />Laptops
+            </li>
+            <li>
+              <img
+                alt="Smartphones"
+                src="https://storage.googleapis.com/a1aa/image/FMjlSUmoiVqfRqzRNmJHrAW2UUNp23RMLRz9SpLG5Vv9luyJA.jpg"
+              />Smartphones
+            </li>
+            <li>
+              <img
+                alt="Tablets"
+                src="https://storage.googleapis.com/a1aa/image/SENRgD7YiM6XDJMZ5GEabFYmjBXco17uaeiVWnGGMVOImuyJA.jpg"
+              />Tablets
+            </li>
+            <li>
+              <img
+                alt="Cameras"
+                src="https://storage.googleapis.com/a1aa/image/BnJv6i236n7oIpfcfkLIOm2gXo51tLHM7oIdqew27KWFb6KnA.jpg"
+              />Cameras
+            </li>
+            <li>
+              <img
+                alt="Headphones"
+                src="https://storage.googleapis.com/a1aa/image/afv4y26EfvgIp0SeUx42rZXmLxfp8762F2vaiYFGYhKut0VOB.jpg"
+              />Headphones
+            </li>
+            <li>
+              <img
+                alt="Speakers"
+                src="https://storage.googleapis.com/a1aa/image/lWICzaymvnpDLl4bTbytvZL4stHFn1h6qBYetsstqdfzMdlTA.jpg"
+              />Speakers
+            </li>
+            <li>
+              <img
+                alt="Wearables"
+                src="https://storage.googleapis.com/a1aa/image/F5qoZtmlWgqdIlmszWV5QjAkdBrxklTIi0PSZVl2ppwWTX5E.jpg"
+              />Wearables
+            </li>
+            <li>
+              <img
+                alt="Gaming Consoles"
+                src="https://storage.googleapis.com/a1aa/image/AOakPSw5Q6q1IdhUjzRYxBhm4nARIJBvnUXLZEzMco6DTX5E.jpg"
+              />Gaming Consoles
+            </li>
+            <li>
+              <img
+                alt="Drones"
+                src="https://storage.googleapis.com/a1aa/image/zLg0sREe94XHKqHUMr98yUKNUKr6sJ9UcRcSXUkPj6NKmuyJA.jpg"
+              />Drones
+            </li>
+            <li>
+              <img
+                alt="Accessories"
+                src="https://storage.googleapis.com/a1aa/image/0ITQ8nw3VrqfTqBXoiLG8pSmdeQOLN2yH6QD4uCYHz1xLdlTA.jpg"
+              />Accessories
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <div className="product-page">
       {sections.map((section) => (
         <div key={section.title} className="product-container">
@@ -221,6 +793,8 @@ function Products() {
         </div>
       ))}
     </div>
+
+  </>
   );
 }
 
