@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import './index.css'; // Ensure your CSS file is imported
 
 const SignUp = () => {
+    const navigate = useNavigate();
     const [userType, setUserType] = useState('user'); // State for user type
     const [formData, setFormData] = useState({
         username: '',
@@ -23,6 +25,11 @@ const SignUp = () => {
         setUserType(e.target.value);
     };
 
+
+    const handleSignInClick = () => {
+                navigate('/signin'); // Navigate to sign-in page
+    };
+
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,6 +48,7 @@ const SignUp = () => {
     }, [userType]);
 
     return (
+<>       
         <div className="registration-form">
             <h2>Join Our Prototype</h2>
 
@@ -141,10 +149,12 @@ const SignUp = () => {
                 <button className="register-button" type="submit">Register</button>
                 <div className="OR">OR</div>
                 <div className="loginIn">
-                    Already On Prototype? <a href="/signin">SignIn</a>
+                    Already On Prototype? <a href="/signin" onClick={handleSignInClick}>Sign In</a>
                 </div>
             </form>
         </div>
+        </>
+
     );
 };
 

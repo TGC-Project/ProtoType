@@ -5,78 +5,124 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
   justify-content: center;
   background-color: var(--primary-color) !important; 
 }
-
 .container {
-  width: 100%; /* Full width of the container */
-}
-
-.header {
   position: relative;
-  display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  height: 350px;
-  overflow: hidden; /* Hide any overflow */
-  padding: 0 80px; /* Add padding for left and right */
+  height: auto; /* Set to auto to allow content height */
+  overflow: hidden; /* Prevent overflow */
+  background-color: white;
 }
 
-.header::before {
-  content: "";
+.head {
+  position: relative; /* Changed to relative to stack correctly */
+  height: 100vh; /* Keep this to fill the viewport */
+  height: 350px;
+  color: black; /* Make text color white for contrast */
+z-index: 2; /* Ensure text is above the background image */
+}
+
+.head-text {
+  position: absolute; /* Positioning to center the content */
+  top: 50%; /* Move down 50% of the height */
+  left: 50%; /* Move right 50% of the width */
+  transform: translate(-50%, -50%); /* Center the element */
+}
+
+.head-text h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 2.5em; /* Adjust size as needed */
+  text-align: center;
+}
+
+.head-text p {
+  margin: 20px 0; /* Add margin for spacing */
+  text-align: center;
+}
+
+.highlight-ME {
+  align-items: center;
+  color: green; /* Highlighted text color */
+}
+
+
+.container .head::before {
+  content: ''; /* Required for pseudo-element */
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../../Images/map-for-hero-section.png"); /* Your background image */
+  background-image: url('../../Images/map-for-hero-section.png'); /* Adjust path as needed */
+  background-size:contain; /* Ensure the image covers the area */
   background-repeat: no-repeat;
-  background-position: right; /* Position the image to the right */
-  background-size:cover; /* Cover the entire area */
-  opacity: 0.7; /* Set opacity */
-  z-index: 1; /* Position it behind the text */
+  background-position:right; /* Center the image */
+  opacity: 0.5; /* Set opacity */
+  z-index: -1; /* Ensure it's below the text */
 }
 
-.header-text {
-  position: relative; /* Ensure text is above the background */
-  z-index: 2; /* Bring text in front of the background */
-  color: #fff; /* Change text color for visibility */
+.head-text {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
   text-align: center; /* Center text */
-  max-width: 600px; /* Optional: limit text width */
+  margin: 0; /* Remove margin */
 }
 
-.header-text h1,
-.header-text p {
-  margin: 0; /* Reset margins for consistency */
-}
-
-/* Styles for the button */
-.header-text button {
-  margin-top: 15px; /* Spacing above the button */
-  padding: 10px 20px; /* Padding for the button */
-  background-color: #007bff; /* Button color */
-  color: white; /* Button text color */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer on hover */
-}
 
 /* Optional hover effect for the button */
-.header-text button:hover {
+.head-text button:hover {
   background-color: #0056b3; /* Darker blue on hover */
+
 }
 
-/* Stats section styles */
 .stats {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-around; /* Space items evenly */
-  margin-top: 20px; /* Margin above stats */
-  flex-wrap: wrap; /* Wrap items on smaller screens */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
+.stat {
+  background-color: white;
+  padding: 10px; /* Keep this if you want internal spacing */
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 90px; /* Set a fixed height */
+  min-width: 200px; /* Minimum width for the cards */
+  max-width: 250px; /* Maximum width for the cards */
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-10px);
+}
+
+.stat i {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.stat h3 {
+  font-size: var(--paragarph);
+  color: #333;
+  margin-top: 10px;
+}
+
+.stat p {
+  font-size: var(--paragraph);
+  color: #666;
+  margin-top: 5px;
+}
+
+
+.container1{
+  background-color: var(--primary-color) !important;
+}
 
 .paragraph-container {
   display: flex;
@@ -98,30 +144,33 @@ p{
   width: 20px; /* Adjust size as needed */
   height: 20px; /* Adjust size as needed */
   margin-right: 10px; /* Space between the image and text */
-margin-top: 11px;
+margin-top: 2px;
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 50px 0;
-  background-color: white !important;
+  /* padding: 50px 10px; */
 }
 .header-text {
   font-size: var(--heading1);
   max-width: 50%;
+  margin-right: 10px;
 }
 .header-text h1 {
   font-size: 32px;
-  margin-right: 30px;
   color: #333;
-  margin: 0;
+  
 }
 .header-text p {
   font-size: var(--paragarph);
   color: #666;
-  margin: 10px 0;
+  margin: 3px 0;
+}
+
+.paragraphbutton{
+  background-color: #28a745 !important;
 }
 .search-bar {
   display: flex;
@@ -129,25 +178,7 @@ margin-top: 11px;
   margin-top: 20px;
   height: 45px;
 }
-.search-bar input {
-  padding: 10px;
-  font-size: var(--paragarph);
-  border: 1px solid #ccc;
-  border-radius: 5px 0 0 5px;
-  flex: 1;
-}
-.search-bar button {
-  padding: 10px 10px;
-  font-size: var(--paragarph);
- height: 30px;
- width: 30px;
-  border: none;
-  margin-top: -1px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-}
+
 .suggestions {
   font-size: var(--paragarph);
   color: #666;
@@ -159,49 +190,19 @@ margin-top: 11px;
 }
 .illustration {
   max-width: 50%;
+  display: block;
 }
 .illustration img {
   width: 100%;
   height: 400px;
   opacity: 0.6;
 }
-.stats {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-.stat {
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  margin: 0 10px;
-  /* height: 120px !important; */
-  transition: transform 0.3s ease;
-}
-.stat:hover {
-  transform: translateY(-10px);
-}
-.stat i {
-  font-size: var(--heading1);
-  color: #007bff;
-}
-.stat h3 {
-  font-size:var(--heading2);
-  color: #333;
-  margin: 10px 0;
-}
-.stat p {
-  font-size: var(--paragarph);
-  color: #666;
-}
 
 /* MOST POPULAR CATEGORIES */
 .container-MOST-P {
   text-align: center;
   margin-top: 30px;
+ 
 }
 h1 {
   font-size: 24px;
@@ -211,6 +212,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 .category-MOST-P {
@@ -261,11 +263,12 @@ h1 {
   margin-top: 30px;
 }
 .container-TC h1 {
-  font-size: 24px;
+  font-size: var(--heading1);
   margin-bottom: 20px;
 }
 .company-list-TC {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -289,7 +292,7 @@ h1 {
   flex-direction: column;
 }
 .company-name-TC {
-  font-size: 16px;
+  font-size: var(--paragarph);
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -307,7 +310,7 @@ h1 {
   margin-left: 5px;
 }
 .location-TC {
-  font-size: 14px;
+  font-size: 12px;
   color: #666;
 }
 .location-TC i {
@@ -316,18 +319,18 @@ h1 {
 /* END */
 /* FEATURED JOB DOMAIN */
 .container-JD {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 .header-JD {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 20px;
 }
 .header-JD h1 {
-  font-size: 24px;
-  margin: 0;
+  font-size: var(--heading1);
+  
 }
 .header-JD a {
   text-decoration: none;
@@ -359,32 +362,33 @@ h1 {
   border-color: #ffeb3b;
 }
 .job-card-JD h2 {
-  font-size: 18px;
+  font-size: var(--heading2);
   margin: 0 0 10px;
 }
 .job-card-JD .job-type-JD {
-  font-size: 12px;
+  font-size:11px;
   color: #28a745;
   margin-bottom: 5px;
 }
 .job-card-JD .salary-JD {
-  font-size: 14px;
+  font-size: 11px;
   color: #6c757d;
   margin-bottom: 10px;
 }
 .job-card-JD .company-JD {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
   color: #6c757d;
 }
 .job-card-JD .company-JD img {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   margin-right: 5px;
 }
-.job-card-JD .location {
-  font-size: 12px;
+.job-card-JD .location-JD {
+  font-size: 14px;
+  margin-top: 10px;
   color: #6c757d;
 }
 /* FEATURED JOB DOMAIN **END */
@@ -405,7 +409,7 @@ h1 {
 }
 
 .testimonial-section-Tt h2 {
-  font-size: 36px;
+  font-size: var(--heading1);
   margin-bottom: 20px;
   animation: fadeInUp-Tt 1s ease-in-out;
 }
@@ -414,12 +418,15 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left:92px;
+  margin-right: 92px;
 }
 
 .testimonial-cards {
   display: flex;
   justify-content: center;
   gap: 20px;
+  cursor: pointer;
 }
 
 .testimonial-card-Tt {
@@ -427,7 +434,8 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  max-width: 300px;
+  max-width: 700px; /* Increased max-width for larger cards */
+  height: 200px; /* Set a fixed height for the cards */
   text-align: left;
   position: relative;
   animation: fadeInUp-Tt 1s ease-in-out;
@@ -439,7 +447,7 @@ h1 {
 }
 
 .testimonial-card-Tt p {
-  font-size: 14px;
+  font-size: 12px;
   color: #555;
   margin-bottom: 20px;
 }
@@ -450,20 +458,20 @@ h1 {
 }
 
 .testimonial-card-Tt .author-Tt img {
-  border-radius: 50% !important; 
-  width: 40px !important;
-  height: 40px !important;
-  margin-right: 10px !important;
+  border-radius: 50% ; 
+  width: 40px ;
+  height: 40px ;
+  margin-right: 10px ;
 }
 
 .testimonial-card-Tt .author-Tt .name-Tt {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: #333;
 }
 
 .testimonial-card-Tt .author-Tt .role-Tt {
-  font-size: 14px;
+  font-size: 12px;
   color: #777;
 }
 
@@ -471,7 +479,7 @@ h1 {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  font-size: 24px;
+  font-size: 22px;
   color: #ddd;
 }
 
@@ -483,7 +491,7 @@ h1 {
 }
 
 .arrow-Tt {
-  font-size: 24px;
+  font-size: 22px;
   color: #007bff;
   cursor: pointer;
   padding: 10px;
@@ -506,14 +514,19 @@ h1 {
   background-color: #007bff;
 }
 
+.container1 .illustration{
+  margin-left: 92px;
+  margin-right: 92px;
+}
+
 .container2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 30px;
-  background-color: rgb(255, 255, 255) !important;
+  padding: 20px;
+  background-color: white;
   max-width: 100%;
-  padding: 0; /* Remove any padding if needed */
 }
 
 .container2 .card {
@@ -536,7 +549,7 @@ h1 {
 }
 
 .container2 .card p {
-  font-size: 16px;
+  font-size: 12px;
   color: #555;
 }
 
@@ -546,15 +559,273 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .container2 .card {
-    width: calc(50% - 10px); /* Adjust to fit better with less space */
+
+/* Add this to your existing CSS */
+
+/* Mobile devices (max-width: 768px) */
+/* Media query for 430x932 screen size device */
+/* Media query for small devices (max-width: 430px) */
+@media only screen and (max-width: 430px) {
+
+  .container {
+  
+    margin: 0; /* Remove margin */
+  }
+
+  .head {
+    height: 200px; /* Adjust height */
+    padding: 10px; /* Add some padding */
+  }
+
+  .head-text {
+    top: 30%; /* Adjust position */
+    padding: 0 10px; /* Add horizontal padding */
+  }
+
+  .head-text button{
+    margin-bottom: 350px;
+  }
+
+  .stats {
+    flex-direction: column; /* Stack stats vertically */
+    align-items: center; /* Center align */
+    margin-top: 20px; /* Add some spacing */
+  }
+
+  .stat {
+    margin-bottom: 10px; /* Reduce bottom margin */
+    width: 100%; /* Make stats full width */
+    text-align: center; /* Center text */
+  }
+
+  .container-TC {
+    max-width: 300px;
+  }
+
+  .container-MOST-P {
+    margin: 10px; /* Reduce margins */
+  }
+
+  .categories-MOST-P {
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center categories */
+  }
+
+  .category-MOST-P {
+    margin: 5px; /* Reduce category margin */
+  }
+
+  .container-VC {
+    padding: 10px; /* Adjust padding */
+  }
+
+  .container-JD {
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .job-list-JD {
+    flex-direction: column; /* Stack jobs vertically */
+    align-items: center; /* Center align */
+  }
+
+  .job-card-JD {
+    margin-bottom: 10px; /* Reduce bottom margin */
+    width: 100%; /* Make job cards full width */
+    max-width: 300px;
+  }
+
+  .container1 {
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .header {
+    flex-direction: column; /* Stack header items */
+    align-items: center; /* Center align */
+    margin: 0; /* Remove margin */
+  }
+
+  .illustration {
+    margin-left: 0;
+    display: none; /* Remove left margin */
+  }
+
+  .header-text {
+    margin-top: 10px; /* Adjust margin */
+    padding: 0 10px; /* Add horizontal padding */
+  }
+
+  .paragraph-container {
+    margin-top: 10px; /* Adjust margin */
+  }
+
+  .container-TC {
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .company-list-TC {
+    flex-direction: column; /* Stack companies vertically */
+    align-items: center; /* Center align */
+  }
+
+  .company-card-TC {
+    margin-bottom: 10px; /* Reduce bottom margin */
+    width: 100%; /* Make company cards full width */
+  }
+
+  .container2 {
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .card {
+    margin-bottom: 10px; /* Reduce bottom margin */
+    width: 100%; /* Make cards full width */
+  }
+
+  .testimonial-section-Tt {
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .testimonial-container-Tt {
+    flex-direction: column; /* Stack testimonials vertically */
+    align-items: center; /* Center align */
+  }
+
+  .testimonial-cards {
+    flex-direction: column; /* Stack testimonial cards vertically */
+    align-items: center; /* Center align */
+  }
+
+  .stars-Tt{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+
+  .testimonial-card-Tt {
+    margin-bottom: 10px; /* Reduce bottom margin */
+    width: 100%; /* Make testimonial cards full width */
+    height: 250px;
+  }
+
+}
+
+/* Tablets (min-width: 768px and max-width: 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 40px;
+  }
+
+  .head {
+    height: 250px;
+  }
+
+  .head-text {
+    top: 40%;
+  }
+
+  .stats {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+
+  .categories-MOST-P {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .category-MOST-P {
+    margin-bottom: 20px;
+  }
+
+  .container-VC {
+    padding: 20px;
+  }
+
+  .container-JD {
+    margin-top: 40px;
+  }
+
+  .job-list-JD {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .job-card-JD {
+    margin-bottom: 20px;
+  }
+
+  .container1 {
+    margin-top: 40px;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .illustration {
+    margin-left: 20px;
+  }
+
+  .header-text {
+    margin-top: 20px;
+  }
+
+  .paragraph-container {
+    margin-top: 20px;
+  }
+
+  .container-TC {
+    margin-top: 40px;
+  }
+
+  .company-list-TC {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .company-card-TC {
+    margin-bottom: 20px;
+  }
+
+  .container2 {
+    margin-top: 40px;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .testimonial-section-Tt {
+    margin-top: 40px;
+  }
+
+  .stars-Tt{
+    display: flex ;
+    align-items: center;
+    gap: 1px;
+  }
+
+  .testimonial-container-Tt {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 10px;
+    margin-right: 10px;
+   
+  }
+
+  .testimonial-cards {
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+
+  .testimonial-card-Tt {
+    margin-bottom: 20px;
+    height: 250px;
   }
 }
 
-@media (max-width: 480px) {
-  .container2 .card {
-    width: calc(100% - 10px); /* Ensure cards fit without extra space */
-  }
-}
+
+

@@ -2,16 +2,23 @@ import React from 'react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from "../Footer";
-import Header from "../../Images/map-for-hero-section.png"
 import HomeImage from "../../Images/home-network-main-circle-nobg (1).png"
 import VerifiedImage from "../../Images/Verified Account.png"
 import Sellers from "../../Images/HOME-PAGE-LOGO-Services.png";
 import Process from "../../Images/HOME-PAGE-LOGO-Services-2.png"
 import Confidence from "../../Images/HOME-PAGE-LOGO-Services-3.png"
+
 import "./index.css";
 
 function Home() {
 
+  const statsData = [
+    { value: "1,75,324", label: "Products", icon: "fas fa-briefcase" },
+    { value: "97,354", label: "Companies", icon: "fas fa-building"  },
+    { value: "38,47,154", label: "Verified Users", icon: "fas fa-user-friends"},
+    { value: "7,532", label: "New Jobs", icon: "fas fa-laptop-code" },
+  ];
+  
 
   const cards = [
     {
@@ -158,22 +165,24 @@ function Home() {
   return (
     <>
       <div className="container">
-      <div className="header">
-    <div className="header-text">
+      <div className="head">
+    <div className="head-text">
         <h1>Navigate your Future: Where career and <span className="highlight-ME">Business</span> Goals Align</h1>
         <p>Unite your career aspirations and business goals. Connect with employers and discover tailored opportunities to navigate your future successfully!</p>
         <button>Join Now</button>
     </div>
 </div>
-        <div className="stats">
-          {Array(4).fill().map((_, index) => (
-            <div className="stat" key={index}>
-              <i className="fas fa-briefcase"></i>
-              <h3>1,75,324</h3>
-              <p>Products</p>
-            </div>
-          ))}
-        </div>
+
+<div className="stats">
+  {statsData.map((stat, index) => (
+    <div className="stat" key={index}>
+      <i className={stat.icon}></i>
+      <h3>{stat.value}</h3>
+      <p>{stat.label}</p>
+    </div>
+  ))}
+</div>
+
       </div>
 
       <div className="container-MOST-P">
@@ -189,7 +198,7 @@ function Home() {
       </div>
 
       <div className="container-VC">
-        <h1>Hire <span className="highlight-VC">Verified Candidate</span> Aligned with Your Business</h1>
+        <h1>Hire <span className="highlight-VC">Verified Candidates</span> Aligned with Your Business</h1>
       </div>
 
       <div className="container-JD">
@@ -242,7 +251,7 @@ function Home() {
           <p>Our platform fosters collaboration, networking, and growth, empowering you to reach your career goals.</p>
         </div>
       </div>
-          <button>Join Now</button>
+          <button cla>Join Now</button>
           </div>
         </div>
       </div>
@@ -314,7 +323,7 @@ function Home() {
 
 
       <div className="testimonial-section-Tt">
-          <h2>Testimonial</h2>
+          <h2>Testimonials</h2>
           <div className="testimonial-container-Tt">
             <i className="fas fa-chevron-left arrow-Tt" onClick={handlePrev}></i>
             <div className="testimonial-cards">
