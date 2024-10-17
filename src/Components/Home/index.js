@@ -164,12 +164,12 @@ function Home() {
 
   return (
     <>
-      <div className="container">
+      <div className="container3">
       <div className="head">
     <div className="head-text">
         <h1>Navigate your Future: Where career and <span className="highlight-ME">Business</span> Goals Align</h1>
         <p>Unite your career aspirations and business goals. Connect with employers and discover tailored opportunities to navigate your future successfully!</p>
-        <button>Join Now</button>
+        <button id='join'>Join Now</button>
     </div>
 </div>
 
@@ -251,7 +251,7 @@ function Home() {
           <p>Our platform fosters collaboration, networking, and growth, empowering you to reach your career goals.</p>
         </div>
       </div>
-          <button cla>Join Now</button>
+          <button id='join'>Join Now</button>
           </div>
         </div>
       </div>

@@ -1,160 +1,188 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; 
-import './index.css'; // Ensure your CSS file is imported
+// src/SignUp.js
+import React, { useState, useEffect } from 'react'; // Import useNavigate for redirection
+import { useNavigate } from 'react-router-dom';
+import './index.css'; // Ensure you have this CSS file for styles
+import countriesData from '../../Data/countries.json'; // Adjust the path as necessary
+import industriesData from '../../Data/industries.json'; // Adjust the path as necessary
+import banksData from '../../Data/banks.json'; // Adjust the path as necessary
 
 const SignUp = () => {
     const navigate = useNavigate();
-    const [userType, setUserType] = useState('user'); // State for user type
+    // State to manage form data and current step
     const [formData, setFormData] = useState({
-        username: '',
+        fname: '',
+        lname: '',
         email: '',
-        password: '',
-        aadhaar: '',
-        din: '',
-        shopact: ''
+        address1: '',
+        address2: '',
+        city: '',
+        zip: '',
+        countryCode: countriesData[0].code, // Default to the first country
+        phone: '',
+        shopActDinNumber: '',
+        industry: '',
+        organizationWebsite: '',
+        currency: '',
+        bankName: '',
+        bankAccountNumber: '',
+        ifscNumber: '',
+        aadharNumber: '',
+        otp: '',
     });
 
-    // Handle input changes
+    const [currentStep, setCurrentStep] = useState(1);
+    const [otpVisible, setOtpVisible] = useState(false);
+
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        const { id, value } = e.target;
+        setFormData({ ...formData, [id]: value });
     };
 
-    // Handle user type change
-    const handleUserTypeChange = (e) => {
-        setUserType(e.target.value);
+    const getOtp = () => {
+        console.log('OTP sent to:', formData.aadharNumber);
+        setOtpVisible(true); // Show the OTP field
     };
 
-
-    const handleSignInClick = () => {
-                navigate('/signin'); // Navigate to sign-in page
-    };
-
-    // Handle form submission
-    const handleSubmit = (e) => {
+    const validateForm = (e) => {
         e.preventDefault();
-        console.log(formData);
+        if (currentStep === 4) {
+            console.log('OTP entered:', formData.otp);
+            alert("Account verification completed!");
+            navigate('/signin'); // Redirect to Sign-In page after verification
+            return;
+        }
+        setCurrentStep((prevStep) => prevStep + 1);
     };
 
-    // Effect to handle user type changes, similar to your JavaScript
-    useEffect(() => {
-        // This effect runs whenever userType changes
-        const companyFields = document.getElementById('company-fields');
-        if (userType === 'company-owner') {
-            companyFields.style.display = 'block'; // Show fields for Company Owner
-        } else {
-            companyFields.style.display = 'none'; // Hide fields for others
+    const handleBack = () => {
+        setCurrentStep((prevStep) => prevStep - 1);
+        if (currentStep > 1) {
+            setFormData((prevData) => {
+                // Reset the OTP and visibility when going back
+                return { ...prevData, otp: '', aadharNumber: '' };
+            });
+            setOtpVisible(false);
         }
-    }, [userType]);
+    };
 
     return (
-<>       
-        <div className="registration-form">
-            <h2>Join Our Prototype</h2>
-
-            <div className="button-group">
-                <input
-                    type="radio"
-                    id="candidate"
-                    name="user-type"
-                    value="user"
-                    checked={userType === 'user'}
-                    onChange={handleUserTypeChange}
-                />
-                <label className="user-type-button" htmlFor="candidate">Candidate</label>
-
-                <input
-                    type="radio"
-                    id="company-owner"
-                    name="user-type"
-                    value="company-owner"
-                    checked={userType === 'company-owner'}
-                    onChange={handleUserTypeChange}
-                />
-                <label className="user-type-button" htmlFor="company-owner">Company Owner</label>
+        <div className="container">
+            <div className="verification-form">
+                <div className="header">
+                    {currentStep > 1 && (
+                        <button className="back-button" onClick={handleBack}>
+                            <i className="fas fa-arrow-left"></i>
+                        </button>
+                    )}
+                    <h1>Account Verification</h1>
+                </div>
+                <div className="steps">
+                    {[1, 2, 3, 4].map((step) => (
+                        <div key={step} className={`step ${currentStep > step ? 'completed' : ''} ${ currentStep === step ? 'active' : ''}`}>
+                            <div className="circle">{step}</div>
+                            {step < 4 && <div className="line"></div>}
+                        </div>
+                    ))}
+                </div>
+                <form onSubmit={validateForm}>
+                    {currentStep === 1 && (
+                        <>
+                            <div className="form-group">
+                                <label>Name</label>
+                                <div className="phone-group1">
+                                    <input type="text" id="fname" placeholder="First name" value={formData.fname} onChange={handleChange} />
+                                    <input type="text" id="lname" placeholder="Last name" value={formData.lname} onChange={handleChange} />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label>Professional Email</label>
+                                <input type="email" id="email" placeholder="Your email" value={formData.email} onChange={handleChange} />
+                            </div>
+                            <div className="form-group">
+                                <label>Address</label>
+                                <input type="text" id="address1" placeholder="Address line 1" value={formData.address1} onChange={handleChange} />
+                                <input type="text" id="address2" placeholder="Address line 2" value={formData.address2} onChange={handleChange} />
+                                <input type="text" id="city" placeholder="City" value={formData.city} onChange={handleChange} />
+                                <input type="text" id="zip" placeholder="Zip" value={formData.zip} onChange={handleChange} />
+                            </div>
+                            <div className="form-group ">
+                                <label>Phone Number</label>
+                                <div className="phone-group">
+                                    <select id="countryCode" value={formData.countryCode} onChange={handleChange}>
+                                        {countriesData.map((country) => (
+                                            <option key={country.code} value={country.code}>{country.name}</option>
+                                        ))}
+                                    </select>
+                                    <input type="tel" id="phone" placeholder="Phone number" value={formData.phone} onChange={handleChange} />
+                                </div>
+                            </div>
+                        </>
+                    )}
+                    {currentStep === 2 && (
+                        <>
+                            <div className="form-group">
+                                <label>Shop Act DIN Number</label>
+                                <input type="text" id="shopActDinNumber" placeholder="Shop Act DIN Number" value={formData.shopActDinNumber} onChange={handleChange} />
+                            </div>
+                            <div className="form-group">
+                                <label>Industry</label>
+                                <select id="countryCode" value={formData.industry} onChange={handleChange}>
+                                    <option value="">Select your industry...</option>
+                                    {industriesData.map((industry) => (
+                                        <option key={industry.value} value={industry.value}>{industry.label}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label>Organization Website</label>
+                                <input type="text" id="organizationWebsite" placeholder="Organization Website" value={formData.organizationWebsite} onChange={handleChange} />
+                            </div>
+                        </>
+                    )}
+                    {currentStep === 3 && (
+                        <>
+                            <div className="form-group">
+                                <label>Currency</label>
+                                <input type="text" id="currency" placeholder="Currency" value={formData.currency} onChange={handleChange} />
+                            </div>
+                            <div className="form-group">
+                                <label>Bank Name</label>
+                                <select id="countryCode" value={formData.bankName} onChange={handleChange}>
+                                    <option value="">Select your bank...</option>
+                                    {banksData.map((bank) => (
+                                        <option key={bank.value} value={bank.value}>{bank.label}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label>Bank Account Number</label>
+                                <input type="text" id="bankAccountNumber" placeholder="Bank Account Number" value={formData.bankAccountNumber} onChange={handleChange} />
+                            </div>
+                            <div className="form-group">
+                                <label>IFSC Number</label>
+                                <input type="text" id="ifscNumber" placeholder="IFSC Number" value={formData.ifscNumber} onChange={handleChange} />
+                            </div>
+                        </>
+                    )}
+                    {currentStep === 4 && (
+                        <>
+                            <div className="form-group">
+                                <label>Aadhar Number</label>
+                                <input type="text" id="aadharNumber" placeholder="Aadhar Number" value={formData.aadharNumber} onChange={handleChange} />
+                            </div>
+                            <button type="button" className="btn1" onClick={getOtp}>Send OTP</button>
+                            {otpVisible && (
+                                <div className="form-group">
+                                    <label>OTP</label>
+                                    <input type="text" id="otp" placeholder=" Enter OTP" value={formData.otp} onChange={handleChange} />
+                                </div>
+                            )}
+                        </>
+                    )}
+                    <button type="submit" className="btn1">Next</button>
+                </form>
             </div>
-
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        required
-                        value={formData.username}
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        required
-                        value={formData.password}
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="aadhaar">Aadhaar Number</label>
-                    <input
-                        type="text"
-                        id="aadhaar"
-                        name="aadhaar"
-                        required
-                        value={formData.aadhaar}
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <div id="company-fields" className="company-fields" style={{ display: userType === 'company-owner' ? 'block' : 'none' }}>
-                    <div className="form-group">
-                        <label htmlFor="din">DIN</label>
-                        <input
-                            type="text"
-                            id="din"
-                            name="din"
-                            value={formData.din}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="shopact">Shop Act Number</label>
-                        <input
-                            type="text"
-                            id="shopact"
-                            name="shopact"
-                            value={formData.shopact}
-                            onChange={handleChange}
-                        />
-                    </div>
-                </div>
-
-                <button className="register-button" type="submit">Register</button>
-                <div className="OR">OR</div>
-                <div className="loginIn">
-                    Already On Prototype? <a href="/signin" onClick={handleSignInClick}>Sign In</a>
-                </div>
-            </form>
         </div>
-        </>
-
     );
 };
 

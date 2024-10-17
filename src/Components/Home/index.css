@@ -8,7 +8,7 @@ body {
   justify-content: center;
   background-color: var(--primary-color) !important; 
 }
-.container {
+.container3 {
   position: relative;
   height: auto; /* Set to auto to allow content height */
   overflow: hidden; /* Prevent overflow */
@@ -47,7 +47,7 @@ z-index: 2; /* Ensure text is above the background image */
 }
 
 
-.container .head::before {
+.container3 .head::before {
   content: ''; /* Required for pseudo-element */
   position: absolute;
   top: 0;
@@ -70,12 +70,20 @@ z-index: 2; /* Ensure text is above the background image */
   margin: 0; /* Remove margin */
 }
 
-
-/* Optional hover effect for the button */
-.head-text button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-
+#join{
+  display: block;
+    width: 80%;
+    padding: 12px; /* Increased padding */
+    background-color: #4A3AFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px; /* More rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto 0; /* Centered button */
+    transition: background-color 0.3s; /* Smooth background color transition */
 }
+
 
 .stats {
   display: flex;
@@ -157,11 +165,12 @@ margin-top: 2px;
   font-size: var(--heading1);
   max-width: 50%;
   margin-right: 10px;
+  gap: 2px;
 }
 .header-text h1 {
-  font-size: 32px;
-  color: #333;
-  
+  font-size: 30px !important;
+  color: #333;  
+  margin-bottom: 20px !important;
 }
 .header-text p {
   font-size: var(--paragarph);
@@ -169,9 +178,6 @@ margin-top: 2px;
   margin: 3px 0;
 }
 
-.paragraphbutton{
-  background-color: #28a745 !important;
-}
 .search-bar {
   display: flex;
   align-items: center;
@@ -202,6 +208,7 @@ margin-top: 2px;
 .container-MOST-P {
   text-align: center;
   margin-top: 30px;
+  margin: 20px;
  
 }
 h1 {

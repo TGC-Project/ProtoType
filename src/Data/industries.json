@@ -1,0 +1,7 @@
+[
+    { "value": "IT", "label": "Information Technology" },
+    { "value": "Manufacturing", "label": "Manufacturing" },
+    { "value": "Retail", "label": "Retail" },
+    { "value": "Finance", "label": "Finance" },
+    { "value": "Pharmaceutical", "label": "Pharmaceutical" }
+]

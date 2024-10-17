@@ -6,7 +6,7 @@ import ProfileImage from "../../Images/ProfileImage.jpg"; // Adjust the path
 
 const ProfileNavbar = ({ toggleProfile }) => {
     return (
-        <nav className="navbar">
+        <nav className="navbar" style={{ width: "100%" }}>
             <div className="logo"><img src={Logo} style={{ height: "30px", width: "30px" }} alt="Logo" /></div>
             <div className="search-container">
                 <input type="text" placeholder="I'm looking for ..." />

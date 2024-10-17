@@ -1,113 +1,225 @@
-.registration-form {
+
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Center elements horizontally */
-    justify-content: center; /* Center elements vertically */
-    background-color: white;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    box-shadow: 0 2px 10px gray;
-    width: 450px; /* Increased width for a more spacious layout */
-    border-radius: 8px; /* Rounded corners */
-    margin: auto; /* Center form within its container */
+    background-color: var(--primary-color);
 }
 
-h2 {
-    margin-bottom: 15px; /* Adjusted spacing below heading */
-    font-size: 20px; /* Reduced font size */
+.verification-form {
+    background-color: white;
+    padding: 30px; /* Increased padding for better spacing */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+    max-width: 600px; /* Set a maximum width */
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s; /* Smooth transition effect */
+}
+
+.verification-form:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header .back-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-left: -56px;
+    color: #4A3AFF; /* Change color for visibility */
+}
+
+.header h1 {
+    font-size: 24px; /* Slightly larger font size */
+    margin: 0;
+    color: #333; /* Darker color for better contrast */
+}
+
+.header .status {
+    color: #4a90e2;
+    font-size: 14px;
+}
+
+.steps {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.steps .step {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.steps .step .circle {
+    min-width: 30px; /* Increased size for better visibility */
+    height: 30px; /* Increased size for better visibility */
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #888888; /* Thicker border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.steps .step.completed .circle {
+    background-color: #4a90e2; /* Color for completed steps */
+    color: #fff; /* Text color for completed steps */
+}
+
+.steps .step.active .circle {
+    background-color:  #4a90e2; /* Color for active step */
+    color: #000; /* Text color for active step */
+}
+
+.steps .step .line {
+    width: 50px; /* Increased line width */
+    height: 1px; /* Increased line height */
+    background-color: #4A3AFF; /* Default line color */
+}
+
+.steps .step.completed .line {
+    background-color: #4a90e2; /* Line color for completed steps */
+}
+
+.form-group {
+    margin: 15px 0; /* Increased margin for better spacing */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px; /* Increased padding for comfort */
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    border-radius: 6px; /* More rounded corners */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+.form-group input:focus {
+    border-color: #4A3AFF; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.phone-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#countryCode{
+    height: 40px;
+}
+
+.phone-group select {
+    margin-right: 10px;
+    padding: 12px; /* Increased padding */
+    border: 1px solid #e0e0e0;
+    border-radius: 6px; /* More rounded corners */
+    flex: 1 0 130px; /* Flex-grow, flex-shrink, flex-basis */
+ }
+
+.phone-group input {
+    flex: 1;
+    max-width: 320px;
+}
+
+.btn1 {
+    display: block;
+    width: 80%;
+    padding: 12px; /* Increased padding */
+    background-color: #4A3AFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px; /* More rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto 0; /* Centered button */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.btn1:hover {
+    background-color: #3d52a0; /* Button hover effect */
 }
 
 .button-group {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    width: 100%; /* Full width to ensure buttons are spaced correctly */
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
-input[type="radio"] {
-    display: none; /* Hide radio buttons */
-}
-
-.user-type-button {
-    flex: 1;
-    padding: 8px; /* Reduced padding for a more compact look */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 0 5px;
-    background-color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-    font-weight: bold; /* Corrected font style */
-    font-size: 14px; /* Reduced font size for a professional appearance */
-}
-
-.user-type-button:hover {
-    background-color: #e0e0e0; /* Light grey on hover */
-}
-
-input[type="radio"]:checked + .user-type-button {
-    background-color: lightblue; /* Highlight selected button */
-}
-
-.form-group {
-    margin-bottom: 15px;
-    width: 100%; /* Full width for form groups */
-    display: flex;
-    flex-direction: column;  
-    align-items: center; /* Center fields */
-}
-
-label {
-    width: 100%; /* Full width for labels */
-    text-align: left; /* Align text left */
-    margin-bottom: 5px; /* Space between label and input */
-    font-size: 14px; /* Reduced font size */
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    padding: 8px; /* Reduced padding for inputs */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px; /* Standardized font size */
-    box-sizing: border-box;
-    width: 350px;
-}
-
-.register-button {
-    background-color: rgb(70, 20, 117);
-    color: white;
-    padding: 8px; /* Reduced padding for button */
+.button-group button {
+    width: 48%;
+    padding: 12px; /* Increased padding */
     border: none;
+    border-radius: 6px; /* More rounded corners */
+    color: #fff;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 14px; /* Reduced font size for button */
-    margin-top: 10px;
+    transition: background-color 0.3s; /* Smooth background color transition */
 }
 
-.register-button:hover {
-    background-color: rgb(92, 92, 224);
+.button-group .candidate,
+.button-group .director {
+    background-color: #4A3AFF;
 }
 
-.company-fields {
-    display: none; /* Initially hidden */
+.button-group .candidate:hover,
+.button-group .director:hover {
+    background-color: #3d52a0;
 }
 
-.OR {
-    text-align: center; /* Center the OR text */
-    margin: 15px 0; /* Adjust vertical margin */
-    font-size: 14px; /* Reduced font size */
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 18px;
+    }
 
-.loginIn {
-    text-align: center; /* Center the login text */
-    margin-top: 15px;
-    font-size: 14px; /* Reduced font size */
-}
+    .steps {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-/* Optional hover effect for the entire form */
-.registration-form:hover {
-    transform: scale(1.02); /* Slightly reduced scale effect */
+    .steps .step {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        max-width: 100%;
+    }
+
+    .phone-group {
+        flex-direction: column;
+    }
+
+    .phone-group select,
+    .phone-group input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn1 {
+        width: 100%;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
 }
