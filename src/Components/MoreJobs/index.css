@@ -1,104 +1,62 @@
-.find-job-btn {
-padding: 10px 20px;
-border: none;
-border-radius: 25px;
-background-color: #007bff; /* Blue background */
-color: white; /* Text color */
-cursor: pointer; /* Pointer cursor */
-}
-
-.header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px;
-background-color: #fff; /* White background to stand out */
-border-bottom: 1px solid #ddd;
-}
-
-.logo {
-font-size: 24px;
-font-weight: bold;
-}
-
-
-.job-offers{
-margin-left: 4rem;
-margin-right: 4rem;
-display: flex;
-justify-content: space-between;
-align-items: center;
-/* margin-top: 10vh; */
-/* margin-bottom: 5vh; */
-color: blue;
-}
-.job-offers>h1{
-font-weight: 700;
-font-size: 30px;
-}
-
-/* .job-offers>a{
-text-decoration: none;
-color: rgb(24, 8, 167);
-cursor: pointer;
-font-weight: 700;
-background-color: blueviolet;
-} */
-
-.job-section{
-margin-left: 4rem;
-margin-right: 4rem;
-justify-content: space-between;
-display: flex;
-align-items: flex-start;
-
-/* margin-bottom: 10vh; */
-}
-
-.view-more-btn {
-padding: 10px 15px;
-background-color: #007bff;
-color: white;
-border: none;
-cursor: pointer;
-border-radius: 3px;
-
-margin-bottom: 10px;
-}
-
-.job{
-
-/* border-right: 1px; */
-padding-left: 1%;
-width: 380px;
-position: relative;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-.job-title{
-display: flex;
-justify-content: space-between;
-align-items: center;
-/* padding-bottom: 5px; */
-
-}
-.job-title p{
-
-padding-right: 50px;
-}
-.job-location{
-display: flex;
-align-items: center;
-padding-bottom: -10px;
-margin-top: -10px;
-
-}.job-location>p{
-margin-left: 5px;
-color: grey;
-font-weight: 600;
-}
-.job-description{
-color: gray;
-font-weight: 600;
-margin-top: -20px;
-}
+.navbar {
+    display: flex;
+    align-items: center; /* Vertically centers the items */
+    justify-content: space-between;
+    padding: 5px 5px;
+    background-color: #f8f9fa; /* Light background for contrast */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .logo {
+    /* Add slight margin if needed */
+  }
+  
+  .logo img {
+    height: 50px; /* Logo size */
+    width: 50px;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column; /* Stack image above text */
+    align-items: center; /* Center align the items */
+    margin: 0 5px; /* Space between nav items */
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .nav-item img {
+    height: 20px; /* Icon size */
+    width: 20px; 
+    margin-bottom: 2px; /* Space between image and text */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .nav-links a:hover {
+    color: #007BFF; /* Change color on hover */
+  }
+  
+  .auth-button {
+    background-color: #007BFF;
+   color: white !important;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 20px; /* Rounded button */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .auth-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

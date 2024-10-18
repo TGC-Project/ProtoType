@@ -1,23 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaSearch } from 'react-icons/fa'; // Import the search icon
-import './index.css'; // Ensure you have the CSS file
-import Logo from "../../Images/Logo.png"
+import { FaHome, FaBoxOpen, FaBriefcase, FaSignInAlt, FaUserPlus, FaSearch } from 'react-icons/fa';
+import './index.css';
+import logo from "../../Images/time_global_consultancy_logo.jpg";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav className="navbar">
-      <div className="logo"><img src={Logo} style={{height:"30px",width:"30px"}}></img></div>
+      <div className="logo">
+        <img src={logo} alt="Logo" />
+      </div>
       <div className="search-container">
-        <input type="text" placeholder="I'm looking for ..." />
+        <input type="text" placeholder="Search..." />
         <FaSearch className="search-icon" />
       </div>
-      <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/products">Goods</Link>
-        <Link to="/job">Explore Opportunity</Link>
-        <Link to="/signin" className="auth-button">Sign In</Link>
-        <Link to="/signup" className="auth-button">Sign Up</Link>
+      <div className="hamburger" onClick={toggleMenu}>
+        &#9776; {/* Hamburger icon */}
+      </div>
+      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <Link to="/">
+          <div className="nav-item">
+            <FaHome className="nav-icon" />
+            <span>Home</span>
+          </div>
+        </Link>
+        <Link to="/products">
+          <div className="nav-item">
+            <FaBoxOpen className="nav-icon" />
+            <span>Goods</span>
+          </div>
+        </Link>
+        <Link to="/job">
+          <div className="nav-item">
+            <FaBriefcase className="nav-icon" />
+            <span>Explore Opportunity</span>
+          </div>
+        </Link>
+        <Link to="/signin" className="auth-button">
+          <div className="nav-item-buttons">
+            <FaSignInAlt className="nav-icon" />
+            <span>Sign In</span>
+          </div>
+        </Link>
+        <Link to="/signup" className="auth-button">
+          <div className="nav-item-buttons">
+            <FaUserPlus className="nav-icon" />
+            <span>Sign Up</span>
+          </div>
+        </Link>
       </div>
     </nav>
   );
