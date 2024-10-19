@@ -256,6 +256,9 @@ function Home() {
         </div>
       </div>
 
+
+    
+
       <div className="container-TC">
         <h1>Top companies</h1>
         <div className="company-list-TC">

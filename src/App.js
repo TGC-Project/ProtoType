@@ -11,6 +11,7 @@ import Navbar from './Components/Navbar';
 import ProfileNavbar from './Components/ProfileNavbar';
 import './App.css';
 import UserProfile from './Components/UserProfile';
+// import CompanyProfile from './Components/CompanyProfile';
 
 const App = () => {
     return (
@@ -55,6 +56,7 @@ const Main = () => {
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/products" element={<Product />} />
                 <Route path="/morejobs" element={<MoreJobs />} />
+                {/* <Route path="companyprofile" element={<CompanyProfile/>}/> */}
             </Routes>
             {/* Show UserProfile if logged in and not on auth pages */}
             {isLoggedIn && isUserProfileVisible && (

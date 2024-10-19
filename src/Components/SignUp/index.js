@@ -66,9 +66,9 @@ const SignUp = () => {
     };
 
     return (
-        <div className="container">
+        <div className="signUp-container">
             <div className="verification-form">
-                <div className="header">
+            <div className="signup-header">
                     {currentStep > 1 && (
                         <button className="back-button" onClick={handleBack}>
                             <i className="fas fa-arrow-left"></i>

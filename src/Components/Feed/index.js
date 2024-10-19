@@ -116,7 +116,7 @@ const Feed = () => {
                     </div>
                     <div class="item">
                         <div>
-                            <img src={Product} style={{marginRight:"8px"}}/>
+                            <img src={Product} style={{marginRight:"10px"}}/>
                             <span>Products Impression</span>
                         </div>
                         <div class="value">34k</div>
@@ -165,7 +165,7 @@ const Feed = () => {
                             value={postContent}
                             onChange={(e) => setPostContent(e.target.value)}
                         />
-                        <button onClick={createPost}>Post</button>
+                        <button className="post-creation" onClick={createPost}>Post</button>
                     </div>
                     <div className="icons-container">
                         <div id="mediaIcon" onClick={() => document.getElementById('fileInput').click()}>
@@ -208,15 +208,15 @@ const Feed = () => {
                             </div>
                            
                             <div className="post-actions1">
-                                <button onClick={() => alert('Liked!')}>
+                                <button  className="feed-button" onClick={() => alert('Liked!')}>
                                     <i className="far fa-thumbs-up"></i>
                                     Like
                                 </button>
-                                <button onClick={createPost}>
+                                <button className='feed-button' onClick={createPost}>
                                     <i className="far fa-comment"></i>
                                     Comment
                                 </button>
-                                <button onClick={() => alert('Sent!')}>
+                                <button className='feed-button' onClick={() => alert('Sent!')}>
                                     <i className="far fa-paper-plane"></i>
                                     Send
                                 </button>

@@ -31,7 +31,12 @@
 
 .sidebar {
     width: 20%;
+    position: sticky; /* Make the sidebar sticky */
+    top: 0; /* Position it at the top of the viewport */
+    height: 200vh; /* Optional: make it full height */
+    overflow: hidden;
 }
+
 
 .main-content {
     width: 55%;
@@ -39,6 +44,10 @@
 
 .right-sidebar {
     width: 20%;
+    position: sticky; /* Make the sidebar sticky */
+    top: 0; /* Position it at the top of the viewport */
+    height: 100vh; /* Optional: make it full height */
+    overflow-y: auto; /* Allow scrolling within the sidebar if needed */
 }
 
 .profile img {
@@ -91,7 +100,7 @@
     margin-right: 10px;
 }
 
-button {
+.feed-button {
     padding: 10px 20px;
     border: none;
     background-color: #0073b1;
@@ -129,26 +138,25 @@ hr {
 .sort-by::after {
     content: '';
     position: absolute;
-    top: 41%;
-    width: 50%;
+    top: 42%;
+    margin-right: 50px;
+    width: 35%;
     height: 1px;
     background-color: #6c6c6c;
 }
 
 
-.post {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+    .post {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
 
-.post .header {
+.header {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 0px !important;
 }
 
 .post a {
@@ -188,7 +196,7 @@ hr {
 }
 
 .content p {
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .post .content img {
@@ -203,7 +211,7 @@ hr {
     justify-content: space-between;
 }
 
-.post .actions button {
+.post .actions .feed-button {
     background: none;
     border: none;
     color: #0073b1;
@@ -217,10 +225,10 @@ hr {
     margin-top: 20px;
 }
 
-.post-actions1 button {
-    background: none;
+.post-actions1 .feed-button{
     border: none;
-    color: #333;
+   background-color: white;
+   color: #333;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -228,12 +236,12 @@ hr {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.post-actions1 button i {
+.post-actions1 .feed-button i {
     margin-right: 4px;
 }
 
-.post-actions1 button:hover {
-    color: #0073b1;
+.post-actions1 .feed-button:hover {
+    color:white;
     transform: scale(1.1);
 }
 
@@ -251,9 +259,17 @@ hr {
     resize: none;
 }
 
-.comment-section button {
-    background-color:#4A3AFF !important; 
-    color: #fff;
+.post-creation{
+    color: white;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.comment-section .feed-button {
+    background-color: white; 
+    color:#333;
     border: none;
     border-radius: 4px;
     padding: 8px 16px;
@@ -262,7 +278,7 @@ hr {
     font-size: 14px;
 }
 
-.comment-section button:hover {
+.comment-section .feed-button:hover {
     background-color: #005f8d;
 }
 
@@ -279,7 +295,7 @@ hr {
     width: 200px;
 }
 
-.share-options button {
+.share-options .feed-button {
     width: 100%;
     padding: 8px;
     border: none;
@@ -290,7 +306,7 @@ hr {
     color: #666;
 }
 
-.share-options button:hover {
+.share-options .feed-button:hover {
     background-color: #f3f2ef;
 }
 
@@ -325,12 +341,16 @@ hr {
     margin-bottom: 15px;
 }
 
+.product-item:hover {
+    background-color: #f4efef;
+}
+
 .product-item:last-child {
     margin-bottom: 0;
 }
 
 .sideproduct h2{
-  font-size: 12px;
+  font-size: 18px;
 } 
 
 .product-item a {
@@ -371,21 +391,10 @@ hr {
     display: none;
 }
 
-button{
+.feed-button{
   background-color: #4A3AFF;
 }
 
-#postButton {
-    display: none;
-    background-color: #2e004f;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-}
 
 .card {
     font-family: Arial, sans-serif;
@@ -396,7 +405,7 @@ button{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 6px 0;
     border-bottom: 1px solid #f0f0f0;
 }
 

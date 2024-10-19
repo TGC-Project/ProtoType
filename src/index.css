@@ -7,8 +7,12 @@
   /* background-color: #ececf8; */
 }
 
+body{
+  background-color: var(--primary-color) !important;
+}
+
 button{
-  background-color:  #007BFF !important;
+  background-color:  #007BFF ;
 }
 
 code {

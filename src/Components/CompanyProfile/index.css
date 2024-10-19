@@ -1,0 +1,104 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.company-profile {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.companyprofile-header {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.companyprofile-header h1 {
+    font-size: 2rem;
+}
+
+.companyprofile-header button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.companyprofile-header button:hover {
+    background-color: #0056b3;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+nav button:hover {
+    text-decoration: underline;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.product-catalogue {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: calc(33.333% - 40px);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.about, .careers, .blogs {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-vacancy {
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.job-description {
+    margin-top: 20px;
+}
+
+.job-description h2 {
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}

@@ -1,170 +1,832 @@
+ 
+.companies-container {
+  text-align: center;
+  display: flex;
+ justify-content: center;
+ margin-top: 40px;
+ align-items: center;
+  animation: scroll 10s linear infinite;
+}
 
-  
-  .hero-section {
-    height: 50vh;
-    background-image: url("../../Images/kaitlyn-baker-vZJdYl5JVXY-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    color: white;
-  }
-  
-  .hero-text-section {
-    margin: 4rem;
-  }
-  
-  .hero-text-section h1 {
-    font-size: 35px;
-    font-weight: 800;
-  }
-  
-  .job-offers {
-    margin: 2rem 4rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .job-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .job {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 10px;
-    padding: 1rem;
-    width: calc(33% - 20px);
-  }
-  
-  .job-title {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .job-location {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    align-items: center;
-  }
+.section-title {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 20px;
+}
 
- .job-location p{
-    font-weight: bold;
-  }
-  
-  .job-description {
-    margin-top: 20px;
-    color: gray;
-  }
-  
-  .feature-companies {
-    margin: 2rem 4rem;
-  }
-  
-  .companies-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  
-  }
-.company:hover{
-    transform: scale(1.05);
-  }
+.line {
+width: 30%;
+border: none;
+border-top: 1px solid #ccc;
+margin: 0 10px;
+}
 
-  button:hover{
-    transform: scale(1.05);
-  }
+.title-text {
+font-size: 16px;
+font-weight: 500;
+color: #666;
+}
 
-  .rating{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .company-list {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 10px;
-    padding: 1rem;
-    height: 320px;
-    box-shadow: 0 1px 8px gray;
-    width: calc(20% - 20px);
-    text-align: center;
-  }
+.companies-logos {
+display: flex;
+justify-content: center;
+gap: 40px;
+margin-top: 20px;
+}
 
-  .company img{
-    width: 100px;
-    height: 80px;
-  }
-  
-  .clt-section {
-    background-image: url("../../Images/headway-5QgIuuBxKwM-unsplash.jpg");
-    display: flex;
-    width: 100%;
-    background-size:cover;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 3rem;
-    color: white;
-  }
-  
-  .email-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .email-container input {
-    margin-right: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-  }
+.companies-logos img {
+height: 20px;
+object-fit: contain;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
 
- button{
-    width: 130px !important;
-    margin-left: 20px;
-    margin-top: 30px;
- }
-  .view-more-btn,
-  .signIn-btn {
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.companies-logos img:hover {
+transform: scale(1.1); /* Zoom effect on hover */
+}
+/*  Ends */
+
+/* Image CSS Start */
+
+.box1 {
+text-align: center;
+display: flex;
+flex-direction: column;
+
+}
+
+.job-header {
+font-size: 36px;
+font-weight: 700;
+color: #333;
+
+}
+
+.subheader {
+font-size: 14px;
+color: #666;
+margin-top: 10px;
+}
+
+.search-box {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 30px;
+border-radius: 10px;
+border: 2px solid gray;
+padding: 10px;
+margin-left: -2rem;
+background-color: #ffffff;
+}
 
 
-  
-  .view-more-btn:hover,
-  .signIn-btn:hover {
-    background-color: darkblue;
-  }
+.search-box .input-container {
+position: relative;
+margin-right:50px;
+display: flex;
+align-items: center;
+border-radius: 5px;
+}
 
-  .email-container button{
-   margin-top: 0px;
-  }
 
-  .job-offers .view-more-btn{
-   width: 180px !important;
+.search-box .input-container input {
+padding: 15px 15px 15px 40px;
+border: 1px solid #ddd;
+border-radius: 0px;
+width: 150px;
+font-size: 1em;
+}
+
+.search-box .input-container .fa-search,
+.search-box .input-container .fa-map-marker-alt {
+position: absolute;
+left: 10px;
+top: 50%;
+transform: translateY(-50%);
+color: #aaa;
+}
+
+.search-box button {
+padding: 15px 30px;
+background-color: #6c63ff;
+color: white;
+width: 8rem;
+border: none;
+border-radius: 5px;
+font-size: 1em;
+cursor: pointer;
+}
+
+.suggestions {
+margin-top: 20px;
+font-size: 0.9em;
+color: #666;
+}
+
+.suggestions a {
+color: black;
+text-decoration: none;
+margin: 0 5px;
+}
+.suggestions span a {
+color:#007bff;
+ 
+}
+
+.job-illustration img {
+width: auto;
+height: 450px;
+align-items: center;
+justify-content: space-between;
+position: relative;
+
+}
+/* Tablets */
+@media only screen and (max-width: 768px) {
+.jobcontainer {
+  flex-direction: column; /* Stack content vertically */
+}
+
+.search-box {
+  flex-direction: column;
+}
+
+.search-box .input-container {
+  margin-right: 0;
+  margin-bottom: 15px;
+  width: 100%; /* Full width inputs */
+}
+
+.search-box button {
+  width: 100%; /* Full width button */
+}
+}
+
+/* Large screens */
+@media only screen and (min-width: 1200px) {
+.jobcontainer {
+  max-width: 1200px; /* Limit width on large screens */
+}
+
+.header {
+  font-size: 40px;
+}
+}
+/* Image CSS End  */
+
+.logo-container {
+width: 100%;
+overflow: hidden;
+background-color: white;
+margin-bottom: 20px;
+margin: 2rem 2rem;
+}
+
+.logo-track {
+display: flex;
+gap: 50px;
+background-color: white;
+animation: flow 30s linear infinite;
+width: max-content; /* Ensures track will adjust to content width */
+}
+
+.logo-track img {
+height: 80px;
+width: auto;
+}
+
+@keyframes flow {
+0% {
+    transform: translateX(0);
+}
+100% {
+    transform: translateX(-50%);
+}
+}
+/* End Flow */
+
+.jobcontainer{
+display: flex;
+justify-items: center;
+align-items: center;
+justify-content: center;
+
+}
+
+/* Add responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+.hero-section {
+  height: 40vh;
+}}
+
+
+.job-offers {
+display: flex;
+justify-items: center;
+align-items: center;
+justify-content: space-between;
+margin: 2rem 2rem;
+}
+
+@media (max-width: 768px) {
+.job-offers {
+  flex-direction: column;
+  text-align: center;
+}
+}
+
+.feature-companies {
+margin: 2rem 2rem;
+}
+.campany_view{
+display: flex;
+justify-items: center;
+align-items: center;
+justify-content: space-between;
+
+
+}
+
+@media (max-width: 768px) {
+.feature-companies .companies-container {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+}
+
+
+.rating{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.rating h3{
+margin-top: -09PX;
+margin: auto ;
+}
+.rating button {
+margin-top: 10px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+padding: 10px;
+
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.company-list:hover{
+transform: scale(1.05);
+}
+
+button:hover{
+transform: scale(1.05);
+}
+.company-list {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 200px;
+  box-shadow: 0 1px 8px gray;
+  width: calc(15% - 20px); /* Adjust width to account for margin */
+  margin: 10px; /* Add margin for spacing between company cards */
+  text-align: center;
+}
+
+.company img{
+width: 90px;
+height: 90px;
+padding: 5px;
+position: relative;
+left: 20%;
+}
+
+.company{
+  background-color: white;
+}
+
+
+/* start */
+/* Section Styling */
+.clt-section {
+background-image: url("../../Images//headway-5QgIuuBxKwM-unsplash.jpg");
+background-color: #1a1a1a; /* Fallback background color */
+background-size: cover;
+background-position: center;
+display: flex;
+width: 100%;
+height: 100%;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 3rem;
+color: white;
+position: relative;
+}
+
+/* Ensure the background image covers the entire section */
+.clt-section:before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay for better text visibility */
+}
+
+/* Text Styling */
+.clt-text-section {
+z-index: 1; /* To make sure it's above the overlay */
+text-align: left;
+width: 100%;
+}
+
+.clt-text-section h1 {
+font-size: 36px;
+font-weight: bold;
+margin-bottom: 1rem;
+}
+
+.clt-text-section p {
+font-size: 18px;
+margin-bottom: 2rem;
+}
+
+/* Email Input and Button Styling */
+.email-container {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+z-index: 1;
+}
+
+.email-container input {
+padding: 10px 15px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 4px;
+margin-right: 10px;
+width: 250px;
+}
+
+.email-container input:focus {
+outline: none;
+border-color: #007bff;
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+.view-more-btn {
+padding: 10px 10px;
+background-color: blue;
+color: white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+height: 40px;
+
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+background-color: #0056b3;
+transform: scale(1.05);
+}
+
+button:active {
+background-color: #003f7f;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+.clt-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.clt-text-section h1 {
+  font-size: 28px;
+}
+
+.clt-text-section p {
+  font-size: 16px;
+}
+
+.email-container {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.email-container input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+}
+}
+/* End */
+
+
+
+.job-card {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  gap: 3px; /* This will have no effect unless used in a flex or grid context */
+  text-align: center;
+  box-shadow: 0 2px 15px gray;
+  transition: transform 0.2s ease-in-out;
+  margin: 10px; /* Add margin for spacing between cards */
+}
+
+@media (max-width: 768px) {
+.job-card {
+  width: 90%; /* Make job cards take up most of the screen width */
+}
+}
+
+.job-card:hover {
+transform: scale(1.05);
+}
+
+.job-card .badge {
+display: inline-block;
+background-color: #e6e0e0;
+border-radius: 20px;
+padding: 5px 7px;
+margin: 5px;
+color: black;
+font-size: 11px;  
+}
+
+.job-card .location{
+display: inline-block;
+background-color: #e6e0e0;
+border-radius: 20px;
+padding: 5px 10px;
+margin: 5px;
+font-size: 11px;
+color: black;
+}
+
+.job-card .logo {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+position: relative;
+left: 50px;
+}
+.job-card .logo {
+transform: scale(1.05);
+
+}
+
+.job-card .title {
+font-size: 24px;
+font-weight: bold;
+margin: 10px 0;
+font-size: 14px;
+}
+
+.job-card .details {
+font-size: 11px;
+color: #666666;
+}
+
+.job-card .salary {
+font-size: 11px;
+color: #666666;
+margin: 5px 0;
+}
+
+.job-card .apply-btn {
+display: inline-block;
+background-color:#007bff;
+color: #ffffff;
+border: none;
+border-radius: 20px;
+padding: 5px 15px;
+font-size: 14px;
+cursor: pointer;
+margin-top: 20px;
+text-decoration: none;
+}
+.job-card .apply-btn:hover {
+transform: scale(1.05);
+}
+
+
+
+/* This Top Campnaices code */
+.Top-Campany {
+text-align: center;
+margin: 40px 0;
+}
+
+/* This Is Footer Code  Start */
+
+@keyframes fadeIn {
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+}
+
+@keyframes slideIn {
+from {
+  transform: translateY(20px);
+  opacity: 0;
+}
+to {
+  transform: translateY(0);
+  opacity: 1;
+}
+}
+
+
+.footer {
+display: flex;
+justify-content: space-around;
+padding: 20px;
+color: white;
+background-color: #1a1a1a;
+}
+
+.footer-column {
+display: flex;
+flex-direction: column;
+animation: slideIn 1s ease-in-out;
+}
+
+.footer-column h3 {
+margin-bottom: 10px;
+font-size: 18px;
+
+}
+
+.footer-column p {
+font-size: 14px;
+}
+
+.footer-column a {
+color: #ffffff;
+text-decoration: none;
+margin-bottom: 5px;
+font-size: 14px;
+transition: color 0.3s;
+}
+
+.footer-column a:hover {
+text-decoration: underline;
+color: #e0e0e0;
+}
+
+.footer-column .highlight {
+color: #e0e0e0;
+}
+
+/*  This Is Footer Code Ends */
+
+
+
+.jobcradcontainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center; /* Center job cards */
+  align-items: center;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+.job-card {
+  width: calc(100% - 20px); /* Full width on small screens */
+}
+
+.companies-container {
+  flex-direction: column; /* Stack companies vertically */
+}
+
+.search-box {
+  flex-direction: column; /* Stack search inputs */
+}
+
+.search-box .input-container {
+  margin-right: 0;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.search-box button {
+  width: 100%; /* Full width button */
+}
+}
+
+/* Animation for footer */
+.footer-column {
+display: flex;
+flex-direction: column;
+animation: slideIn 0.5s ease-in-out; /* Add animation */
+}
+
+/* Keyframes for animations */
+@keyframes slideIn {
+from {
+  transform: translateY(20px);
+  opacity: 0;
+}
+to {
+  transform: translateY(0);
+  opacity: 1;
+}
+}
+
+/* Add transitions for buttons */
+button {
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+/*  */
+
+
+.Popularcontainer {
+width: 90%;
+margin: 0 auto;
+padding: 20px 0;
+}
+
+.section-title {
+text-align: center;
+font-size: 26px;
+font-weight: bold;
+margin:30px
+}
+
+.categories{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;
+}
+
+
+.job-item:hover{
+transform: scale(1.05);
+
+}
+.category {
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+padding: 10px;
+text-align: center;
+font-size: 16px;
+width: 18%; /* 4 cards in one row */
+}
+.category:hover
+{
+transform: scale(1.05);
+}
+
+.category-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .job {
-      width: calc(100% - 20px);
-    }
-  
-    .company-list {
-      width: calc(100% - 20px);
-    }
-  
-    .hero-text-section h1 {
-      font-size: 24px;
-    }
+.category img{
+border-radius: 50%;
+margin-bottom: 10px;
+position: relative;
+left: 20%;
+}
+
+.job-listings {
+  display: flex;
+  justify-content: center; /* Center job items */
+   /* Align items to the start */
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  margin-top: 20px; /* Margin at the top */
+}
+
+.job-item {
+  background-color: #fff;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px; /* Margin for spacing */
+  width: calc(40% - 20px); /* Adjust width to account for margin */
+  display: flex;
+   /* Stack image and details vertically */
+   /* Center text inside the card */
+}
+
+.job-item img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.job-title {
+  font-size: 14px; /* Title font size */
+  font-weight: bold; /* Bold title */
+  margin-bottom: 5px; /* Space below title */
+}
+
+.job-details {
+  display: flex;
+  justify-content: center;
+ /* Stack details vertically */
+}
+
+.detail-item {
+  display: flex;
+  align-items: center; /* Center icon and text vertically */
+  margin-bottom: 5px; /* Space between details */
+  font-size: 12px; /* Detail font size */
+}
+
+.detail-item i {
+margin-left: 6px;
+margin-right: 4px;
+}
+
+.view-details {
+  background-color: #007BFF; /* Button color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding for button */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.view-details:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .job-item {
+    width: calc(45% - 20px); /* Adjust for smaller screens */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .job-item {
+    width: calc(100% - 20px); /* Full width on very small screens */
+  }
+}
+
+.view-more {
+background-color: #4a90e2;
+border: none;
+border-radius: 5px;
+color: #fff;
+cursor: pointer;
+display: block;
+margin: 40px auto;
+padding: 10px 20px;
+text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+.category {
+  width: 30%; /* 3 cards per row on medium screens */
+}
+
+.job-item {
+  width: 45%; /* 2 jobs per row on medium screens */
+}
+}
+
+@media (max-width: 768px) {
+.category {
+  width: 45%; /* 2 cards per row on small screens */
+}
+
+.job-item {
+  width: 90%; /* 1 job per row on small screens */
+}
+}
+
+@media (max-width: 480px) {
+.category,
+.job-item {
+  width: 100%; /* 1 card/job per row on extra small screens */
+}
+}

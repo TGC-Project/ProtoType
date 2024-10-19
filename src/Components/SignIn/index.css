@@ -4,11 +4,7 @@
 
 }
 
-.img {
-    height: 55%;
-    width: 40%;
-    margin-right: 16%;
-}
+
 
 .login-container {
     background-color: white;
@@ -55,31 +51,30 @@
     outline: none;
 }
 
-.submit {
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
+.signin-submit {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    width: 107%;
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 15px; /* Add padding for a better appearance */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
     margin-top: 20px;
-    height: 35px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    position: relative; /* Position relative for the image inside */
-    display: flex; /* Use flexbox to center content */
-    gap: 2px ; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
-.submit:hover {
-    background-color: #0056b3;
+.signin-submit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-.submit img {
-    height: 30px !important;
-    width: 30px !important;
+.img {
+    height: 25px; /* Adjust size as needed */
+    width: 25px; /* Adjust size as needed */
+    margin-right: 8px; /* Space between image and text */
 }
+
 
 .message {
     text-align: center;

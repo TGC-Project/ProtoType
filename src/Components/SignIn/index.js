@@ -71,10 +71,11 @@ const SignIn = ({ onLogin }) => {
                             required
                         />
                     </div>
-                    <button type="submit" className='submit'>
-                    <img className="img" src={image1} alt="Login" />
-                        Sign In
-                    </button>
+                    <button type="submit" className='signin-submit'>
+    <img className="img" src={image1} alt="Login" />
+    Sign In
+</button>
+
                     <div className="OR">OR</div>
                     <p className="message">
                         Don't have an account? <a href="/signup" onClick={handleSignUpClick}>Sign Up</a>

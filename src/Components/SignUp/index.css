@@ -1,10 +1,10 @@
 
-.container {
+.signUp-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5%;
     padding: 20px;
-    background-color: var(--primary-color);
 }
 
 .verification-form {
@@ -22,13 +22,13 @@
     transform: scale(1.02); /* Slightly scale up on hover */
 }
 
-.header {
+.signup-header {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
 }
 
-.header .back-button {
+.signup-header .back-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -38,13 +38,13 @@
     color: #4A3AFF; /* Change color for visibility */
 }
 
-.header h1 {
+.signup-header h1 {
     font-size: 24px; /* Slightly larger font size */
     margin: 0;
     color: #333; /* Darker color for better contrast */
 }
 
-.header .status {
+.signup-header .status {
     color: #4a90e2;
     font-size: 14px;
 }
@@ -187,7 +187,7 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .header h1 {
+    .signup-header h1 {
         font-size: 18px;
     }
 
