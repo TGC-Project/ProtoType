@@ -26,6 +26,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 40px;
+    position: relative;
+    gap: 400px;
 }
 
 .signup-header .back-button {

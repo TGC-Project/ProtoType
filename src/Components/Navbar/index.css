@@ -1,148 +1,175 @@
 .navbar {
   display: flex;
-  align-items: center; /* Vertically centers the items */
+  align-items: center;
   justify-content: space-between;
-  padding: 5px 10px;
-  background-color: #f8f9fa; /* Light background for contrast */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  flex-wrap: wrap; /* Allow items to wrap */
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.logo img {
-  height: 50px; /* Logo size */
-  width: 50px;
-  border-radius: 50px;
-  margin-left: 30px;
-}
-
-.search-container {
+.navbar .logo {
   display: flex;
   align-items: center;
-  position: relative; /* For positioning the search icon */
-  margin: 0 10px; /* Add margin for spacing */
 }
 
-.search-container input {
-  width: 300px !important; /* Full width */
-  max-width: 100%;
-  padding: 10px 40px 10px 20px; /* Padding for the icon space */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 20px; /* Rounded corners */
-  font-size: 16px; /* Font size */
-  transition: border-color 0.3s; /* Smooth transition */
+.navbar .logo img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
 
-.search-container input:focus {
-  border-color: #007BFF; /* Change border color on focus */
-  outline: none; /* Remove default outline */
+.navbar .search-container {
+  position: relative;
+  margin-left: 16px;
+  max-width: 500px;
+}
+
+.navbar .search-container input {
+  padding: 8px 16px 8px 40px;
+  border: 1px solid #ccc;
+  border-radius: 9999px;
+  outline: none;
 }
 
 .search-icon {
-  position: absolute; /* Position it inside the input */
-  left: 40% !important; /* Space from the left */
-  color: #aaa; /* Icon color */
+  position: absolute;
+  margin-left: 60%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
 }
 
-.nav-links {
+.navbar .menu {
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Allow items to wrap */
+  gap: 16px;
 }
 
-.nav-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.nav-item {
-  display: flex;
-  flex-direction: column; /* Stack image above text */
-  align-items: center; /* Center align the items */
-  margin: 0 15px; /* Space between nav items */
+.navbar .menu a {
+  color: #4a4a4a;
   text-decoration: none;
-  color: #333;
-  transition: color 0.3s; /* Smooth color transition */
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-}
-
-.nav-links a:hover {
-  color: #007BFF; /* Change color on hover */
-}
-
-.auth-button .nav-item-buttons {
-  background-color: #007BFF; /* Button color */
-  color: #fff !important; /* Button text color */
-  padding: 5px 15px; /* Padding for buttons */
-  font-size: 14px; /* Font size */
-  border-radius: 20px; /* Rounded button */
-  transition: background-color 0.3s; /* Smooth transition */
   display: flex;
-  align-items: center; /* Center content in button */
+  align-items: center;
 }
 
-.auth-button .nav-item-buttons:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+.navbar .menu a i {
+  margin-right: 8px; /* Adjust the space between the icon and text */
 }
 
-.auth-button .nav-icon {
-  margin-right: 5px !important; /* Space between icon and text */
+.navbar .menu a:hover {
+  color: #1a1a1a;
 }
 
-/* Responsive Styles */
-.hamburger {
-  display: none; /* Hidden by default */
-  cursor: pointer; /* Pointer on hover */
-  font-size: 24px; /* Icon size */
+.navbar .menu button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar .menu button.sign-up {
+  background-color: #0056b3;
+}
+
+.navbar .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar .hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+.main-content {
+  text-align: center;
+  padding: 64px 16px;
+  background-color: white;
+}
+
+.main-content h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.main-content h1 span {
+  color: #28a745;
+}
+
+.main-content p {
+  margin-top: 16px;
+  color: #6c757d;
+}
+
+.main-content button {
+  margin-top: 32px;
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 16px;
+  background-color: #f8f9fa;
+}
+
+.stats-card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  max-width: 200px;
+}
+
+.stats-card i {
+  color: #007bff;
+  font-size: 24px;
+}
+
+.stats-card h2 {
+  margin-top: 8px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stats-card p {
+  color: #6c757d;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    justify-content: space-between; /* Maintain spacing */
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
   }
 
-  .logo img {
-    height: 40px; /* Adjust logo size */
-    width: 40px; /* Adjust logo size */
-    margin-left: 0px;
+  .navbar .menu.active {
+    display: flex;
   }
 
-  .search-container {
-    flex: 1; /* Allow search bar to grow */
-    margin: 0 5px; /* Reduce margin */
+  .navbar .hamburger {
+    display: flex;
   }
 
-  .search-container input {
-    padding: 8px; /* Adjust padding */
-  }
-
-  .nav-links {
-    display: none; /* Hide links by default */
-    flex-direction: column; /* Stack vertically */
-    position: absolute;
-    top: 60px; /* Adjust based on navbar height */
-    right: 0;
-    background-color: #f8f9fa; /* Match the navbar background */
-    width: 100%; /* Full width on small screens */
-    z-index: 1000; /* Ensure it appears above other elements */
-    padding: 10px 0; /* Padding for vertical spacing */
-  }
-
-  .nav-links.open {
-    display: flex; /* Show links when open */
-  }
-
-  .hamburger {
-    display: block; /* Show hamburger icon on small screens */
-  }
-
-  .nav-item, .auth-button {
-    margin: 10px 0; /* Space for vertical layout */
-    padding: 10px 15px; /* Add padding for touch targets */
-    width: 100%; /* Full width for each item */
-    text-align: center; /* Center text */
+  .stats-section {
+    flex-direction: column;
+    align-items: center;
   }
 }

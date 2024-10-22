@@ -1,4 +1,3 @@
- 
 .companies-container {
   text-align: center;
   display: flex;
@@ -596,9 +595,6 @@ color: #e0e0e0;
 }
 
 /*  This Is Footer Code Ends */
-
-
-
 .jobcradcontainer {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -659,7 +655,6 @@ transition: background-color 0.3s ease, transform 0.3s ease;
 
 
 /*  */
-
 
 .Popularcontainer {
 width: 90%;
@@ -776,6 +771,12 @@ margin-right: 4px;
 
 .view-details:hover {
   background-color: #0056b3; /* Darker blue on hover */
+}
+.subscribe-button{
+  background-color: transparent;
+}
+.subscribe-button:hover{
+  background-color: transparent;
 }
 
 /* Media Query for Responsive Design */

@@ -435,7 +435,7 @@ const Job = () => {
             </p>
             <div className="email-container">
               <input type="email" placeholder="Enter your email address" />
-              <button>Subscribe</button>
+              <button className='subscribe-button'>Subscribe</button>
             </div>
           </div>
         </section>

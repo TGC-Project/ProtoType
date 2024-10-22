@@ -63,6 +63,8 @@
     cursor: pointer; /* Pointer on hover */
     margin-top: 20px;
     transition: background-color 0.3s; /* Smooth transition for background color */
+    position: relative;
+    justify-content: center;
 }
 
 .signin-submit:hover {

@@ -69,12 +69,12 @@ const SignUp = () => {
         <div className="signUp-container">
             <div className="verification-form">
             <div className="signup-header">
+                    <h1>Account Verification</h1>
                     {currentStep > 1 && (
                         <button className="back-button" onClick={handleBack}>
                             <i className="fas fa-arrow-left"></i>
                         </button>
                     )}
-                    <h1>Account Verification</h1>
                 </div>
                 <div className="steps">
                     {[1, 2, 3, 4].map((step) => (

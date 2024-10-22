@@ -39,7 +39,7 @@
   
   .search-icon {
     position: absolute; /* Position it inside the input */
-    left: 80%; /* Space from the left */
+    left: 28% !important; /* Space from the left */
     color: #aaa; /* Icon color */
   }
   

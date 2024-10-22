@@ -4,6 +4,7 @@ import Product from "../../Images/Products impression.png";
 import Jobs from "../../Images/jobs.png"
 import Impression from "../../Images/Profile impression.png"
 import Media from "../../Images/media.png"
+import { useNavigate } from 'react-router-dom';
 
 import './index.css'; // CSS file for styling
 
@@ -47,6 +48,9 @@ const initialPosts = [
 ];
 
 const Feed = () => {
+
+    const navigate = useNavigate();
+
     const [posts, setPosts] = useState(initialPosts);
     const [postContent, setPostContent] = useState('');
     const [mediaFile, setMediaFile] = useState(null);
@@ -100,8 +104,12 @@ const Feed = () => {
         <div className="feed-container">
             <div className="sidebar">
                 <div className="profile">
-                    <img alt="Profile" src="https://storage.googleapis.com/a1aa/image/fBSgqgbP36SYM6uTnNdqKoBvMTClOXJyeIu5dNVI5C0ePMPnA.jpg" />
-                    <h3>Sadashiv Tape</h3>
+                <img 
+                        alt="Profile" 
+                        src="https://storage.googleapis.com/a1aa/image/fBSgqgbP36SYM6uTnNdqKoBvMTClOXJyeIu5dNVI5C0ePMPnA.jpg" 
+                        onClick={() => navigate('/companyprofile')} // Navigate on click
+                        style={{ cursor: 'pointer' }} // Add pointer cursor
+                    />   <h3>Sadashiv Tape</h3>
                     <label>I'm committed to growth and innovation.</label>
                     <label>Pune, Maharastra</label>
                     <label>Prototype 1</label>
@@ -155,7 +163,7 @@ const Feed = () => {
                 </div>
             </div>
 
-            <div className="main-content">
+            <div className="feed-main-content">
                 <div className="search">
                     <div className="post-box">
                         <input
@@ -248,7 +256,7 @@ const Feed = () => {
 
 
 
-            <div className="right-sidebar">
+            <div className="feed-right-sidebar">
             <div  class="sideproduct">
                 <h2>Top Selling Product</h2>
                 <hr/>

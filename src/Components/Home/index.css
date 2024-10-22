@@ -106,7 +106,7 @@ z-index: 2; /* Ensure text is above the background image */
 }
 
 .stat i {
-  font-size: 24px;
+  font-size: 24px !important;
   color: #007bff;
 }
 
@@ -125,7 +125,7 @@ z-index: 2; /* Ensure text is above the background image */
 
 .container1{
   background-color: var(--primary-color) !important;
-  margin-top: 10%;
+  margin-top: 50px;
 }
 
 .paragraph-container {
@@ -292,11 +292,12 @@ h1 {
 .container-TC {
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 50px;
 }
-.container-TC h1 {
+.container-TC  h1 {
   font-size: var(--heading1);
   margin-bottom: 20px;
+  margin-right: 50%;
 }
 .company-list-TC {
   display: flex;
@@ -352,16 +353,16 @@ h1 {
 /* FEATURED JOB DOMAIN */
 .container-JD {
   max-width: 1300px;
- 
   margin: 0 auto;
 }
 .header-JD {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 .header-JD h1 {
   font-size: var(--heading1);
+  margin-left: 100px;
   
 }
 .header-JD a {
@@ -436,13 +437,15 @@ h1 {
 }
 
 .testimonial-section-Tt {
-  text-align: center;
+  /* text-align: center; */
   padding: 50px 0;
 }
 
 .testimonial-section-Tt h2 {
   font-size: var(--heading1);
   margin-bottom: 20px;
+  font-weight: bold;
+  margin-left: 100px;
   animation: fadeInUp-Tt 1s ease-in-out;
 }
 

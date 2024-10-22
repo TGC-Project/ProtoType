@@ -1,7 +1,99 @@
-import { useState } from "react";
-import "./index.css";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prototype</title>
+    <!-- <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style> -->
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .slide-up {
+            animation: slideUp 0.5s ease-in-out;
+        }
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .hover-zoom:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+          .button-bounce:hover {          
+            animation: bounce 0.3s;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        .hover-text:hover {
+            color: #1D4ED8; 
+        }
+        .bg-gray-100-company-profile {
+            background-color: #f8f9fa;
+        }
+        .bg-white-company-profile {
+            background-color: white;
+        }
+        .rounded-lg-company-profile {
+            border-radius: 8px;
+        }
+        .shadow-md-company-profile {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .p-6-company-profile {
+            padding: 24px;
+        }
+        .mb-4-company-profile {
+            margin-bottom: 16px;
+        }
+        .text-xl-company-profile {
+            font-size: 1.25rem;
+        }
+        .font-semibold-company-profile {
+            font-weight: 600;
+        }
+        .font-bold-company-profile {
+            font-weight: 700;
+        }
+        .w-full-company-profile {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
 
-const CompanyProfile = () => {
+<div id="root"></div>
+<script type="text/babel">
+    const { useState } = React;
+
+    
+
     const ProductCatalogue = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
             {Array(4).fill().map((_, index) => (
@@ -319,6 +411,7 @@ const Blogs = () => {
 };
 
 
+    const App = () => {
         const [activeSection, setActiveSection] = useState('ProductCatalogue');
         const [isFollowed, setIsFollowed] = useState(false);
 
@@ -372,4 +465,9 @@ const Blogs = () => {
                 </div>
         );
     };
-export default CompanyProfile;
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+</script>
+
+</body>
+</html>

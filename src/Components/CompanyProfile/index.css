@@ -1,24 +1,30 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
+.company-profile-page {
+    background-color: #f5f5f5;
+    padding: 20px;
 }
 
 .company-profile {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
-}
-
-.companyprofile-header {
-    padding: 20px;
+    background: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.companyprofile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .companyprofile-header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.companyprofile-header p {
+    font-size: 1.2rem;
+    color: #555;
 }
 
 .companyprofile-header button {
@@ -34,19 +40,22 @@ body {
     background-color: #0056b3;
 }
 
-nav {
-    margin: 20px 0;
+.company-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-nav button {
+.company-nav button {
     background: none;
     border: none;
     color: #007bff;
+    font-size: 1.1rem;
+    margin: 0 15px;
     cursor: pointer;
-    margin-right: 20px;
 }
 
-nav button:hover {
+.company-nav button:hover {
     text-decoration: underline;
 }
 
@@ -56,23 +65,25 @@ nav button:hover {
 
 .product-catalogue {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.product-item {
+/* .product-item {
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin: 10px;
     padding: 20px;
-    width: calc(33.333% - 40px);
+    width: calc(45% - 40px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .product-item img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-}
+} */
 
 .about, .careers, .blogs {
     background: white;
@@ -81,24 +92,28 @@ nav button:hover {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.job-vacancy {
-    cursor: pointer;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+.map {
+    width: 100%;
+    height: 300px;
+    border: 0;
 }
 
-.job-description {
-    margin-top: 20px;
+.job-vacancy {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.job-vacancy h3 {
+    margin: 0;
+    font-size: 1.2rem;
 }
 
 .job-description h2 {
     margin-bottom: 10px;
 }
 
-ul {
+.job-description ul {
+    list-style-type: disc;
     padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 5px;
 }
