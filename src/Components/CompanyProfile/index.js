@@ -1,21 +1,37 @@
 import { useState } from "react";
 import "./index.css";
+import Product from "../../Images/Products impression.png";
+import Impression from "../../Images/Profile impression.png"
+import { useNavigate } from 'react-router-dom';
 
 const CompanyProfile = () => {
+
+    const navigate = useNavigate();
+
+    const [isFollowed, setIsFollowed] = useState(false);
+    const [followersCount, setFollowersCount] = useState(147); // Initial follower count
+  
+    const handleFollowToggle = () => {
+      setIsFollowed(!isFollowed);
+      setFollowersCount(prevCount => isFollowed ? prevCount - 1 : prevCount + 1);
+    };
+
+    
+
     const ProductCatalogue = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
             {Array(4).fill().map((_, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md p-4 slide-up hover-zoom">
+                <div key={index} className=" bg-white rounded-lg shadow-md p-4 slide-up hover-zoom">
                     <img src="product1.jpg" alt="product1" className="w-full h-40 object-cover rounded-lg" />
-                    <h3 className="mt-4 text-gray-700 font-medium hover-text">BIRLA OPUS ONE PURE ELEGANCE 20L, Packaging Size: Bucket of 20 Litre</h3>
-                    <p className="mt-2 text-gr ProductCatalogueay-900 font-bold">200 Rs</p>
+                    <h3 className="mt-4 text-gray-700 font-medium hover-text text-sm">BIRLA OPUS ONE PURE ELEGANCE 20L, Packaging Size: Bucket of 20 Litre</h3>
+                    <p className="mt-2 text-gr ProductCatalogueay-900 font-bold text-sm">200 Rs</p>
                 </div>
             ))}
             {Array(5).fill().map((_, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md p-4 slide-up hover-zoom">
                     <img src="product2.jpg" alt="product2" className="w-full h-40 object-cover rounded-lg" />
-                    <h3 className="mt-4 text-gray-700 font-medium hover-text">SD Ultima Royal Luxury Termite Terminator Paint - 20 ltrs</h3>
-                    <p className="mt-2 text-gray-900 font-bold">25000 Rs</p>
+                    <h3 className="mt-4 text-gray-700 font-medium hover-text text-sm">SD Ultima Royal Luxury Termite Terminator Paint - 20 ltrs</h3>
+                    <p className="mt-2 text-gray-900 font-bold text-sm">25000 Rs</p>
                 </div>
             ))}
         </div >
@@ -25,40 +41,40 @@ const CompanyProfile = () => {
         <div className="max-w-5xl mx-50px p-4-company-profile">
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
                 <h2 className="text-xl font-semibold mb-4-company-profile">Overview</h2>
-                <p className="mb-4-company-profile">
+                <p className="mb-4-company-profile text-sm">
                     At Time Global Consultancy, we are dedicated to delivering innovative software solutions that empower businesses to thrive in a digital landscape. Founded in 2010, we pride ourselves on our commitment to quality, customer satisfaction, and continuous innovation.
                 </p>
-                <p className="mb-4-company-profile">
+                <p className="mb-4-company-profile text-sm">
                     Our mission is to transform the way organizations operate by providing cutting-edge solutions that drive efficiency and growth. We achieve this through a combination of industry expertise, innovative technology, and a customer-centric approach.
                 </p>
-                <p className="mb-4-company-profile">
+                <p className="mb-4-company-profile text-sm">
                     With our team of experts, we aim to focus on sustainability and ethical practices, which is integral to our business model.
                 </p>
-                <div className="grid grid-cols-2 gap-4-company-profile">
+                <div className="grid grid-cols-2 gap-4-company-profile text-sm">
                     <div>
-                        <h3 className="font-semibold-company-profile">Website</h3>
-                        <p className="font-company-profile"style={{ color: "grey"}}>https://website.example</p>
+                        <h3 className="font-semibold-company-profile text-sm">Website</h3>
+                        <p className="font-company-profile text-sm"style={{ color: "grey"}}>https://website.example</p>
                     </div>
                     <div>
-                        <h3 className="font-semibold-company-profile">Products</h3>
+                        <h3 className="font-semibold-company-profile text-sm">Products</h3>
                         <p className="font-company-profile"style={{ color: "grey"}}>17500 Products</p>
                     </div>
                     <div>
-                        <h3 className="font-semibold-company-profile">Industry</h3>
-                        <p className="font-company-profile"style={{ color: "grey"}}>IT Services and IT Consulting</p>
+                        <h3 className="font-semibold-company-profile text-sm">Industry</h3>
+                        <p className="font-company-profile text-sm"style={{ color: "grey"}}>IT Services and IT Consulting</p>
                     </div>
                     <div>
-                        <h3 className="font-semibold-company-profile">Location</h3>
-                        <p className="font-company-profile"style={{ color: "grey"}}>Pune, Maharashtra</p>
+                        <h3 className="font-semibold-company-profile text-sm">Location</h3>
+                        <p className="font-company-profile text-sm"style={{ color: "grey"}}>Pune, Maharashtra</p>
                     </div>
                     <div>
-                        <h3 className="font-semibold-company-profile">Verified Employee</h3>
-                        <p className="font-company-profile"style={{ color: "grey"}}>10-15 Employees</p>
+                        <h3 className="font-semibold-company-profile text-sm">Verified Employee</h3>
+                        <p className="font-company-profile text-sm"style={{ color: "grey"}}>10-15 Employees</p>
                     </div>
                 </div>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md-company-profile">
-                <h2 className="text-xl font-semibold mb-4-company-profile">Location</h2>
+                <h2 className="text-sm font-semibold mb-4-company-profile">Location</h2>
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.643160315634!2d73.847784314368!3d18.5204306874097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c07a1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sPune%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1634567890123!5m2!1sen!2sus" 
                     width="600" 
@@ -224,13 +240,13 @@ const CompanyProfile = () => {
     const JobVacancy = ({ job, onClick }) => (
         <div className="flex justify-between items-center p-4 border rounded-lg shadow-sm mb-4 bg-white transition-transform transform hover:scale-105 cursor-pointer" onClick={onClick}>
             <div>
-                <h3 className="font-semibold">{job.title}</h3>
+                <h3 className="font-semibold text-base">{job.title}</h3>
                 <p className="text-sm text-gray-600">{job.location}</p>
                 <p className="text-sm text-gray-600">{job.exp}</p>
                 <p className="text-sm text-gray-600">{job.type} | {job.salary}</p>
             </div>
             <div className="text-right">
-                <button className="btn-animated bg-blue-500 text-white px-4 py-2 rounded-lg">View Details</button>
+                <button className="btn-animated bg-blue-500 text-white px-4 py-2 rounded-lg text-sm">View Details</button>
             </div>
         </div>
     );
@@ -239,20 +255,20 @@ const CompanyProfile = () => {
         <div className="sticky top-0 z-10 p-4 border rounded-lg shadow-sm bg-white transition-opacity duration-500 ease-in-out max-h-screen overflow-y-auto">
         <div className="p-4 border rounded-lg shadow-sm bg-white transition-opacity duration-500 ease-in-out">
             <h2 className="font-semibold text-lg mb-4">Job Description</h2>
-            <p><strong>Job Title:</strong> {job.title}</p>
-            <p><strong>Location:</strong> {job.location}</p>
-            <h3 className="font-semibold mt-4">Role Overview:</h3>
-            <p>{job.description}</p>
+            <p className="text-sm"><strong>Job Title:</strong> {job.title}</p>
+            <p className="text-sm"><strong>Location:</strong> {job.location}</p>
+            <h2 className="font-semibold mt-4 ">Role Overview:</h2>
+            <p className="text-sm">{job.description}</p>
 
             <h2 className="mt-4 font-semibold"> Requirements:</h2>
             <ul className="list-disc pl-5">
                 {job. requirements.map(( requirements, index) => (
-                    <li key={index} className="text-black-700">{requirements}</li>
+                    <li key={index} className="text-black-700 text-sm">{requirements}</li>
                 ))}
             </ul>
                 
             <h2 className="mt-4 font-semibold"> Responsibilities:</h2>
-            <ul className="list-disc pl-5">
+            <ul className="list-disc pl-5 text-sm">
                 {job.responsibilities.map((responsibilities, index) => (
                     <li key={index} className="text-black-700">{responsibilities}</li>
                 ))}
@@ -305,10 +321,10 @@ const Blogs = () => {
     return (
         <div className="mt-4 slide-up">
             <h3 className="text-lg font-bold">Latest Blogs</h3>
-            <ul className="mt-2 text-gray-700">
+            <ul className="mt-1 text-gray-700">
                 {postDetails.map((post, index) => (
-                    <li key={index} className="mb-4 p-4 border rounded-lg shadow-sm bg-white transition-transform transform hover:scale-105">
-                        <h4 className="font-semibold hover:text-blue-600">{post.title}</h4>
+                    <li key={index} className="mb-4 p-4 text-sm border rounded-lg shadow-sm bg-white transition-transform transform hover:scale-105">
+                        <h4 className="font-semibold text-base hover:text-blue-600">{post.title}</h4>
                         <p className="text-sm text-gray-500">{post.date}</p>
                         <p className="mt-2">{post.excerpt}</p>
                     </li>
@@ -320,14 +336,78 @@ const Blogs = () => {
 
 
         const [activeSection, setActiveSection] = useState('ProductCatalogue');
-        const [isFollowed, setIsFollowed] = useState(false);
-
         const handleSectionChange = (section) => {
             setActiveSection (section);
         };
 
         return (
-            <div className="max-w-5xl mx-auto p-4 fade-in" >
+
+            <div className="feed-container">
+
+<div className="sidebar">
+                <div className="profile">
+                <img 
+                        alt="Profile" 
+                        src="https://storage.googleapis.com/a1aa/image/fBSgqgbP36SYM6uTnNdqKoBvMTClOXJyeIu5dNVI5C0ePMPnA.jpg" 
+                        onClick={() => navigate('/companyprofile')} // Navigate on click
+                        style={{ cursor: 'pointer' }} // Add pointer cursor
+                    />   <h2>Sadashiv Tape</h2>
+                    <label>I'm committed to growth and innovation.</label>
+                    <label>Pune, Maharastra</label>
+                    <label>Prototype 1</label>
+                </div>
+                <div class="card">
+                    <div class="item">
+                        <div className="componyprofile-impression">
+                            <img src={Impression}style={{marginRight:"10px"}}/>
+                            <span>Profile impression</span>
+                        </div>
+                        <div class="value">3k</div>
+                    </div>
+                    <div class="item">
+                        <div className="componyprofile-impression">
+                            <img src={Product} style={{marginRight:"5px"}}/>
+                            <span>Products Impression</span>
+                        </div>
+                        <div class="value">34k</div>
+                    </div>
+                </div>
+                <div className="links">
+                    <h2>Employer</h2>
+                    <hr/>
+                    <a href="#">Post a Job</a>
+                    <a href="#">Browse Candidate</a>
+                    <a href="#">Employer Dashboard</a>
+                    <a href="#">Applications</a>
+                </div>
+                <div className="links">
+                    <h2>Candidate</h2>
+                    <hr/>
+                    <a href="#">Browse Jobs</a>
+                    <a href="#">Browse Employer</a>
+                    <a href="#">Candidate Dashboard</a>
+                    <a href="#">Saved Jobs</a>
+                </div>
+                <div className="links">
+                    <h2>Quick Links</h2>
+                    <hr/>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Products</a>
+                    <a href="#">Blogs</a>
+                </div>
+                <div className="links">
+                    <h2>Support</h2>
+                    <hr/>
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Condition</a>
+                </div>
+            </div>
+
+
+            
+            <div className="feed-main-content fade-in" >
                 <div className="bg-white rounded-lg shadow-md">
                     <div className="relative">
                         <img src="cover-image.jpg" alt="cover-image" className="w-full h-48 object-cover rounded-t-lg" />
@@ -336,24 +416,26 @@ const Blogs = () => {
                         </div>
                     </div>
                     <div className="p-6 pt-12">
-                        <div className="flex justify-between items-center">
-                            <div>
-                                <h1 className="text-2xl font-bold">Time Global Consultancy</h1>
-                                <p className="text-gray-600">Creating new opportunities</p>
-                                <p className="text-gray-500">IT Services and IT Consulting</p>
-                                <p className="text-gray-500">Pune, Maharashtra · 147 products · 147 Followers</p>
-                            </div>
-                            <button 
-                                className={`px-4 py-2 rounded-full transition duration-300 button-bounce ${isFollowed ? 'bg-gray-600 text-white' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
-                                onClick={() => setIsFollowed(!isFollowed)}
-                            >
-                                {isFollowed ? 'Followed' : 'Follow'}
-                            </button>
-                        </div>
-                    </div>
+      <div className="flex justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold">Time Global Consultancy</h1>
+          <p className="text-gray-600 text-sm">Creating new opportunities</p>
+          <p className="text-gray-500 text-sm">IT Services and IT Consulting</p>
+          <p className="text-gray-500 text-sm">
+            Pune, Maharashtra · 147 products · {followersCount} Followers
+          </p>
+        </div>
+        <button 
+          className={`px-4 py-2 rounded-full transition duration-300 button-bounce text-sm ${isFollowed ? 'bg-gray-600 text-white' : 'bg-blue-600 text-white hover:bg-blue-700'}`}
+          onClick={handleFollowToggle}
+        >
+          {isFollowed ? 'Followed' : 'Follow'}
+        </button>
+      </div>
+    </div>
                     <div className="border-t">
                         <nav className="flex space-x-4 p-4">
-                            <button className={`text-gray-500  ${activeSection === 'ProductCatalogue' ? 'text-black' : ''}`} onClick={() => handleSectionChange('ProductCatalogue')}>Product Catalogue</button>
+                            <button className={`text-gray-500 ${activeSection === 'ProductCatalogue' ? 'text-black' : ''}`} onClick={() => handleSectionChange('ProductCatalogue')}>Product Catalogue</button>
                             <button className={`text-gray-500 ${activeSection === 'About' ? 'text-black-500' : ''}`} onClick={() => handleSectionChange('About')}>About</button>
                             <button className={`text-gray-500 ${activeSection === 'Careers' ? 'text-black' : ''}`} onClick={() => handleSectionChange('Careers')}>Careers</button>
                             <button className={`text-gray-500 ${activeSection === 'Blogs' ? 'text-black' : ''}`} onClick={() => handleSectionChange('Blogs')}>Blogs</button>
@@ -370,6 +452,48 @@ const Blogs = () => {
                 </div>
 
                 </div>
+            
+
+                <div className="feed-right-sidebar">
+            <div  class="sideproduct">
+                <h2>Top Selling Product</h2>
+                <hr/>
+                <div className="product-item-1">
+                    <a href="#">Brick Making Machines</a>
+                    <div className="count">900 products</div>
+                </div>
+               
+                <div className="product-item-1">
+                    <a href="#">Passenger Lifts</a>
+                    <div className="count">1200 products</div>
+                </div>
+                <div className="product-item-1">
+                    <a href="#">Batteries</a>
+                    <div className="count">1700 products</div>
+                </div>
+                <div className="product-item-1">
+                    <a href="#">Solar Panels</a>
+                    <div className="count">2000 products</div>
+                </div>
+                <div className="product-item-1">
+                    <a href="#">Brick Making Machines</a>
+                    <div className="count">900 products</div>
+                </div>
+                <div className="product-item-1">
+                    <a href="#">Passenger Lifts</a>
+                    <div className="count">1200 products</div>
+                </div>
+                <div className="product-item-1">
+                    <a href="#">Batteries</a>
+                    <div className="count">1700 products</div>
+                </div>
+                <div className="product-item-1">
+                    <a href="#">Solar Panels</a>
+                    <div className="count">2000 products</div>
+                </div>
+            </div>
+            </div>
+            </div>
         );
     };
 export default CompanyProfile;

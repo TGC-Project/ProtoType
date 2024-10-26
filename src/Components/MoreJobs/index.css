@@ -1,59 +1,183 @@
-.navbar {
-    display: flex;
-    align-items: center; /* Vertically centers the items */
-    justify-content: space-between;
-    padding: 5px 5px;
-    background-color: #f8f9fa; /* Light background for contrast */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+.view-job-container {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fb;
+  margin: 0;
+  padding: 0;
+
+}
+
+.view-job-container h1 {
+  text-align: center;
+
+}
+
+.view-job-all-box {
+  gap: 30px;
+  display: flex;
+  margin-left: 3%;
+}
+
+
+.view-job-sidebar {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+.view-job-profile-card:hover{
+  transform: scale(1.03);
+}
+
+.view-job-sidebar h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.view-job-sidebar .view-job-filter-group {
+  margin-bottom: 20px;
+}
+
+.view-job-sidebar .view-job-filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.view-job-sidebar .view-job-filter-group input[type="radio"],
+.view-job-sidebar .view-job-filter-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.view-job-sidebar .view-job-filter-group .slider-container {
+  display: flex;
+  align-items: center;
+}
+
+.view-job-sidebar .view-job-filter-group .slider-container input[type="range"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.view-job-sidebar .view-job-filter-group .slider-container span {
+  font-size: 14px;
+  color: #007bff;
+}
+
+
+
+@media (max-width: 768px) {
+  .view-job-all-box {
+      flex-direction: column;
+      align-items: center;
   }
-  
-  
-  .logo img {
-    height: 50px; /* Logo size */
-    width: 50px;
+  .view-job-sidebar{
+      width: 100%;
+      margin-right : 0;
   }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-item {
-    display: flex;
-    flex-direction: column; /* Stack image above text */
-    align-items: center; /* Center align the items */
-    margin: 0 5px; /* Space between nav items */
-    text-decoration: none;
-    font-size: 14px;
-    color: #333;
-    transition: color 0.3s; /* Smooth color transition */
-  }
-  
-  .nav-item img {
-    height: 20px; /* Icon size */
-    width: 20px; 
-    margin-bottom: 2px; /* Space between image and text */
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .nav-links a:hover {
-    color: #007BFF; /* Change color on hover */
-  }
-  
-  .auth-button {
-    background-color: #007BFF;
-   color: white !important;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 20px; /* Rounded button */
-    transition: background-color 0.3s; /* Smooth transition */
-  }
-  
-  .auth-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
+}
+.view-job-profile-card {
+  display: flex;
+  width: 150%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.view-Details:hover{
+  background-color: #800080;
+  transform: scale(1.05);
+}
+.view-job-profile-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.view-job-profile-info {
+  flex-grow: 1;
+}
+
+.view-job-profile-info h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #333333;
+}
+
+.view-job-profile-info p {
+  margin: 5px 0;
+  color: #666666;
+}
+
+.view-job-profile-info .location, .view-job-profile-info .experience {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.view-job-profile-info .location i, .view-job-profile-info .experience i {
+  margin-right: 5px;
+}
+
+.view-job-profile-actions {
+  display: flex;
+  align-items: center;
+}
+
+.view-job-profile-actions .bookmark {
+  margin-right: 20px;
+  color: #666666;
+  cursor: pointer;
+}
+
+.view-job-profile-actions .view-Details {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.view-job-profile-actions .view-Details i {
+  margin-left: 10px;
+}
+
+
+.pagination-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.pagination-container:hover{
+  background-color: #ddd;
+}
+
+
+.page-item {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.page-link {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  background-color: #f0f0f0;
+}
+
+.page-link.active {
+  background-color: #800080;
+  color: #fff;
+}
+
+.page-item.disabled .page-link {
+  color: #ccc;
+}

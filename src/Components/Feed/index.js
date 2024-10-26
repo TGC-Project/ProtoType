@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Article from "../../Images/write article.png";
 import Product from "../../Images/Products impression.png";
 import Jobs from "../../Images/jobs.png"
-import Impression from "../../Images/Profile impression.png"
 import Media from "../../Images/media.png"
 import { useNavigate } from 'react-router-dom';
+import LeftSideBar from '../LeftSideBar';
 
 import './index.css'; // CSS file for styling
 
@@ -102,36 +102,36 @@ const Feed = () => {
 
     return (
         <div className="feed-container">
-            <div className="sidebar">
+            {/* <div className="sidebar">
                 <div className="profile">
                 <img 
                         alt="Profile" 
                         src="https://storage.googleapis.com/a1aa/image/fBSgqgbP36SYM6uTnNdqKoBvMTClOXJyeIu5dNVI5C0ePMPnA.jpg" 
                         onClick={() => navigate('/companyprofile')} // Navigate on click
                         style={{ cursor: 'pointer' }} // Add pointer cursor
-                    />   <h3>Sadashiv Tape</h3>
+                    />   <h2>Sadashiv Tape</h2>
                     <label>I'm committed to growth and innovation.</label>
                     <label>Pune, Maharastra</label>
                     <label>Prototype 1</label>
                 </div>
                 <div class="card">
                     <div class="item">
-                        <div>
+                        <div className='componyprofile-impression'>
                             <img src={Impression}style={{marginRight:"10px"}}/>
                             <span>Profile impression</span>
                         </div>
                         <div class="value">3k</div>
                     </div>
                     <div class="item">
-                        <div>
-                            <img src={Product} style={{marginRight:"10px"}}/>
+                        <div className='componyprofile-impression'>
+                            <img src={Product} style={{marginRight:"5px"}}/>
                             <span>Products Impression</span>
                         </div>
                         <div class="value">34k</div>
                     </div>
                 </div>
                 <div className="links">
-                    <h3>Employer</h3>
+                    <h2>Employer</h2>
                     <hr/>
                     <a href="#">Post a Job</a>
                     <a href="#">Browse Candidate</a>
@@ -139,7 +139,7 @@ const Feed = () => {
                     <a href="#">Applications</a>
                 </div>
                 <div className="links">
-                    <h3>Candidate</h3>
+                    <h2>Candidate</h2>
                     <hr/>
                     <a href="#">Browse Jobs</a>
                     <a href="#">Browse Employer</a>
@@ -147,7 +147,7 @@ const Feed = () => {
                     <a href="#">Saved Jobs</a>
                 </div>
                 <div className="links">
-                    <h3>Quick Links</h3>
+                    <h2>Quick Links</h2>
                     <hr/>
                     <a href="#">About</a>
                     <a href="#">Contact</a>
@@ -155,13 +155,15 @@ const Feed = () => {
                     <a href="#">Blogs</a>
                 </div>
                 <div className="links">
-                    <h3>Support</h3>
+                    <h2>Support</h2>
                     <hr/>
                     <a href="#">FAQ</a>
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms & Condition</a>
                 </div>
-            </div>
+            </div> */}
+
+            <LeftSideBar/>
 
             <div className="feed-main-content">
                 <div className="search">
@@ -193,7 +195,7 @@ const Feed = () => {
                 </div>
                 <div className="sort-by">
     <span>Sort by: </span>
-    <select>
+    <select className='feed-select'>
         <option>Most Recent</option>
         <option>Most Popular</option>
     </select>
@@ -205,7 +207,7 @@ const Feed = () => {
                             <div className="header">
                                 <img alt="Logo" height="40" src="https://storage.googleapis.com/a1aa/image/VMOfjEvP5QUTMa8udc00R6a150itxFmNmiwVzAOKn6z6DzzJA.jpg" width="40" />
                                 <div className="info">
-                                    <h3>{post.author}</h3>
+                                    <h2 className='post-author'>{post.author}</h2>
                                     <p>{post.time}</p>
                                 </div>
                             </div>
@@ -260,41 +262,42 @@ const Feed = () => {
             <div  class="sideproduct">
                 <h2>Top Selling Product</h2>
                 <hr/>
-                <div className="product-item">
+                <div className="product-item-1">
                     <a href="#">Brick Making Machines</a>
                     <div className="count">900 products</div>
                 </div>
                
-                <div className="product-item">
+                <div className="product-item-1">
                     <a href="#">Passenger Lifts</a>
                     <div className="count">1200 products</div>
                 </div>
-                <div className="product-item">
+                <div className="product-item-1">
                     <a href="#">Batteries</a>
                     <div className="count">1700 products</div>
                 </div>
-                <div className="product-item">
+                <div className="product-item-1">
                     <a href="#">Solar Panels</a>
                     <div className="count">2000 products</div>
                 </div>
-                <div className="product-item">
+                <div className="product-item-1">
                     <a href="#">Brick Making Machines</a>
                     <div className="count">900 products</div>
                 </div>
-                <div className="product-item">
+                <div className="product-item-1">
                     <a href="#">Passenger Lifts</a>
                     <div className="count">1200 products</div>
                 </div>
-                <div className="product-item">
+                <div className="product-item-1">
                     <a href="#">Batteries</a>
                     <div className="count">1700 products</div>
                 </div>
-                <div className="product-item">
+                <div className="product-item-1">
                     <a href="#">Solar Panels</a>
                     <div className="count">2000 products</div>
                 </div>
             </div>
             </div>
+            {/* <RightSideBar/> */}
         </div>
     );
 };

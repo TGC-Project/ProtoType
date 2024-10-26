@@ -3,14 +3,17 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  
   .imgecontain {
     height: 40px;
     width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
   }
+
+
   
   .product-page {
     padding: 20px;
@@ -170,7 +173,6 @@
   }
   
   .slide {
-    min-width: 200px;
     margin: 0 20px;
     text-align: center;
     object-fit: cover;
@@ -187,10 +189,10 @@
     transition: transform 0.2s;
   }
   
-  h4{
+  /* h4{
     padding: 10px;
     font-size: 2em;
-  }
+  }  */
   
   .prev,
   .next {
@@ -234,7 +236,7 @@
     align-items: center;
     margin-left: 20px;
     margin-right: 20px;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 100px;
     background-color: white;
     border-bottom: 1px solid #ddd;

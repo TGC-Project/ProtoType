@@ -69,7 +69,7 @@ z-index: 2; /* Ensure text is above the background image */
   display: block;
     width: 20%;
     padding: 12px; /* Increased padding */
-    background-color: #4A3AFF;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 6px; /* More rounded corners */
@@ -83,10 +83,10 @@ z-index: 2; /* Ensure text is above the background image */
 .stats {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .stat {
@@ -95,7 +95,6 @@ z-index: 2; /* Ensure text is above the background image */
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: 90px; /* Set a fixed height */
   min-width: 200px; /* Minimum width for the cards */
   max-width: 250px; /* Maximum width for the cards */
   transition: transform 0.3s ease;
@@ -110,16 +109,14 @@ z-index: 2; /* Ensure text is above the background image */
   color: #007bff;
 }
 
-.stat h3 {
-  font-size: var(--paragarph);
+.stat h4 {
+  font-size:14px;
   color: #333;
-  margin-top: 10px;
 }
 
 .stat p {
   font-size: var(--paragraph);
   color: #666;
-  margin-top: 5px;
 }
 
 
@@ -141,9 +138,8 @@ z-index: 2; /* Ensure text is above the background image */
   margin: 10px 0; /* Space between paragraphs */
 }
 
-p{
-  font-size:var(--paragarph);
-}
+
+
 .check-icon {
   width: 20px; /* Adjust size as needed */
   height: 20px; /* Adjust size as needed */
@@ -151,6 +147,10 @@ p{
 margin-top: 2px;
 }
 
+h3{
+  font-size: 26px;
+  font-weight: bold;
+}
 .header {
   display: flex;
   justify-content: space-around;
@@ -294,10 +294,11 @@ h1 {
   margin: 0 auto;
   margin-top: 50px;
 }
-.container-TC  h1 {
+.top-compony-header {
   font-size: var(--heading1);
   margin-bottom: 20px;
-  margin-right: 50%;
+  display: flex;
+  margin-top: 20px;
 }
 .company-list-TC {
   display: flex;
@@ -362,19 +363,20 @@ h1 {
 }
 .header-JD h1 {
   font-size: var(--heading1);
-  margin-left: 100px;
   
 }
 .header-JD a {
   text-decoration: none;
   color: #007bff;
   font-size: 14px;
+  margin-right: 40px;
 }
 .job-list-JD {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: 20px;
   gap: 20px;
  
 }
@@ -441,11 +443,12 @@ h1 {
   padding: 50px 0;
 }
 
-.testimonial-section-Tt h2 {
+.testimonial-section-head {
   font-size: var(--heading1);
   margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 4%;
   font-weight: bold;
-  margin-left: 100px;
   animation: fadeInUp-Tt 1s ease-in-out;
 }
 
@@ -470,7 +473,8 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 700px; /* Increased max-width for larger cards */
-  height: 200px; /* Set a fixed height for the cards */
+  max-height: 230px;
+  height: 230px; /* Set a fixed height for the cards */
   text-align: left;
   position: relative;
   animation: fadeInUp-Tt 1s ease-in-out;
@@ -557,8 +561,10 @@ h1 {
 .container2 {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   margin-top: 30px;
+  height: 280px;
   padding: 20px;
   background-color: white;
   max-width: 100%;
@@ -568,15 +574,23 @@ h1 {
   background: white;
   border-radius: 8px;
   width: fit-content;
+  height: 200px;
   justify-content: center;
   align-items: center;
-  margin: 5px; /* Decrease margin to minimize space */
+  margin: 15px; /* Decrease margin to minimize space */
   text-align: center;
 }
 
+.container2 .card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .AboutPolicy{
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
 .container2 .card h1 {
@@ -594,6 +608,12 @@ h1 {
 .container2 img:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.testimonial-card-Tt:hover{
+  transform: scale(1.05);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -626,7 +646,7 @@ h1 {
   .stats {
     flex-direction: column; /* Stack stats vertically */
     align-items: center; /* Center align */
-    margin-top: 20px; /* Add some spacing */
+   
   }
 
   .stat {
@@ -719,7 +739,7 @@ h1 {
   }
 
   .testimonial-section-Tt {
-    margin-top: 20px; /* Adjust margin */
+    margin-top: 10px; /* Adjust margin */
   }
 
   .testimonial-container-Tt {
@@ -732,6 +752,7 @@ h1 {
     align-items: center; /* Center align */
   }
 
+ 
   .stars-Tt{
     display: flex;
     align-items: center;
@@ -743,6 +764,8 @@ h1 {
     width: 100%; /* Make testimonial cards full width */
     height: 250px;
   }
+
+
 
 }
 

@@ -67,3 +67,11 @@
 .footer-column .highlight {
   color: #e0e0e0;
 }
+
+h6{
+  text-decoration: underline;
+}
+
+.footer a{
+  font-size: 12px !important;
+}

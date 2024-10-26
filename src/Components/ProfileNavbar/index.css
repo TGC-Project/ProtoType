@@ -73,25 +73,7 @@
     color: #007BFF; /* Change color on hover */
   }
   
-  .auth-button .nav-item-buttons {
-    background-color: #007BFF; /* Button color */
-    color: #fff !important; /* Button text color */
-    padding: 5px 15px; /* Padding for buttons */
-    font-size: 14px; /* Font size */
-    border-radius: 20px; /* Rounded button */
-    transition: background-color 0.3s; /* Smooth transition */
-    display: flex;
-    align-items: center; /* Center content in button */
-  }
-  
-  .auth-button .nav-item-buttons:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
-  .auth-button .nav-icon {
-    margin-right: 5px !important; /* Space between icon and text */
-  }
-  
+
   /* Responsive Styles */
   .hamburger {
     display: none; /* Hidden by default */
@@ -139,11 +121,5 @@
       display: block; /* Show hamburger icon on small screens */
     }
   
-    .nav-item, .auth-button {
-      margin: 10px 0; /* Space for vertical layout */
-      padding: 10px 15px; /* Add padding for touch targets */
-      width: 100%; /* Full width for each item */
-      text-align: center; /* Center text */
-    }
   }
   

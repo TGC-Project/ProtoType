@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 16px;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -42,7 +42,6 @@
 .navbar .menu {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
 .navbar .menu a {
@@ -60,20 +59,55 @@
   color: #1a1a1a;
 }
 
-.navbar .menu button {
-  background-color: #007bff;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 9999px;
+.navbar .menu {
   display: flex;
-  align-items: center;
-  cursor: pointer;
+  align-items: center; /* Space between buttons */
 }
 
-.navbar .menu button.sign-up {
-  background-color: #0056b3;
+.navbar .nav-item {
+  color: #4a4a4a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px; /* Padding for better click area */
+  border-radius: 9999px; /* Makes buttons pill-shaped */
+  transition: background-color 0.3s; /* Smooth transition */
 }
+
+.navbar .nav-item:hover {
+  background-color: #f0f0f0; /* Optional hover effect */
+}
+
+.navbar .nav-icon {
+  margin-right: 8px; /* Space between the icon and text */
+}
+
+.auth-button {
+  border: 2px solid #007bff;
+  color:black;
+  padding: 8px 16px;
+  border-radius: 10px;
+  display: flex;  
+  align-items: center;
+  cursor: pointer;
+  margin-left: 16px; /* Space between auth buttons and nav items */
+}
+.auth-button:hover{
+  background-color: #007bff;
+  color: whitesmoke !important;
+}
+
+#signupbutton{
+  background-color: #007bff;
+  color: white !important;
+}
+
+.vl{
+  border-left:  1px solid #707070;
+  margin-left: 20px;
+}
+
+
 
 .navbar .hamburger {
   display: none;

@@ -12,6 +12,14 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.text-gray-500{
+    background-color: white;
+}
+
+.text-gray-500:hover{
+    color: black;
+}
+
 .companyprofile-header {
     text-align: center;
     margin-bottom: 20px;
@@ -37,7 +45,7 @@
 }
 
 .companyprofile-header button:hover {
-    background-color: #0056b3;
+    background-color: #ffffff !important;
 }
 
 .company-nav {
@@ -69,6 +77,11 @@
     flex-wrap: wrap;
 }
 
+.componyprofile-impression{ 
+    display: flex;
+    justify-content: space-evenly;
+    }
+
 /* .product-item {
     background: white;
     border: 1px solid #ddd;
@@ -78,6 +91,7 @@
     width: calc(45% - 40px);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .product-item img {
     max-width: 100%;
@@ -116,4 +130,16 @@
 .job-description ul {
     list-style-type: disc;
     padding-left: 20px;
+}
+.hover-zoom:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+.button-bounce:hover {
+    animation: bounce 0.3s;
+}
+           
+
+.hover-text:hover {
+    color: #1D4ED8; /* Tailwind's blue-700 */
 }

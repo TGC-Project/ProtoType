@@ -4,7 +4,7 @@ import Home from './Components/Home';
 import Job from "./Components/Job";
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
-import Feed from "./Components/Feed";
+import Feed from "./Components/Feed";   
 import MoreJobs from './Components/MoreJobs';
 import Navbar from './Components/Navbar';
 import ProfileNavbar from './Components/ProfileNavbar';
@@ -13,6 +13,8 @@ import RelatedProducts from './Components/RelatedProducts';
 import UserProfile from './Components/UserProfile';
 import './App.css';
 import CompanyProfile from './Components/CompanyProfile';
+import UserDetails from './Components/UserDetails';
+import CompanySignup from './Components/CompanySignUp';
 
 const App = () => {
     return (
@@ -53,12 +55,15 @@ const Main = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/signin" element={<SignIn onLogin={handleLogin} />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/companysignup" element={<CompanySignup />} />
                 <Route path="/job" element={<Job />} />
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/morejobs" element={<MoreJobs />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/relatedproductsdemo" element={<RelatedProducts />} />
                 <Route path='/companyprofile' element={<CompanyProfile/>}/>
+                <Route path='/userdetails' element={<UserDetails/>}/>
+                <Route path='/companysignup' element={<CompanySignup/>}/>
             </Routes>
             {/* Show UserProfile if logged in and not on auth pages */}
             {isLoggedIn && isUserProfileVisible && (

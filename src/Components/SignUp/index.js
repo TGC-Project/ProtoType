@@ -1,14 +1,12 @@
-// src/SignUp.js
-import React, { useState, useEffect } from 'react'; // Import useNavigate for redirection
+import React, { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
-import './index.css'; // Ensure you have this CSS file for styles
-import countriesData from '../../Data/countries.json'; // Adjust the path as necessary
-import industriesData from '../../Data/industries.json'; // Adjust the path as necessary
-import banksData from '../../Data/banks.json'; // Adjust the path as necessary
+import './index.css';
+import countriesData from '../../Data/countries.json';
+import industriesData from '../../Data/industries.json';
+import banksData from '../../Data/banks.json';
 
 const SignUp = () => {
     const navigate = useNavigate();
-    // State to manage form data and current step
     const [formData, setFormData] = useState({
         fname: '',
         lname: '',
@@ -17,7 +15,7 @@ const SignUp = () => {
         address2: '',
         city: '',
         zip: '',
-        countryCode: countriesData[0].code, // Default to the first country
+        countryCode: countriesData[0].code,
         phone: '',
         shopActDinNumber: '',
         industry: '',
@@ -32,6 +30,7 @@ const SignUp = () => {
 
     const [currentStep, setCurrentStep] = useState(1);
     const [otpVisible, setOtpVisible] = useState(false);
+    const [userType, setUserType] = useState('');
 
     const handleChange = (e) => {
         const { id, value } = e.target;
@@ -40,7 +39,7 @@ const SignUp = () => {
 
     const getOtp = () => {
         console.log('OTP sent to:', formData.aadharNumber);
-        setOtpVisible(true); // Show the OTP field
+        setOtpVisible(true);
     };
 
     const validateForm = (e) => {
@@ -48,7 +47,7 @@ const SignUp = () => {
         if (currentStep === 4) {
             console.log('OTP entered:', formData.otp);
             alert("Account verification completed!");
-            navigate('/signin'); // Redirect to Sign-In page after verification
+            navigate('/signin');
             return;
         }
         setCurrentStep((prevStep) => prevStep + 1);
@@ -57,19 +56,29 @@ const SignUp = () => {
     const handleBack = () => {
         setCurrentStep((prevStep) => prevStep - 1);
         if (currentStep > 1) {
-            setFormData((prevData) => {
-                // Reset the OTP and visibility when going back
-                return { ...prevData, otp: '', aadharNumber: '' };
-            });
+            setFormData((prevData) => ({
+                ...prevData,
+                otp: '',
+                aadharNumber: ''
+            }));
             setOtpVisible(false);
         }
+    };
+
+    const handleUserType = (type) => {
+        setUserType(type);
+        setCurrentStep(1);
+        setFormData({ ...formData, otp: '', aadharNumber: '' });
     };
 
     return (
         <div className="signUp-container">
             <div className="verification-form">
-            <div className="signup-header">
-                    <h1>Account Verification</h1>
+                <div className="signup-header">
+                    <div className="button-group">
+                        <button className="candidate" onClick={() => handleUserType('candidate')}>Candidate</button>
+                        <button className="director" onClick={() => handleUserType('director')}>Director</button>
+                    </div>
                     {currentStep > 1 && (
                         <button className="back-button" onClick={handleBack}>
                             <i className="fas fa-arrow-left"></i>
@@ -78,10 +87,13 @@ const SignUp = () => {
                 </div>
                 <div className="steps">
                     {[1, 2, 3, 4].map((step) => (
-                        <div key={step} className={`step ${currentStep > step ? 'completed' : ''} ${ currentStep === step ? 'active' : ''}`}>
-                            <div className="circle">{step}</div>
-                            {step < 4 && <div className="line"></div>}
-                        </div>
+                        (userType === 'candidate' && (step === 1 || step === 2)) || 
+                        (userType === 'director' && step <= 4) ? (
+                            <div key={step} className={`step ${currentStep > step ? 'completed' : ''} ${currentStep === step ? 'active' : ''}`}>
+                                <div className="circle">{step}</div>
+                                {step < 4 && <div className="line"></div>}
+                            </div>
+                        ) : null
                     ))}
                 </div>
                 <form onSubmit={validateForm}>
@@ -105,7 +117,7 @@ const SignUp = () => {
                                 <input type="text" id="city" placeholder="City" value={formData.city} onChange={handleChange} />
                                 <input type="text" id="zip" placeholder="Zip" value={formData.zip} onChange={handleChange} />
                             </div>
-                            <div className="form-group ">
+                            <div className="form-group">
                                 <label>Phone Number</label>
                                 <div className="phone-group">
                                     <select id="countryCode" value={formData.countryCode} onChange={handleChange}>
@@ -120,26 +132,22 @@ const SignUp = () => {
                     )}
                     {currentStep === 2 && (
                         <>
-                            <div className="form-group">
-                                <label>Shop Act DIN Number</label>
-                                <input type="text" id="shopActDinNumber" placeholder="Shop Act DIN Number" value={formData.shopActDinNumber} onChange={handleChange} />
+
+                             <div className="form-group">
+                                <label>Aadhar Number</label>
+                                <input type="text" id="aadharNumber" placeholder="Aadhar Number" value={formData.aadharNumber} onChange={handleChange} />
                             </div>
-                            <div className="form-group">
-                                <label>Industry</label>
-                                <select id="countryCode" value={formData.industry} onChange={handleChange}>
-                                    <option value="">Select your industry...</option>
-                                    {industriesData.map((industry) => (
-                                        <option key={industry.value} value={industry.value}>{industry.label}</option>
-                                    ))}
-                                </select>
-                            </div>
-                            <div className="form-group">
-                                <label>Organization Website</label>
-                                <input type="text" id="organizationWebsite" placeholder="Organization Website" value={formData.organizationWebsite} onChange={handleChange} />
-                            </div>
+                            <button type="button" className="btn1" onClick={getOtp}>Send OTP</button>
+                            {otpVisible && (
+                                <div className="form-group">
+                                    <label>OTP</label>
+                                    <input type="text" id="otp" placeholder="Enter OTP" value={formData.otp} onChange={handleChange} />
+                                </div>
+                            )}
+                          
                         </>
                     )}
-                    {currentStep === 3 && (
+                    {userType === 'director' && currentStep === 3 && (
                         <>
                             <div className="form-group">
                                 <label>Currency</label>
@@ -147,7 +155,7 @@ const SignUp = () => {
                             </div>
                             <div className="form-group">
                                 <label>Bank Name</label>
-                                <select id="countryCode" value={formData.bankName} onChange={handleChange}>
+                                <select id="bankName" value={formData.bankName} onChange={handleChange}>
                                     <option value="">Select your bank...</option>
                                     {banksData.map((bank) => (
                                         <option key={bank.value} value={bank.value}>{bank.label}</option>
@@ -164,19 +172,25 @@ const SignUp = () => {
                             </div>
                         </>
                     )}
-                    {currentStep === 4 && (
+                    {userType === 'director' && currentStep === 4 && (
                         <>
-                            <div className="form-group">
-                                <label>Aadhar Number</label>
-                                <input type="text" id="aadharNumber" placeholder="Aadhar Number" value={formData.aadharNumber} onChange={handleChange} />
+                           <div className="form-group">
+                                <label>Shop Act DIN Number</label>
+                                <input type="text" id="shopActDinNumber" placeholder="Shop Act DIN Number" value={formData.shopActDinNumber} onChange={handleChange} />
                             </div>
-                            <button type="button" className="btn1" onClick={getOtp}>Send OTP</button>
-                            {otpVisible && (
-                                <div className="form-group">
-                                    <label>OTP</label>
-                                    <input type="text" id="otp" placeholder=" Enter OTP" value={formData.otp} onChange={handleChange} />
-                                </div>
-                            )}
+                            <div className="form-group">
+                                <label>Industry</label>
+                                <select id="industry" value={formData.industry} onChange={handleChange}>
+                                    <option value="">Select your industry...</option>
+                                    {industriesData.map((industry) => (
+                                        <option key={industry.value} value={industry.value}>{industry.label}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label>Organization Website</label>
+                                <input type="text" id="organizationWebsite" placeholder="Organization Website" value={formData.organizationWebsite} onChange={handleChange} />
+                            </div>
                         </>
                     )}
                     <button type="submit" className="btn1">Next</button>

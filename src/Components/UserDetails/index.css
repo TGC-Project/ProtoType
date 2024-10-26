@@ -1,0 +1,5 @@
+.feed-container {
+    margin: 40px;
+    display: flex;
+    justify-content: space-between;
+}
