@@ -5,8 +5,9 @@ import image from "../../Images/loginimage.png";
 import image1 from "../../Images/hacking.png";
 
 const SignIn = ({ onLogin }) => {
-    const [username, setUsername] = useState('');
+    const [email, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,29 +20,44 @@ const SignIn = ({ onLogin }) => {
 
     const loginSubmit = async (e) => {
         e.preventDefault();
-    
+
+        // Client-side validation
+        if (!email || !password) {
+            setError('Please enter both username and password.');
+            return;
+        }
+
         try {
-            const response = await fetch('http://localhost:5000/api/signin', {
+            const response = await fetch('http://localhost:5001/api/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ email, password }),
             });
-    
+
             const data = await response.json();
+            console.log("API Response:", data); // Debugging line
+
             if (response.ok) {
-                onLogin(); // Call the onLogin prop function
-                navigate('/feed'); // Redirect to feed
+                // Store user data in localStorage
+                localStorage.setItem('user', JSON.stringify({
+                    fname: data.fname,
+                    lname: data.lname,
+                    email: data.email,
+                }));
+
+                console.log("Login successful, navigating to feed...");
+                navigate('/feed'); // Redirect to feed (implement this route)
             } else {
-                alert(data.message); // Show error message
+                setError(data.message); // Show error message from the server
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('An error occurred. Please try again later.');
+            setError('An error occurred. Please try again later.');
         }
     };
-    
+
     const handleSignUpClick = (e) => {
         e.preventDefault();
         navigate('/signup');
@@ -51,7 +67,8 @@ const SignIn = ({ onLogin }) => {
         <div className="login-container">
             <div className="box">
                 <form className="login-form" onSubmit={loginSubmit}>
-                    <h2>SignIn</h2>
+                    <h2>Sign In</h2>
+                    {error && <div className="error-message">{error}</div>}
                     <div className="social-links">
                         <a href="#" className='google1'>
                             <img className='google' src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="Google" />
@@ -69,7 +86,7 @@ const SignIn = ({ onLogin }) => {
                             type="text"
                             id="username"
                             name="username"
-                            value={username}
+                            value={email}
                             onChange={(e) => setUsername(e.target.value)}
                             required
                         />
@@ -86,10 +103,9 @@ const SignIn = ({ onLogin }) => {
                         />
                     </div>
                     <button type="submit" className='signin-submit'>
-    <img className="img" src={image1} alt="Login" />
-    Sign In
-</button>
-
+                        <img className="img" src={image1} alt="Login" />
+                        Sign In
+                    </button>
                     <div className="OR">OR</div>
                     <p className="message">
                         Don't have an account? <a href="/signup" onClick={handleSignUpClick}>Sign Up</a>

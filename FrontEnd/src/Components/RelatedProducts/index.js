@@ -1,55 +1,55 @@
 import React, { useState, useEffect } from 'react';
-import './index.css';
+import './RelatedProduct.css';
 
 
 const ProductService = () => {
     const newArrivals = [
         {
             name: 'The Mini Sling Bag',
-            price: '2650 INR (Approx.)',
-            moq: 'MOQ - 100 Piece/Pieces',
+            price: '₹599.00',
+            AMP : '₹399.00',
             image: 'https://storage.googleapis.com/a1aa/image/17WG4HGYOHJWIRHiptsuHt0Ktqqm22eYc3P5xQY3dKMEPx0JA.jpg'
           },
           {
               name: 'Auqa Filter',
-              price: '2650 INR (Approx.)',
-              moq: 'MOQ - 100 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://aquafreshrosystem.com/wp-content/uploads/2024/01/Aqua-Natural-RO.png'
             },
             {
-              name: 'Samsung Ecobubble washing machine',
-              price: '2650 INR (Approx.)',
-              moq: 'MOQ - 100 Piece/Pieces',
+              name: 'Ecobubble washing machine',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://i.pinimg.com/736x/b9/3a/78/b93a781a6e4cc915d60f5bdf92c460e6.jpg'
             },
             {
               name: 'SAMSUNG 8 kg with Steam',
-              price: '2650 INR (Approx.)',
-              moq: 'MOQ - 100 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://rukminim2.flixcart.com/image/850/1000/xif0q/washing-machine-new/t/u/0/-original-imah4mej36j7z7a7.jpeg?q=90&crop=false'
             },
             {
-              name: 'Samsung Bespoke 30-in 4 Burners',
-              price: '2650 INR (Approx.)',
-              moq: 'MOQ - 100 Piece/Pieces',
+              name: 'Samsung Bespoke Burners',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDn8BfHmIBGQGwaLCwYUWH-JDR2quAyv8ibQ&s'
             },
             {
                 name: 'LG Refrigerator',
-                price: '2650 INR (Approx.)',
-                moq: 'MOQ - 100 Piece/Pieces',
+                price: '₹599.00',
+                AMP : '₹399.00',
                 image: 'https://hips.hearstapps.com/hmg-prod/images/gh-113021-ghi-best-fridges-1638385441.png?crop=0.486xw:0.746xh;0.0385xw,0.160xh&resize=640:*'
               },
               {
                 name: 'LG Palash 600 Watt Mixer',
-                price: '2650 INR (Approx.)',
-                moq: 'MOQ - 100 Piece/Pieces',
+                price: '₹599.00',
+               AMP : '₹399.00',
                 image: 'https://www.wonderchef.com/cdn/shop/files/Image2_59cf4e01-8ee5-4343-8435-35b589744b7b_1024x1024@2x.jpg?v=1718097302'
               },
               {
                 name: 'Mr.Cook Palash 600 Watt Mixer',
-                price: '2650 INR (Approx.)',
-                moq: 'MOQ - 100 Piece/Pieces',
+                price: '₹599.00',
+                 AMP : '₹399.00',
                 image: 'https://unitedgrouponline.com/cdn/shop/files/mrcookpalash3_1024x1024.jpg?v=1703265476'
               },
     
@@ -59,50 +59,50 @@ const ProductService = () => {
     const tradeIndiaTrusted = [
         {
             name: 'Office Chair',
-            price: '140 INR (Approx.)',
-            moq: 'MOQ - 50 Piece/Pieces',
+            price: '₹599.00',
+           AMP : '₹399.00',
             image: 'https://belfurniture.com/cdn/shop/files/7109d991-2db3-4fd1-a7c5-8b1b21aa5447_930x.jpg?v=1727716566'
           },
           {
               name: 'Books Shelfs',
-              price: '140 INR (Approx.)',
-              moq: 'MOQ - 50 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://www.nilkamalfurniture.com/cdn/shop/products/ITRONEWBCASEWNT_05_large.jpg?v=1635158354'
             },
             {
               name: 'Relexo Sofa',
-              price: '140 INR (Approx.)',
-              moq: 'MOQ - 50 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvYn5TKaQDQcgVJnxM7FyuOO6VFf3uaX2PDZS3pWilIXkfFp45_VMkqGH6HsXl574nJTA&usqp=CAU'
             },
             {
               name: 'nico Sofa',
-              price: '140 INR (Approx.)',
-              moq: 'MOQ - 50 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://www.godrejinterio.com/imagestore/B2C/56101502SD01898/56101502SD01898_A2_803x602.jpg'
             },
             {
               name: 'Corporate Sofa',
-              price: '140 INR (Approx.)',
-              moq: 'MOQ - 50 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://thesleepcompany.in/cdn/shop/files/Artboard_1_ff12fb07-a7ef-4cc7-9cea-67f4815ca8eb.webp?v=1720604274'
             },
             {
               name: 'Boss Chair',
-              price: '140 INR (Approx.)',
-              moq: 'MOQ - 50 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://m.media-amazon.com/images/S/mms-media-storage-prod/final/BrandPosts/brandPosts/571b6719-7395-4a26-ba1e-1ad83800374c/438e28fb-aaaa-4cb0-8874-df6c0caa4276/media._SL480_.jpeg'
             },
             {
               name: 'Book Table',
-              price: '140 INR (Approx.)',
-              moq: 'MOQ - 50 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://ebansal.com/cdn/shop/products/model39-w-02_1500x1500_8a656787-70a6-4862-bcf5-7cd2d9d9460f.jpg?v=1680520696'
             },
             {
               name: ' Material Table',
-              price: '140 INR (Approx.)',
-              moq: 'MOQ - 50 Piece/Pieces',
+              price: '₹599.00',
+              AMP : '₹399.00',
               image: 'https://m.media-amazon.com/images/I/81+MrAGPIrL._AC_UF1000,1000_QL80_.jpg'
             },
       // Add more products as needed...
@@ -164,33 +164,33 @@ const RelatedProducts = () => {
       products: [
         {
           image: 'https://5.imimg.com/data5/UK/ML/PN/SELLER-79991697/industrial-wire-rope-hoist-500x500.jpg',
-          name: 'Material Handling Electric Wire Rope Hoist',
-          price: '2650 INR (Approx.)',
-          moq: '100 Piece/Pieces',
+          name: 'Material Handling Rope',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
         {
           image: 'https://5.imimg.com/data5/JX/OW/DM/SELLER-74566800/electric-wire-rope-hoist-500x500.jpg',
-          name: 'Wire Rope Hoist, Capacity: 5 ton',
-          price: '',
-          moq: '100 Square Foot/Square Foots',
+          name: 'Wire Rope Hoist',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
         {
           image: 'https://na.bhs1.com/media/catalog/product/cache/7cbf7ab80ec21f65659eb82d7049f5a8/s/c/sc-400_web.jpg',
           name: 'Wire and Cable Handling',
-          price: '',
-          moq: '10 Piece/Pieces',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
         {
           image: 'https://www.materialhandling247.com/images/article/MHPN1206_prod_jaescoWEB.jpg',
-          name: 'Jesco Industries, Inc.: Side pivot hopper',
-          price: 'Price',
-          moq: 'MOQ',
+          name: 'Side pivot hopper',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
         {
           image: 'https://5.imimg.com/data5/WG/UJ/DU/SELLER-4335664/wire-springs-500x500.jpg',
-          name: 'Silver Stainless Steel Spring Wire',
-          price: 'Price',
-          moq: 'MOQ',
+          name: 'Stainless Steel Spring Wire',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
       ],
     },
@@ -201,52 +201,58 @@ const RelatedProducts = () => {
       products: [
         {
           image: 'https://5.imimg.com/data5/TU/EQ/PK/SELLER-39922342/komori-a37p-lithrone-convertible-perfecting-offset-printing-press-500x500.png',
-          name: 'Komori A37P Lithrone Convertible Perfecting Offset Printing Press',
-          price: '140 INR (Approx.)',
-          moq: '50 Piece/Pieces',
+          name: 'Offset Printing Press',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
         {
           image: 'https://image.made-in-china.com/202f0j00PqJuFrNdrfct/Single-Clamp-Print-on-Demand-Digital-Book-Perfect-Binder.webp',
-          name: 'Single Clamp Print on Demand Digital Book Perfect Binder',
-          price: '1116 INR (Approx.)',
-          moq: '96 Piece/Pieces',
+          name: 'Book Perfect Binder',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
         {
           image: 'https://static3.webx.pk/files/4059/Images/l6290-4059-0-270622075740371.jpg',
-          name: 'Epson EcoTank L6290 A4 Wi-Fi Duplex All-in-One Ink Tank Printer',
-          price: '',
-          moq: '100 Kilograms/Kilograms',
+          name: 'Epson Ink Tank Printer',
+          price: '₹599.00',
+           AMP : '₹399.00',
         },
         {
           image: 'https://i5.walmartimages.com/asr/75f66eeb-5669-4cdf-b536-2c9c16b2b25c.6a7333d9bd6c365f72c18d2054425717.jpeg',
-          name: 'HP LaserJet Pro MFP 3101fdw Laser Copy Machine',
-          price: 'Price',
-          moq: 'MOQ',
+          name: 'HP LaserJet Laser Copy Machine',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
         {
           image: 'https://www.secureye.com/wp-content/uploads/2019/02/big-s-fb4k.jpg',
-          name: 'Biometric Device with Face Recognition and Access Control',
-          price: 'Price',
-          moq: 'MOQ',
+          name: 'Biometric Device',
+          price: '₹599.00',
+          AMP : '₹399.00',
         },
       ],
     },
   ];
 
+const [itemsToShowNew, setItemsToShowNew] = useState(4);
+const [itemsToShowTrusted, setItemsToShowTrusted] = useState(4);
+
   useEffect(() => {
     setNewArrivals(productService.getNewArrivals());
     setTradeIndiaTrusted(productService.getTradeIndiaTrusted());
-    setDisplayedNewArrivals(newArrivals.slice(0, itemsToShow));
-    setDisplayedTradeIndiaTrusted(tradeIndiaTrusted.slice(0, itemsToShow));
-  }, [productService, itemsToShow]);
+    setDisplayedNewArrivals(newArrivals.slice(0, itemsToShowNew));
+    setDisplayedTradeIndiaTrusted(tradeIndiaTrusted.slice(0, itemsToShowTrusted));
+  }, [productService,itemsToShowNew, itemsToShowTrusted]);
 
   const loadMore = (type) => {
-    setItemsToShow((prev) => prev + 4);
     if (type === 'new') {
-      setDisplayedNewArrivals(newArrivals.slice(0, itemsToShow + 4));
-    } else {
-      setDisplayedTradeIndiaTrusted(tradeIndiaTrusted.slice(0, itemsToShow + 4));
-    }
+      setItemsToShowNew((prev) => prev + 4);
+      setDisplayedNewArrivals(newArrivals.slice(0, itemsToShowNew + 4));
+    } 
+    
+    else if (type === 'trusted') {
+      setItemsToShowTrusted((prev) => prev + 4);
+      setDisplayedTradeIndiaTrusted(tradeIndiaTrusted.slice(0, itemsToShowTrusted + 4));
+  }
   };
 
   const changeMainImage = (image) => {
@@ -273,7 +279,7 @@ const RelatedProducts = () => {
       <div className="container-sofa">
         <div className="left-column-sofa">
           <div className="thumbnail-section-sofa">
-            <img src={currentImage} alt="Main product image" height="400" width="600" />
+            <img  src={currentImage} alt="Main product image"  height="200" width="700"/>
             <div className="thumbnail-images-sofa">
               {thumbnailImages.map((thumbnail, index) => (
                 <img
@@ -437,14 +443,15 @@ const RelatedProducts = () => {
         <div className="product-list" id="arrival1">
           {displayedNewArrivals.map((product, index) => (
             <div key={index} className="product-item">
-              <img src={product.image} alt={product.name} height="200" width="200" />
+              <img className='ProductImage' src={product.image} alt={product.name}/>
               <h3>{product.name}</h3>
-              <p>{product.price}</p>
-              <p>{product.moq}</p>
+              <p>Price: {product.price}</p>
+              <p>AMP: {product.AMP}</p>
+              {/* <p>{product.moq}</p> */}
             </div>
           ))}
         </div>
-        <button  className="Productbutton" onClick={() => loadMore('new')}>Show More</button>
+        <button className='arrival-section-button' onClick={() => loadMore('new')}>Show More</button>
       </div>
 
       <div className="arrival-section">
@@ -453,14 +460,15 @@ const RelatedProducts = () => {
         <div className="product-list" id="trusted1">
           {displayedTradeIndiaTrusted.map((product, index) => (
             <div key={index} className="product-item">
-              <img src={product.image} alt={product.name} height="200" width="200" />
+              <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
-              <p>{product.price}</p>
-              <p>{product.moq}</p>
+              <p>Price: {product.price}</p> 
+              {/* <p>{product.moq}</p> */}
+               <p>AMP: {product.AMP}</p>
             </div>
           ))}
         </div>
-        <button  className="Productbutton" onClick={() => loadMore('trusted')}>Show More</button>
+         <button className='arrival-section-button' onClick={() => loadMore('trusted')}>Show More</button>
       </div>
     </div>
 
@@ -472,10 +480,10 @@ const RelatedProducts = () => {
           <div className="product-carousel12" id={section.id}>
             {section.products.map((product, productIndex) => (
               <div key={productIndex} className="product-item12">
-                <img src={product.image} alt={product.name} height="200" width="200" />
-                <h6>{product.name}</h6>
-                <p>{product.price}</p>
-                {product.moq && <p>MOQ - {product.moq}</p>}
+                <img src={product.image} alt={product.name}  />
+                <h3 className='product-name-industrial-plants'>{product.name}</h3>
+                <p className='section12-p'>Price: {product.price}</p>
+                <p className='section12-p'>AMP: {product.AMP}</p>
               </div>
             ))}
           </div>

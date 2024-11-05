@@ -364,7 +364,7 @@ const Job = () => {
       <section className="a-feature-companies">
         <div className="a-campany_view">
           <h1>Featured Companies</h1>
-          <button className="a-view-more-btn">View All Campany</button>
+          <button className="a-view-more-btn"  onClick={() => navigate('/morecompanies')}>View All Campany</button>
         </div>
         <div className="a-companies-container">
           {companies.map((company, index) => (

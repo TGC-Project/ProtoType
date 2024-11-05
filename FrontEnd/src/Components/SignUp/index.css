@@ -144,7 +144,7 @@
     max-width: 320px;
 }
 
-.btn1 {
+.role-button {
     display: block;
     width: 80%;
     padding: 12px; /* Increased padding */
@@ -158,11 +158,11 @@
     transition: background-color 0.3s; /* Smooth background color transition */
 }
 
-.btn1:hover {
+.role-button:hover {
     background-color: #3d52a0; /* Button hover effect */
 }
 
-.button-group {
+.role-selection {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Center the buttons horizontally */
@@ -170,7 +170,7 @@
     margin-bottom: 20px;
 }
 
-.button-group button {
+.role-selection .role-button {
     max-width: 120px; /* Limit max width for better spacing */
     padding: 12px; /* Increased padding */
     border: none;
@@ -183,13 +183,13 @@
     transition: background-color 0.3s; /* Smooth background color transition */
 }
 
-.button-group .candidate,
-.button-group .director {
+.role-selection .candidate,
+.role-selection .director {
     background-color: #007bff;
 }
 
-.button-group .candidate:hover,
-.button-group .director:hover {
+.role-selection .candidate:hover,
+.role-selection .director:hover {
     background-color: #3d52a0;
 }
 

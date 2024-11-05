@@ -100,14 +100,18 @@
     margin-right: 10px;
 }
 
+.post-actions{
+    display: flex;
+    justify-content: space-between;
+}
 .feed-button {
-    padding: 10px 20px;
+    padding: 5px 10px;
+    font-size: 12px;
     border: none;
-    background-color: #0073b1;
-    color: #fff;
+    color: black;
     margin-top: -2px;
     border-radius: 20px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
 }
@@ -192,6 +196,8 @@ hr {
     text-align: left;
 }
 
+
+
 .post a {
     display: flex;
     margin-right: auto; /* Align to the left */
@@ -217,7 +223,7 @@ hr {
 .post .actions .feed-button {
     background: none;
     border: none;
-    color: #0073b1;
+    color: hsl(201, 100%, 35%);
     cursor: pointer;
 }
 
@@ -244,8 +250,12 @@ hr {
 }
 
 .post-actions1 .feed-button:active {
-    color: #4A3AFF;
     transform: scale(1.1);
+}
+
+.feed-button:hover{
+    background-color: #007bff;
+    color: white;
 }
 
 .comment-section {
@@ -270,20 +280,8 @@ hr {
     border-radius: 20px;
 }
 
-.comment-section .feed-button {
-    background-color: white; 
-    color:#333;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    cursor: pointer;
-    margin-top: 8px;
-    font-size: 14px;
-}
 
-/* .comment-section .feed-button:hover {
-    background-color: #005f8d;
-} */
+
 
 .share-options {
     display: none;
@@ -398,9 +396,6 @@ hr {
     display: none;
 }
 
-.feed-button{
-  background-color: #4A3AFF;
-}
 
 
 .card {
@@ -470,3 +465,6 @@ hr {
         height: 100px; /* Maintain aspect ratio */
     }
 }
+
+
+

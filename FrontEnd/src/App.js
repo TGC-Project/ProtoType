@@ -15,6 +15,7 @@ import './App.css';
 import CompanyProfile from './Components/CompanyProfile';
 import UserDetails from './Components/UserDetails';
 import CompanySignup from './Components/CompanySignUp';
+import MoreCompanies from './Components/MoreCompanies';
 
 const App = () => {
     return (
@@ -59,6 +60,7 @@ const Main = () => {
                 <Route path="/job" element={<Job />} />
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/morejobs" element={<MoreJobs />} />
+                <Route path="/morecompanies" element={<MoreCompanies />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/relatedproductsdemo" element={<RelatedProducts />} />
                 <Route path='/companyprofile' element={<CompanyProfile/>}/>

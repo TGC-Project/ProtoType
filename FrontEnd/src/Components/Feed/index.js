@@ -1,139 +1,76 @@
 import React, { useState, useEffect } from 'react';
-import Article from "../../Images/write article.png";
-import Product from "../../Images/Products impression.png";
-import Jobs from "../../Images/jobs.png";
-import Media from "../../Images/media.png";
 import LeftSideBar from '../LeftSideBar';
-import './index.css'; // CSS file for styling
+import ProfileImage from "../../Images/img.png";
+import './index.css'; // Import your CSS for styling
 
 const Feed = () => {
     const [posts, setPosts] = useState([]);
-    const [postContent, setPostContent] = useState('');
-    const [mediaFile, setMediaFile] = useState(null);
-    const [commentContent, setCommentContent] = useState({});
+    const [commentVisible, setCommentVisible] = useState(null); // Manage which post's comment section is visible
 
+    // Fetch posts from the backend API when the component mounts
     useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const response = await fetch('http://localhost:5001/api/posts');
+                console.log("API Response Status:", response.status);
+
                 if (!response.ok) {
                     const errorText = await response.text();
                     throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
                 }
+
                 const data = await response.json();
+                console.log('Fetched posts data:', data);
                 setPosts(data);
             } catch (error) {
                 console.error('Error fetching posts:', error);
             }
         };
+
         fetchPosts();
     }, []);
-    
-    const createPost = async () => {
-        if (postContent.trim() === '') {
-            alert('Please enter some content to post.');
-            return;
-        }
-    
-        const newPost = {
-            content: postContent,
-            author: 'Sadashiv Tape',
-            time: new Date().toLocaleString(),
-            image: mediaFile ? URL.createObjectURL(mediaFile) : null,
-            comments: [],
-            showComments: false,
-        };
-    
+
+    // Handle the like button click
+    const handleLike = async (postId) => {
         try {
-            const response = await fetch('http://localhost:5001/api/posts', {
+            const response = await fetch(`http://localhost:5001/api/posts/like/${postId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(newPost),
             });
-    
-            if (response.ok) {
-                const savedPost = await response.json();
-                setPosts([savedPost, ...posts]);
-            } else {
-                alert('Error saving post');
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Error liking post: ${errorText}`);
             }
+
+            const updatedPost = await response.json();
+
+            // Update the post's like count in the state
+            setPosts(posts.map(post =>
+                post._id === postId ? updatedPost : post
+            ));
         } catch (error) {
-            console.error('Error:', error);
-            alert('Error saving post');
+            console.error('Error liking post:', error);
         }
-    
-        setPostContent('');
-        setMediaFile(null);
     };
-    
-    const handleCommentChange = (postId, value) => {
-        setCommentContent({ ...commentContent, [postId]: value });
+
+    // Toggle the visibility of the comment input section
+    const toggleCommentSection = (postId) => {
+        setCommentVisible(postId === commentVisible ? null : postId); // Toggle visibility for the clicked post
     };
-    
-    const handleMediaUpload = (event) => {
-        setMediaFile(event.target.files[0]);
-    };
-    
-    const addComment = (postId) => {
-        const content = commentContent[postId] || '';
-        if (content.trim() === '') {
-            alert('Please enter a comment.');
-            return;
-        }
-    
-        setPosts(posts.map(post =>
-            post._id === postId ? { ...post, comments: [...post.comments, content] } : post
-        ));
-    
-        setCommentContent({ ...commentContent, [postId]: '' });
-    };
-    
+
     return (
         <div className="feed-container">
             <LeftSideBar />
             <div className="feed-main-content">
-                <div className="search">
-                    <div className="post-box">
-                        <input
-                            id="post-input"
-                            placeholder="Media | Write Article | Job | Products"
-                            type="text"
-                            value={postContent}
-                            onChange={(e) => setPostContent(e.target.value)}
-                        />
-                        <button className="post-creation" onClick={createPost}>Post</button>
-                    </div>
-                    <div className="icons-container">
-                        <div id="mediaIcon" onClick={() => document.getElementById('fileInput').click()}>
-                            <img src={Media} style={{ marginRight: "10px" }} alt="Media Icon" />Media
-                        </div>
-                        <div><img src={Article} style={{ marginRight: "10px" }} alt="Article Icon" />Write Article</div>
-                        <div><img src={Jobs} style={{ marginRight: "10px" }} alt="Jobs Icon" />Job</div>
-                        <div><img src={Product} style={{ marginRight: "10px" }} alt="Product Icon" />Products</div>
-                    </div>
-                    <input
-                        type="file"
-                        id="fileInput"
-                        accept="image/*"
-                        style={{ display: 'none' }}
-                        onChange={handleMediaUpload}
-                    />
-                </div>
-                <div className="sort-by">
-                    <span>Sort by: </span>
-                    <select className='feed-select'>
-                        <option>Most Recent</option>
-                        <option>Most Popular</option>
-                    </select>
-                </div>
                 <div id="posts">
                     {posts.length > 0 ? (
                         posts.map((post) => (
                             <div className="post" key={post._id}>
                                 <div className="header">
-                                    <img alt="User Avatar" height="40" src="https://storage.googleapis.com/a1aa/image/VMOfjEvP5QUTMa8udc00R6a150itxFmNmiwVzAOKn6z6DzzJA.jpg" width="40" />
+                                    <img alt="User Avatar" height="40" src={ProfileImage} width="40" />
                                     <div className="info">
                                         <h2 className='post-author'>{post.author}</h2>
                                         <p>{post.time}</p>
@@ -145,31 +82,35 @@ const Feed = () => {
                                     <a href="#">See translation</a>
                                 </div>
                                 <div className="post-actions">
-                                    <button className="feed-button" onClick={() => alert('Liked!')}>
-                                        <i className="far fa-thumbs-up"></i>
-                                        Like
+                                    <button className="feed-button" onClick={() => handleLike(post._id)}>
+                                        <i className="far fa-thumbs-up"></i> Like ({post.likes})
                                     </button>
-                                    <button className='feed-button' onClick={() => alert('Comment')}>
-                                        <i className="far fa-comment"></i>
-                                        Comment
+                                    <button
+                                        className="feed-button"
+                                        onClick={() => toggleCommentSection(post._id)} // Toggle visibility
+                                    >
+                                        <i className="far fa-comment"></i> Comment
                                     </button>
                                     <button className='feed-button' onClick={() => alert('Sent!')}>
-                                        <i className="far fa-paper-plane"></i>
-                                        Send
+                                        <i className="far fa-paper-plane"></i> Send
                                     </button>
                                 </div>
-                                <div className="comment-section">
-                                    <textarea
-                                        placeholder="Add a comment..."
-                                        rows="4"
-                                        value={commentContent[post._id] || ''}
-                                        onChange={(e) => handleCommentChange(post._id, e.target.value)}
-                                    />
-                                    <button onClick={() => addComment(post._id)}>Post</button>
-                                    {post.comments.map((comment, index) => (
-                                        <p key={index}>{comment}</p>
-                                    ))}
-                                </div>
+
+                                {/* Conditionally Render Comment Input Section */}
+                                {commentVisible === post._id && (
+                                    <div className="comment-wrapper"> {/* New div wrapper for comment section */}
+                                        <div className="comment-section">
+                                            <div className="comment-avatar">
+                                                <img alt="User Avatar" src={ProfileImage} width="30" height="30" />
+                                            </div>
+                                            <textarea
+                                                placeholder="Enter your comment..."
+                                                rows="4"
+                                            />
+                                            <button>Post Comment</button>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         ))
                     ) : (
@@ -177,7 +118,7 @@ const Feed = () => {
                     )}
                 </div>
             </div>
-    
+
             <div className="feed-right-sidebar">
                 <div className="sideproduct">
                     <h2>Top Selling Product</h2>
@@ -201,7 +142,7 @@ const Feed = () => {
                 </div>
             </div>
         </div>
-    );   
+    );
 };
 
 export default Feed;
